@@ -11,11 +11,14 @@
         "lint": "pnpm lint:astro && pnpm lint:prettier",
         "lint:astro": "astro check",
         "lint:prettier": "prettier --check .",
+        "lint:prettier:fix": "prettier --check .",
         "preview": "astro preview"
     },
     "dependencies": {
         "@astrojs/check": "^0.2.0",
+        "@astrojs/tailwind": "^5.0.0",
         "astro": "^3.0.5",
+        "tailwindcss": "^3.0.24",
         "typescript": "^5.2.2"
     },
     "devDependencies": {
