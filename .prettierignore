@@ -1,0 +1,7 @@
+/.netlify/
+/.pnpm-store/
+/.vscode/
+/dist/
+/node_modules/
+pnpm-lock.yaml
+README.md

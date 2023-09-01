@@ -1,0 +1,25 @@
+{
+    "name": "astro",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "astro": "astro",
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "build:noindex": "pnpm build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
+        "lint": "pnpm lint:astro && pnpm lint:prettier",
+        "lint:astro": "astro check",
+        "lint:prettier": "prettier --check .",
+        "preview": "astro preview"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.2.0",
+        "astro": "^3.0.5",
+        "typescript": "^5.2.2"
+    },
+    "devDependencies": {
+        "prettier": "^3.0.3",
+        "prettier-plugin-astro": "^0.12.0"
+    }
+}
