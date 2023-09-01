@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import {Counter} from "../components/counter";
 ---
 
 <Layout title="Sascha Klatt | full-stack developer">
@@ -23,6 +24,7 @@ import Card from "../components/Card.astro";
                     <li>Figma / Affinity</li>
                 </ol>
             </section>
+            <Counter client:idle />
             <div>
                 <button>get in touch!</button>
             </div>
