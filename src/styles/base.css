@@ -2,25 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    /* regular button classes */
-    .btn-base {
-        @apply rounded-full
-        inline-flex
-        px-8 md:px-10
-        py-3
-        items-center
-        justify-center
-        border border-transparent
-        text-base text-center md:text-lg
-        font-medium
-        focus:outline-none
-        focus:ring-2 focus:ring-opacity-75
-        transition-colors
-        select-none
-        whitespace-nowrap;
+@layer base {
+    body {
+        text-rendering: optimizelegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
-    .btn-primary {
-        @apply btn-base bg-slate-500 text-white hover:bg-slate-400 hover:text-white focus:ring-0;
+
+    /* ::-moz-selection {
+        @apply bg-primary-200;
+    } */
+
+    /* ::selection {
+        @apply bg-primary-200;
+    } */
+
+    html {
+        font-size: 1.125rem; /* = 18px, by a default browser font size of 16px  */
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply break-words;
     }
 }

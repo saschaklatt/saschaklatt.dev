@@ -1,5 +1,5 @@
 ---
-import "../styles/base.css";
+import "../styles/index.css";
 
 interface Props {
     title: string;
@@ -18,7 +18,7 @@ const {title} = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
-    <body>
+    <body class="font-sans">
         <slot />
     </body>
 </html>
@@ -30,9 +30,7 @@ const {title} = Astro.props;
         --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
     }
     html {
-        font-family: system-ui, sans-serif;
         background: #13151a;
-        background-size: 224px;
     }
     code {
         font-family:

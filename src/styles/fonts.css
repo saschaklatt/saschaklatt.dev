@@ -1,0 +1,24 @@
+@layer base {
+    @font-face {
+        font-display: swap;
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 400;
+        src: url("/fonts/nunito.woff2") format("woff2-variations");
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: "Source Code Pro";
+        font-style: normal;
+        font-weight: 400;
+        src: url("/fonts/sourcecodepro.woff2") format("woff2-variations");
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: "Bungee Inline";
+        font-weight: 400;
+        src: url("/fonts/bungee-inline-regular.woff2") format("woff2");
+    }
+}
