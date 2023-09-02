@@ -7,12 +7,14 @@ export const Counter = () => {
         <section>
             <div className="content my-10">
                 <p>Counter: {value}</p>
-                <button className="btn-primary" onClick={() => setValue(value + 1)}>
-                    {"+"}
-                </button>
-                <button className="btn-primary" onClick={() => setValue(value - 1)}>
-                    {"-"}
-                </button>
+                <div className="flex gap-4">
+                    <button className="btn-accent" onClick={() => setValue(value + 1)}>
+                        {"+"}
+                    </button>
+                    <button className="btn-accent" onClick={() => setValue(value - 1)}>
+                        {"-"}
+                    </button>
+                </div>
             </div>
         </section>
     );
