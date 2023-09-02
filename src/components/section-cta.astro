@@ -11,7 +11,7 @@ const {headline, message} = Astro.props;
 
 <section>
     <div class="content text-center">
-        <HeaderUnderline headline="Need dev support?" />
+        <HeaderUnderline headline={headline} />
         {message && <p class="mx-auto opacity-70 text-xl font-bold max-w-prose leading-tight my-12">{message}</p>}
         <div class="text-center inline-flex gap-4 flex-col md:flex-row">
             <slot name="buttons" />

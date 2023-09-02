@@ -1,26 +1,44 @@
 ---
 import Editor from "./editor.astro";
+import {getImage} from "astro:assets";
+import assetImageSascha from "../assets/images/iphone-sascha@2x.png";
+import assetImageWaves from "../assets/images/stage-waves.svg";
+import {numToPx} from "../helpers/converter-helpers";
+import {getBreakpoints} from "../helpers/tailwind-helpers";
+
+const breakpoints = getBreakpoints();
+const imageSaschaSm = await getImage({src: assetImageSascha, format: "webp", quality: "max", width: 100});
+const imageSaschaMd = await getImage({src: assetImageSascha, format: "webp", quality: "max", width: 251});
 ---
 
-<section class="bg-gradient-to-tr from-primary-400 to-neutral-500">
-    <div class="content py-10">
-        <h1 class="font-serif" slot="stage">
-            <span class="block text-2xl">Sascha Klatt</span>
-            <span class="block text-4xl">full-stack dev</span>
-        </h1>
-        <Editor>
-            <li>TypeScript</li>
-            <li>React / Next.js / Astro</li>
-            <li>Node.js</li>
-            <li>MongoDB / MySQL</li>
-            <li>Apollo GraphQL</li>
-            <li>Sanity CMS</li>
-            <li>Figma / Affinity</li>
-        </Editor>
+<section class="bg-gradient-to-tr from-primary-400 to-neutral-500 flex flex-col justify-center">
+    <div class="content pt-32 pb-20 inline-flex items-center flex-col md:flex-row gap-x-32 gap-y-8 drop-shadow-2xl">
+        <div>
+            <picture>
+                <source srcset={imageSaschaSm.src} media={`(max-width: ${numToPx(breakpoints.md)})`} />
+                <source srcset={imageSaschaMd.src} media={`(min-width: ${numToPx(breakpoints.md + 1)})`} />
+                <img class="md:-rotate-6" src={imageSaschaMd.src} alt="An iPhone showing Sascha Klatt smiling." loading="lazy" />
+            </picture>
+        </div>
+        <div class="flex flex-col gap-y-8">
+            <h1 class="font-serif text-center md:text-left" slot="stage">
+                <span class="block text-lg">Sascha Klatt</span>
+                <span class="block text-3xl">creative full-stack dev</span>
+            </h1>
+            <Editor>
+                <li>TypeScript</li>
+                <li>React / Next.js / Astro</li>
+                <li>Node.js</li>
+                <li>MongoDB / MySQL</li>
+                <li>Apollo GraphQL</li>
+                <li>Sanity CMS</li>
+                <li>Figma / Affinity</li>
+            </Editor>
 
-        <div class="flex gap-x-4">
-            <button class="btn-accent">get in touch!</button>
-            <button class="btn-neutral">play space invaders :)</button>
+            <div class="flex flex-col md:flex-row gap-y-2 md:gap-x-4 md:gap-y-0">
+                <button class="btn-accent">get in touch!</button>
+            </div>
         </div>
     </div>
+    <img src={assetImageWaves.src} height={assetImageWaves.height} alt="" />
 </section>
