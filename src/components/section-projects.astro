@@ -1,5 +1,12 @@
 ---
+import type {Project} from "../content/typedefs";
 import HeaderSideline from "./header-sideline.astro";
+
+interface Props {
+    projects: Project[];
+}
+
+const {projects} = Astro.props;
 ---
 
 <section class="py-10">
@@ -8,5 +15,8 @@ import HeaderSideline from "./header-sideline.astro";
             headline="Projects"
             subline="Hire me as a freelance web developer to realize your project or support your dev team. Here's a selection of the projects I worked on."
         />
+        <ul>
+            {projects.map((project) => <li>{project.title}</li>)}
+        </ul>
     </div>
 </section>
