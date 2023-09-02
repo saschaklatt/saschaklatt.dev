@@ -2,9 +2,11 @@
 import Layout from "../layouts/layout.astro";
 import {Counter} from "../components/counter";
 import SectionStage from "../components/section-stage.astro";
+import SectionProjects from "../components/section-projects.astro";
 ---
 
 <Layout title="Sascha Klatt | full-stack developer">
     <SectionStage slot="stage" />
+    <SectionProjects slot="main" />
     <Counter client:idle slot="main" />
 </Layout>
