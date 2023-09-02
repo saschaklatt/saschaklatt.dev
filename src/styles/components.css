@@ -1,22 +1,39 @@
 @layer components {
-    /* regular button classes */
     .btn-base {
-        @apply rounded-full
+        @apply rounded-md
         inline-flex
-        px-8 md:px-10
+        px-8
         py-3
         items-center
         justify-center
         border border-transparent
-        text-base text-center md:text-lg
-        font-medium
-        focus:outline-none
-        focus:ring-2 focus:ring-opacity-75
+        text-center 
+        text-lg
+        font-black
         transition-colors
         select-none
         whitespace-nowrap;
     }
-    .btn-primary {
-        @apply btn-base bg-slate-500 text-white hover:bg-slate-400 hover:text-white focus:ring-0;
+
+    .btn-accent {
+        @apply btn-base bg-accent-600 text-white hover:bg-accent-500 hover:text-white focus:ring-0;
+    }
+    .btn-neutral {
+        @apply btn-base bg-neutral-600 text-white hover:bg-neutral-500 hover:text-white focus:ring-0;
+    }
+
+    .link {
+        @apply rounded-md
+        inline-block
+        transition-colors
+        text-current
+        underline;
+    }
+    .link-dark {
+        @apply link text-neutral-900 hover:text-neutral-800 underline;
+    }
+
+    .content {
+        @apply mx-auto max-w-screen-xl px-4;
     }
 }

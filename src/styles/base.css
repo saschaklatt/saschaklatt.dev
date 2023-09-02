@@ -3,22 +3,27 @@
 @tailwind utilities;
 
 @layer base {
+    ::-moz-selection {
+        @apply bg-accent-300;
+    }
+
+    ::selection {
+        @apply bg-accent-300;
+    }
+
+    html {
+        font-size: 1rem;
+    }
     body {
         text-rendering: optimizelegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+
+        @apply font-sans;
     }
-
-    /* ::-moz-selection {
-        @apply bg-primary-200;
-    } */
-
-    /* ::selection {
-        @apply bg-primary-200;
-    } */
-
-    html {
-        font-size: 1.125rem; /* = 18px, by a default browser font size of 16px  */
+    html,
+    body {
+        @apply bg-neutral-900 text-white;
     }
 
     h1,
