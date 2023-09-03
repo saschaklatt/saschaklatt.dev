@@ -154,3 +154,13 @@ export const Rollup: Technology = {
     id: "rollup",
     name: "Rollup",
 };
+
+export const Svelte: Technology = {
+    id: "svelte",
+    name: "Svelte",
+};
+
+export const Astro: Technology = {
+    id: "astro",
+    name: "Astro",
+};

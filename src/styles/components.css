@@ -42,4 +42,13 @@
     .content {
         @apply mx-auto max-w-screen-xl px-4;
     }
+
+    .details-summary {
+        @apply cursor-pointer select-none;
+    }
+    .details-summary::marker,
+    .details-summary::-webkit-details-marker {
+        content: "";
+        display: none;
+    }
 }

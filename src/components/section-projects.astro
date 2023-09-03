@@ -1,5 +1,6 @@
 ---
-import type {Project} from "../content/typedefs";
+import type {Project} from "../data/typedefs";
+import CardProject from "./card-project.astro";
 import HeaderSideline from "./header-sideline.astro";
 
 interface Props {
@@ -15,8 +16,8 @@ const {projects} = Astro.props;
             headline="Projects"
             subline="Hire me as a freelance web developer to realize your project or support your dev team. Here's a selection of the projects I worked on."
         />
-        <ul>
-            {projects.map((project) => <li>{project.title}</li>)}
+        <ul class="flex flex-col gap-8 mt-16">
+            {projects.map((project) => <CardProject project={project} />)}
         </ul>
     </div>
 </section>

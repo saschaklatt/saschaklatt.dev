@@ -59,4 +59,14 @@ export const RicoKlatt: Client = {
     city: "Mittweida",
 };
 
+export const XPURE: Client = {
+    name: "XPURE GmbH",
+    city: "Leipzig",
+};
+
+export const MAN: Client = {
+    name: "MAN Truck & Bus Deutschland GmbH",
+    city: "Munich",
+};
+
 export const clients: Client[] = [Studitemps, InviaFlights, Adb];

@@ -18,7 +18,9 @@ export interface Project {
     teamSize?: number;
     contractType: "freelance" | "employed" | "sideProject";
     client?: Client;
+    employer?: Client;
     partners: Client[];
+    image: ImageMetadata;
 }
 
 export interface Technology {

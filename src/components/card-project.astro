@@ -1,0 +1,117 @@
+---
+import {Image} from "astro:assets";
+import type {Project} from "../data/typedefs";
+
+interface Props {
+    project: Project;
+}
+
+interface ListItem {
+    term: string;
+    text: string;
+    href?: string;
+}
+
+const {project} = Astro.props;
+const {title, subline, description, image} = project;
+
+const listItems: ListItem[] = [];
+
+if (project.website) {
+    listItems.push({
+        term: "Website",
+        text: project.website.label,
+        href: project.website.href,
+    });
+}
+if (project.dateEnd) {
+    listItems.push({
+        term: "From / to",
+        text: `${project.dateEnd.toLocaleDateString("en")} - ${project.dateEnd.toLocaleDateString("en")}`,
+    });
+} else {
+    listItems.push({
+        term: "From / to",
+        text: `since ${project.dateStart.toLocaleDateString("en")}`,
+    });
+}
+if (project.technologies.length > 0) {
+    listItems.push({
+        term: "Tech",
+        text: project.technologies.map((tech) => tech.name).join(", "),
+    });
+}
+if (project.employer) {
+    listItems.push({
+        term: "Employer",
+        text: project.employer.name,
+    });
+}
+if (project.client) {
+    listItems.push({
+        term: "Client",
+        text: project.client.name,
+        href: project.client.website?.href,
+    });
+}
+if (project.partners.length > 0) {
+    listItems.push({
+        term: "in cooperation with",
+        text: `${project.partners.map((partner) => partner.name).join(", ")}`,
+    });
+}
+if (project.industry) {
+    listItems.push({
+        term: "Industry",
+        text: project.industry,
+    });
+}
+if (project.teamSize) {
+    listItems.push({
+        term: "Team size",
+        text: `${project.teamSize.toFixed(0)} people`,
+    });
+}
+---
+
+<details
+    class:list={[
+        "group",
+        "border border-neutral-800 rounded-lg overflow-hidden",
+        "transition-all",
+        "open:text-neutral-950 open:bg-gradient-to-tr from-primary to-neutral-500 open:p-8",
+    ]}
+>
+    <summary class="details-summary transition-all flex gap-8 items-center group-open:items-start">
+        <Image
+            src={image}
+            alt={`Screenshot of the project ${title}`}
+            class="transition-all w-60 group-open:w-96 group-open:rounded-lg"
+        />
+        <div>
+            <div class="font-black">
+                <h3 class="transition-all text-2xl font-black group-open:text-3xl">{title}</h3>
+                <p class="transition-all font-black opacity-75 group-open:text-md">{subline}</p>
+            </div>
+            <div class="hidden group-open:block">
+                <p class="my-8">{description}</p>
+                <dl class="grid grid-cols-[auto,1fr] items-start gap-x-8 gap-y-2">
+                    {
+                        listItems.map(({term, text, href}) => (
+                            <>
+                                <dt class="font-bold uppercase text-xs col-start-1 leading-loose">{term}</dt>
+                                <dd class="col-start-2">
+                                    {href ? ( 
+                                        <a href={href} class="link" target="_blank" rel="noreferrer noopener nofollow">{text}</a>
+                                    ) : (
+                                        <>{text}</>
+                                    )}
+                                </dd>
+                            </>
+                        ))
+                    }
+                </dl>
+            </div>
+        </div>
+    </summary>
+</details>
