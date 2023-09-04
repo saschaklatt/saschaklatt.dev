@@ -129,8 +129,8 @@ if (project.teamSize) {
                 "md:group-open:mt-12",
             ]}
         >
-            <h3 class="transition-fonts text-2xl font-black md:group-open:text-3xl">{project.title}</h3>
-            <p class="font-black opacity-75 group-open:text-md">{project.subline}</p>
+            <h3 class="transition-fonts text-2xl font-extrabold md:group-open:text-3xl">{project.title}</h3>
+            <p class="font-semibold leading-tight opacity-70 group-open:text-md group-open:font-bold">{project.subline}</p>
         </div>
         <ul
             class:list={[
@@ -140,13 +140,13 @@ if (project.teamSize) {
                 "md:row-start-2 md:col-start-2 md:col-span-1",
             ]}
         >
-            {project.tags.map((tag) => <li class="hashtag opacity-50 group-open:opacity-75">{tag}</li>)}
+            {project.tags.map((tag) => <li class="hashtag opacity-50 group-open:opacity-70">{tag}</li>)}
         </ul>
         <div
             class:list={[
                 "flex flex-0 px-4 mt-4",
                 "col-start-3 row-start-2 row-span-2",
-                "md:row-start-1 md:row-span-2",
+                "md:row-start-1 md:row-span-3",
                 "md:mx-10",
             ]}
         >
@@ -175,7 +175,7 @@ if (project.teamSize) {
                 {
                     listItems.map(({term, text, href}) => (
                         <>
-                            <dt class="font-bold uppercase text-xs col-start-1 leading-loose">{term}</dt>
+                            <dt class="font-extrabold uppercase text-xs col-start-1 leading-loose">{term}</dt>
                             <dd class="col-start-2">
                                 {href ? (
                                     <a href={href} class="link" target="_blank" rel="noreferrer noopener nofollow">
