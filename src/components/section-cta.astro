@@ -9,7 +9,7 @@ interface Props {
 const {headline, message} = Astro.props;
 ---
 
-<section>
+<section class="my-64">
     <div class="content text-center">
         <HeaderUnderline headline={headline} />
         {message && <p class="mx-auto opacity-70 text-xl font-semibold max-w-prose leading-tight my-12">{message}</p>}

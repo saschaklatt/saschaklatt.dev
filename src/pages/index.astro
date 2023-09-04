@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/layout.astro";
-import {Counter} from "../components/counter";
 import SectionStage from "../components/section-stage.astro";
 import SectionProjects from "../components/section-projects.astro";
 import SectionCta from "../components/section-cta.astro";
@@ -13,6 +12,4 @@ import {allProjects} from "../data/projects";
     <SectionCta slot="main" headline="Need dev support?" message="Let me help you creating high-quality digital products.">
         <a slot="buttons" href="mailto:hello@saschaklatt.dev" class="btn-accent">{"send me an email!"}</a>
     </SectionCta>
-    <Counter client:idle slot="main" />
 </Layout>
- ../data/projects
