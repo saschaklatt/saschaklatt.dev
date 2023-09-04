@@ -1,6 +1,7 @@
-import {MAN, XPURE} from "../companies";
-import {Bootstrap, Docker, GitLab, JIRA, React, Redux, ReduxSaga, Swagger} from "../technologies";
 import type {Project} from "../typedefs";
+import {MAN, XPURE} from "../companies";
+import {Bootstrap, Docker, React, Redux, ReduxSaga} from "../technologies";
+import {GitLab, JIRA, Swagger} from "../tools";
 import image from "../../assets/images/project-rio@2x.png";
 
 // prettier-ignore
@@ -12,11 +13,13 @@ export const RIO: Project = {
     dateStart: new Date("2016-09-01"),
     dateEnd: new Date("2018-12-31"),
     partners: [],
-    tags: ["employment", "front-end"],
+    tags: ["employment", "front-end", "ux/ui"],
     role: "Front-end developer",
     client: MAN,
     employer: XPURE,
     industry: "Transportation",
-    technologies: [React, Redux, ReduxSaga, Bootstrap, GitLab, Swagger, Docker, JIRA],
+    technologies: [React, Redux, ReduxSaga, Bootstrap, Docker],
+    tools: [GitLab, JIRA, Swagger],
+    teamSize: 8,
     image,
 };

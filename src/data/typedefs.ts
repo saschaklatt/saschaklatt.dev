@@ -15,6 +15,7 @@ export interface Project {
     role?: string;
     tags: string[];
     technologies: Technology[];
+    tools: Tool[];
     industry?: string;
     teamSize?: number;
     contractType: "freelance" | "employed" | "sideProject" | "startup";
@@ -25,6 +26,11 @@ export interface Project {
 }
 
 export interface Technology {
+    id: string;
+    name: string;
+}
+
+export interface Tool {
     id: string;
     name: string;
 }

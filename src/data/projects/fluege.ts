@@ -1,7 +1,8 @@
 import type {Project} from "../typedefs";
 import {InviaFlights} from "../companies";
-import {JIRA, Lit, Polymer, Redux, ReduxSaga, WebComponents} from "../technologies";
+import {Lit, Polymer, Redux, ReduxSaga, WebComponents} from "../technologies";
 import image from "../../assets/images/project-fluege@2x.png";
+import {GitLab, JIRA, Swagger} from "../tools";
 
 // prettier-ignore
 export const FluegeDe: Project = {
@@ -19,7 +20,8 @@ export const FluegeDe: Project = {
     client: InviaFlights,
     industry: "Travel",
     tags: ["freelance", "front-end"],
-    technologies: [WebComponents, Lit, Polymer, Redux, ReduxSaga, JIRA],
+    technologies: [WebComponents, Lit, Polymer, Redux, ReduxSaga],
+    tools: [GitLab, JIRA, Swagger],
     partners: [],
     image
 };

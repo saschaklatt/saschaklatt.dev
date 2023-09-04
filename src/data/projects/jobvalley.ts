@@ -1,7 +1,8 @@
 import type {Project} from "../typedefs";
 import {Studitemps} from "../companies";
-import {Contentful, JIRA, MongoDB, NextJS, NodeJS, React, Storybook, Tailwind, Vercel} from "../technologies";
+import {Contentful, MongoDB, NextJS, NodeJS, React, Storybook, Tailwind, Vercel} from "../technologies";
 import image from "../../assets/images/project-jobvalley@2x.png";
+import {JIRA} from "../tools";
 
 // prettier-ignore
 export const Jobvalley: Project = {
@@ -20,7 +21,8 @@ export const Jobvalley: Project = {
     role: "Lead developer, full-stack",
     client: Studitemps,
     tags: ["freelance", "front-end", "back-end", "cms"],
-    technologies: [React, NextJS, Tailwind, MongoDB, NodeJS, Contentful, Storybook, Vercel, JIRA],
+    technologies: [React, NextJS, Tailwind, MongoDB, NodeJS, Contentful, Storybook, Vercel],
+    tools: [JIRA],
     partners: [],
     image,
 };

@@ -48,6 +48,12 @@ if (project.technologies.length > 0) {
         text: project.technologies.map((tech) => tech.name).join(", "),
     });
 }
+if (project.tools.length > 0) {
+    listItems.push({
+        term: "Tools",
+        text: project.tools.map((tool) => tool.name).join(", "),
+    });
+}
 if (project.employer) {
     listItems.push({
         term: "Employer",

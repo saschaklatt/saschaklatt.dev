@@ -1,5 +1,7 @@
-import {RicoKlatt} from "../companies";
 import type {Project} from "../typedefs";
+import {RicoKlatt} from "../companies";
+import {Contentful, Netlify, NextJS, React, Tailwind} from "../technologies";
+import {GitLab, JIRA} from "../tools";
 import image from "../../assets/images/project-klatt-eis@2x.png";
 
 // prettier-ignore
@@ -10,8 +12,9 @@ export const KlattEis: Project = {
     contractType: "sideProject",
     dateStart: new Date("2021-06-01"),
     partners: [],
-    tags: ["side project", "front-end", "cms"],
-    technologies: [],
+    tags: ["side project", "front-end", "ux/ui", "cms"],
+    technologies: [React, NextJS, Tailwind, Contentful, Netlify],
+    tools: [GitLab, JIRA],
     client: RicoKlatt,
     industry: "Food",
     role: "Full-stack developer",

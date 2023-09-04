@@ -90,11 +90,6 @@ export const Netlify: Technology = {
     name: "Netlify",
 };
 
-export const GitLab: Technology = {
-    id: "gitlab",
-    name: "GitLab",
-};
-
 export const GitHub: Technology = {
     id: "github",
     name: "GitHub",
@@ -115,24 +110,9 @@ export const Polymer: Technology = {
     name: "Polymer",
 };
 
-export const Swagger: Technology = {
-    id: "swagger",
-    name: "Swagger",
-};
-
 export const REST: Technology = {
     id: "rest",
     name: "REST",
-};
-
-export const Redmine: Technology = {
-    id: "redmine",
-    name: "Redmine",
-};
-
-export const JIRA: Technology = {
-    id: "jira",
-    name: "JIRA",
 };
 
 export const Drupal: Technology = {

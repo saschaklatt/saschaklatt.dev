@@ -1,7 +1,8 @@
 import type {Project} from "../typedefs";
-import {Apollo, Astro, GitLab, GraphQL, JIRA, MongoDB, Netlify, NodeJS, Svelte, TypeScript} from "../technologies";
-import image from "../../assets/images/project-appocados@2x.png";
+import {Apollo, Astro, GraphQL, MongoDB, Netlify, NodeJS, Svelte, TypeScript} from "../technologies";
+import {Figma, GitLab, JIRA} from "../tools";
 import {NataschaFadeeva} from "../companies/natascha-fadeeva";
+import image from "../../assets/images/project-appocados@2x.png";
 
 // prettier-ignore
 export const Appocados: Project = {
@@ -17,7 +18,8 @@ export const Appocados: Project = {
     industry: "Food",
     role: "Systems architect, full-stack developer, and UX/UI",
     tags: ["startup", "front-end", "back-end", "ux/ui"],
-    technologies: [TypeScript, Svelte, Astro, MongoDB, NodeJS, Apollo, GraphQL, GitLab, JIRA, Netlify],
+    technologies: [TypeScript, Svelte, Astro, MongoDB, NodeJS, Apollo, GraphQL, Netlify],
+    tools: [Figma, GitLab, JIRA],
     partners: [NataschaFadeeva],
     teamSize: 2,
     image,

@@ -12,6 +12,7 @@ export const Gridl: Project = {
     partners: [],
     tags: ["side project", "open source"],
     technologies: [TypeScript, Jest, Rollup],
+    tools: [],
     industry: "Software",
     website: {
         href: "https://gridl.js.org",

@@ -1,6 +1,7 @@
 import type {Project} from "../typedefs";
 import {Adb, KnickDesign, Robole} from "../companies";
-import {Express, Gatsby, GitLab, GraphQL, NodeJS, REST, React, Redmine, Redux, Swagger} from "../technologies";
+import {Express, Gatsby, GraphQL, NodeJS, REST, React, Redux} from "../technologies";
+import {GitLab, Redmine, Swagger} from "../tools";
 import image from "../../assets/images/project-politischbilden@2x.png";
 
 // prettier-ignore
@@ -15,8 +16,9 @@ export const PolitischBilden: Project = {
     client: Adb,
     partners: [Robole, KnickDesign],
     tags: ["freelance", "front-end"],
-    technologies: [React, Gatsby, Redux, NodeJS, Express, REST, GraphQL, GitLab, Swagger, Redmine],
-    industry: "Education",
+    technologies: [React, Gatsby, Redux, NodeJS, Express, REST, GraphQL],
+    tools: [Redmine, Swagger, GitLab],
+    industry: "Education, Politics",
     teamSize: 4,
     website: {
         href: "https://politischbilden.de",

@@ -1,6 +1,7 @@
 import type {Project} from "../typedefs";
 import {BMBF, KnickDesign, Robole} from "../companies";
-import {Drupal, Mapbox, Redmine} from "../technologies";
+import {Drupal, Mapbox} from "../technologies";
+import {Redmine} from "../tools";
 import image from "../../assets/images/project-bmbf-client-ii@2x.png";
 
 // prettier-ignore
@@ -15,8 +16,9 @@ export const BmbfClientII: Project = {
     client: BMBF,
     partners: [Robole, KnickDesign],
     tags: ["freelance", "back-end", "front-end", "cms"],
-    technologies: [Drupal, Mapbox, Redmine],
-    industry: "Government",
+    technologies: [Drupal, Mapbox],
+    tools: [Redmine],
+    industry: "Politics",
     teamSize: 4,
     website: {
         href: "https://bmbf-client.de/",
