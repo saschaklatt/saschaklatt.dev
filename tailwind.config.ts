@@ -65,8 +65,9 @@ export default {
                 "2xl": `0 25px 25px rgb(0 0 0 / 0.3)`,
             },
             transitionProperty: {
-                spacing: "margin, padding",
+                bg: "background-color background-opacity",
                 fonts: "font-size, font-weight",
+                spacing: "margin, padding",
             },
         },
     },

@@ -22,4 +22,8 @@ export const RIO: Project = {
     tools: [GitLab, JIRA, Swagger],
     teamSize: 8,
     image,
+    website: {
+        href: "https://rio.cloud",
+        label: "rio.cloud",
+    }
 };

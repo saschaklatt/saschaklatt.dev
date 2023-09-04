@@ -97,9 +97,11 @@ if (project.teamSize) {
 >
     <summary
         class:list={[
+            "transition-bg",
             "details-summary rounded-lg grid grid-cols-[1fr_min-content]",
             "md:grid-cols-[auto_1fr_auto] md:grid-rows-[auto_auto] md:gap-x-8",
             "md:hover:bg-neutral-800 md:hover:bg-opacity-10",
+            "md:focus-visible:bg-neutral-800 md:focus-visible:bg-opacity-10",
             "common-focus",
         ]}
     >
@@ -129,7 +131,9 @@ if (project.teamSize) {
                 "md:group-open:mt-12",
             ]}
         >
-            <h3 class="transition-fonts text-2xl font-extrabold md:group-open:text-3xl">{project.title}</h3>
+            <h3 class="transition-fonts text-2xl font-extrabold md:group-open:text-3xl opacity-75 group-open:opacity-100">
+                {project.title}
+            </h3>
             <p class="font-semibold leading-tight opacity-70 group-open:text-md group-open:font-bold">{project.subline}</p>
         </div>
         <ul
