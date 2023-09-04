@@ -19,7 +19,7 @@ export default {
                 950: "#0C0106",
             },
             neutral: {
-                DEFAULT: "#061923",
+                DEFAULT: "#2EA0DB",
                 50: "#FFFFFF",
                 100: "#EEF7FC",
                 200: "#BEE1F4",

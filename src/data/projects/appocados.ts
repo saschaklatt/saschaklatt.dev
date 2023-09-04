@@ -1,6 +1,7 @@
 import type {Project} from "../typedefs";
 import {Apollo, Astro, GitLab, GraphQL, JIRA, MongoDB, Netlify, NodeJS, Svelte, TypeScript} from "../technologies";
 import image from "../../assets/images/project-appocados@2x.png";
+import {NataschaFadeeva} from "../companies/natascha-fadeeva";
 
 // prettier-ignore
 export const Appocados: Project = {
@@ -11,12 +12,13 @@ export const Appocados: Project = {
         href: "https://www.appocados.com",
         label: "www.appocados.com",
     },
-    contractType: "sideProject",
+    contractType: "startup",
     dateStart: new Date("2023-02-01"),
     industry: "Food",
     role: "Systems architect, full-stack developer, and UX/UI",
+    tags: ["startup", "front-end", "back-end", "ux/ui"],
     technologies: [TypeScript, Svelte, Astro, MongoDB, NodeJS, Apollo, GraphQL, GitLab, JIRA, Netlify],
-    partners: [],
+    partners: [NataschaFadeeva],
     teamSize: 2,
     image,
 };

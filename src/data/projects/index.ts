@@ -16,4 +16,14 @@ export {KlattEis};
 export {PolitischBilden};
 export {RIO};
 
-export const allProjects = [Appocados, BmbfClientII, FluegeDe, Gridl, Jobvalley, KlattEis, PolitischBilden, RIO];
+// prettier-ignore
+export const allProjects = [
+    Appocados,
+    Jobvalley,
+    FluegeDe,
+    PolitischBilden,
+    BmbfClientII,
+    RIO,
+    KlattEis,
+    Gridl,
+];

@@ -10,6 +10,7 @@ export const Gridl: Project = {
     contractType: "sideProject",
     dateStart: new Date("2018-01-17"),
     partners: [],
+    tags: ["side project", "open source"],
     technologies: [TypeScript, Jest, Rollup],
     industry: "Software",
     website: {

@@ -1,5 +1,5 @@
 import type {Project} from "../typedefs";
-import {BMBF, KnickDesign, Robole} from "../clients";
+import {BMBF, KnickDesign, Robole} from "../companies";
 import {Drupal, Mapbox, Redmine} from "../technologies";
 import image from "../../assets/images/project-bmbf-client-ii@2x.png";
 
@@ -14,6 +14,7 @@ export const BmbfClientII: Project = {
     role: "Drupal developer",
     client: BMBF,
     partners: [Robole, KnickDesign],
+    tags: ["freelance", "back-end", "front-end", "cms"],
     technologies: [Drupal, Mapbox, Redmine],
     industry: "Government",
     teamSize: 4,

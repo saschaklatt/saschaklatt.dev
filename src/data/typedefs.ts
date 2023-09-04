@@ -13,13 +13,14 @@ export interface Project {
     dateStart: Date;
     dateEnd?: Date;
     role?: string;
+    tags: string[];
     technologies: Technology[];
     industry?: string;
     teamSize?: number;
-    contractType: "freelance" | "employed" | "sideProject";
-    client?: Client;
-    employer?: Client;
-    partners: Client[];
+    contractType: "freelance" | "employed" | "sideProject" | "startup";
+    client?: Company;
+    employer?: Company;
+    partners: Company[];
     image: ImageMetadata;
 }
 
@@ -28,7 +29,7 @@ export interface Technology {
     name: string;
 }
 
-export interface Client {
+export interface Company {
     name: string;
     website?: Website;
     logo?: ImageMetadata;

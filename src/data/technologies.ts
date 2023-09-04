@@ -164,3 +164,8 @@ export const Astro: Technology = {
     id: "astro",
     name: "Astro",
 };
+
+export const Docker: Technology = {
+    id: "docker",
+    name: "Docker",
+};

@@ -1,5 +1,5 @@
 import type {Project} from "../typedefs";
-import {InviaFlights} from "../clients";
+import {InviaFlights} from "../companies";
 import {JIRA, Lit, Polymer, Redux, ReduxSaga, WebComponents} from "../technologies";
 import image from "../../assets/images/project-fluege@2x.png";
 
@@ -18,6 +18,7 @@ export const FluegeDe: Project = {
     role: "Front-end developer",
     client: InviaFlights,
     industry: "Travel",
+    tags: ["freelance", "front-end"],
     technologies: [WebComponents, Lit, Polymer, Redux, ReduxSaga, JIRA],
     partners: [],
     image

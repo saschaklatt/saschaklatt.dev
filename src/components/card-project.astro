@@ -1,6 +1,7 @@
 ---
 import {Image} from "astro:assets";
 import type {Project} from "../data/typedefs";
+import IconArrowDown from "./icon-arrow-down.astro";
 
 interface Props {
     project: Project;
@@ -13,9 +14,15 @@ interface ListItem {
 }
 
 const {project} = Astro.props;
-const {title, subline, description, image} = project;
 
 const listItems: ListItem[] = [];
+
+function formatDate(date: Date): string {
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const m = date.getMonth();
+    const y = date.getFullYear();
+    return `${months[m]} ${y}`;
+}
 
 if (project.website) {
     listItems.push({
@@ -27,17 +34,17 @@ if (project.website) {
 if (project.dateEnd) {
     listItems.push({
         term: "From / to",
-        text: `${project.dateEnd.toLocaleDateString("en")} - ${project.dateEnd.toLocaleDateString("en")}`,
+        text: `${formatDate(project.dateStart)} - ${formatDate(project.dateEnd)}`,
     });
 } else {
     listItems.push({
         term: "From / to",
-        text: `since ${project.dateStart.toLocaleDateString("en")}`,
+        text: `since ${formatDate(project.dateStart)}`,
     });
 }
 if (project.technologies.length > 0) {
     listItems.push({
-        term: "Tech",
+        term: "Tech-stack",
         text: project.technologies.map((tech) => tech.name).join(", "),
     });
 }
@@ -51,13 +58,12 @@ if (project.client) {
     listItems.push({
         term: "Client",
         text: project.client.name,
-        href: project.client.website?.href,
     });
 }
 if (project.partners.length > 0) {
     listItems.push({
         term: "in cooperation with",
-        text: `${project.partners.map((partner) => partner.name).join(", ")}`,
+        text: `${project.partners.map((partner) => partner.name).join("\n")}`,
     });
 }
 if (project.industry) {
@@ -69,7 +75,7 @@ if (project.industry) {
 if (project.teamSize) {
     listItems.push({
         term: "Team size",
-        text: `${project.teamSize.toFixed(0)} people`,
+        text: `${project.teamSize.toFixed(0)} team mates`,
     });
 }
 ---
@@ -79,39 +85,69 @@ if (project.teamSize) {
         "group",
         "border border-neutral-800 rounded-lg overflow-hidden",
         "transition-all",
-        "open:text-neutral-950 open:bg-gradient-to-tr from-primary to-neutral-500 open:p-8",
+        "open:text-neutral-950 open:bg-gradient-to-tr from-neutral-600 to-primary-400 open:p-8",
     ]}
 >
-    <summary class="details-summary transition-all flex gap-8 items-center group-open:items-start">
+    <summary class="details-summary transition-all rounded-lg flex gap-8 items-center hover:bg-neutral-800 hover:bg-opacity-10">
         <Image
-            src={image}
-            alt={`Screenshot of the project ${title}`}
+            src={project.image}
+            alt={`Screenshot of the project ${project.title}`}
             class="transition-all w-60 group-open:w-96 group-open:rounded-lg"
+            draggable="false"
         />
-        <div>
+        <div class="flex-1">
             <div class="font-black">
-                <h3 class="transition-all text-2xl font-black group-open:text-3xl">{title}</h3>
-                <p class="transition-all font-black opacity-75 group-open:text-md">{subline}</p>
+                <h3 class="transition-all text-2xl font-black group-open:text-3xl">{project.title}</h3>
+                <p class="transition-all font-black opacity-75 group-open:text-md">{project.subline}</p>
             </div>
-            <div class="hidden group-open:block">
-                <p class="my-8">{description}</p>
-                <dl class="grid grid-cols-[auto,1fr] items-start gap-x-8 gap-y-2">
-                    {
-                        listItems.map(({term, text, href}) => (
-                            <>
-                                <dt class="font-bold uppercase text-xs col-start-1 leading-loose">{term}</dt>
-                                <dd class="col-start-2">
-                                    {href ? ( 
-                                        <a href={href} class="link" target="_blank" rel="noreferrer noopener nofollow">{text}</a>
-                                    ) : (
-                                        <>{text}</>
-                                    )}
-                                </dd>
-                            </>
-                        ))
-                    }
-                </dl>
-            </div>
+            <ul class="flex gap-2 mt-4">
+                {project.tags.map((tag) => <li class="hashtag opacity-50 group-open:opacity-75">{tag}</li>)}
+            </ul>
+        </div>
+        <div class="flex flex-0 mx-10">
+            <IconArrowDown
+                class="opacity-25 w-6 max-w-6 transition-transform -rotate-90 group-open:rotate-0 group-open:opacity-75"
+            />
         </div>
     </summary>
+    <div class="flex gap-8">
+        <div class="transition-all min-w-[15rem] group-open:min-w-[24rem] flex items-end">
+            {
+                project.client?.logo && (
+                    <Image
+                        src={project.client.logo}
+                        alt={`Logo of the company ${project.client?.name}`}
+                        class="w-auto h-10 max-h-10"
+                        draggable="false"
+                        format="svg"
+                    />
+                )
+            }
+        </div>
+        <div class="transition-all group-open:block">
+            <p class="my-8">{project.description}</p>
+            <dl class="grid grid-cols-[auto,1fr] items-start gap-x-8 gap-y-2">
+                {
+                    listItems.map(({term, text, href}) => (
+                        <>
+                            <dt class="font-bold uppercase text-xs col-start-1 leading-loose">{term}</dt>
+                            <dd class="col-start-2">
+                                {href ? (
+                                    <a href={href} class="link" target="_blank" rel="noreferrer noopener nofollow">
+                                        {text}
+                                    </a>
+                                ) : (
+                                    <>
+                                        {text.split("\n").map((line) => (
+                                            <span class="block">{line}</span>
+                                        ))}
+                                    </>
+                                )}
+                            </dd>
+                        </>
+                    ))
+                }
+            </dl>
+        </div>
+    </div>
 </details>

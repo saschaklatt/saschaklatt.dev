@@ -1,8 +1,15 @@
 @layer components {
+    /*** PAGE LAYOUT ***/
+    .content {
+        @apply mx-auto max-w-screen-xl px-4;
+    }
+
+    /*** FOCUS ***/
     .common-focus {
         @apply focus:ring-4 focus:ring-primary-100 focus:outline-none;
     }
 
+    /*** BUTTONS ***/
     .btn-base {
         @apply common-focus
         rounded-md
@@ -19,7 +26,6 @@
         select-none
         whitespace-nowrap;
     }
-
     .btn-accent {
         @apply btn-base bg-accent-600 text-white hover:bg-accent-500 hover:text-white;
     }
@@ -27,6 +33,23 @@
         @apply btn-base bg-neutral-600 text-white hover:bg-neutral-500 hover:text-white;
     }
 
+    /*** BADGES ***/
+    .badge {
+        @apply inline-flex items-center justify-center rounded-full text-xs font-black px-2.5 py-1.5 uppercase border;
+    }
+    .badge-light {
+        @apply badge text-neutral-100 border-neutral-100 opacity-50;
+    }
+    .badge-dark {
+        @apply badge text-neutral-900 border-neutral-900 opacity-100;
+    }
+
+    /*** HASHTAG ***/
+    .hashtag {
+        @apply text-xs font-black uppercase before:content-['#'] before:inline-block;
+    }
+
+    /*** LINKS ***/
     .link {
         @apply common-focus
         rounded-md
@@ -39,10 +62,7 @@
         @apply link text-neutral-900 hover:text-neutral-800 underline;
     }
 
-    .content {
-        @apply mx-auto max-w-screen-xl px-4;
-    }
-
+    /*** DETAILS ELEMENT ***/
     .details-summary {
         @apply cursor-pointer select-none;
     }

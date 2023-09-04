@@ -1,4 +1,4 @@
-import {RicoKlatt} from "../clients";
+import {RicoKlatt} from "../companies";
 import type {Project} from "../typedefs";
 import image from "../../assets/images/project-klatt-eis@2x.png";
 
@@ -10,6 +10,7 @@ export const KlattEis: Project = {
     contractType: "sideProject",
     dateStart: new Date("2021-06-01"),
     partners: [],
+    tags: ["side project", "front-end", "cms"],
     technologies: [],
     client: RicoKlatt,
     industry: "Food",

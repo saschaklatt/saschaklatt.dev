@@ -1,5 +1,5 @@
 import type {Project} from "../typedefs";
-import {Adb, KnickDesign, Robole} from "../clients";
+import {Adb, KnickDesign, Robole} from "../companies";
 import {Express, Gatsby, GitLab, GraphQL, NodeJS, REST, React, Redmine, Redux, Swagger} from "../technologies";
 import image from "../../assets/images/project-politischbilden@2x.png";
 
@@ -14,6 +14,7 @@ export const PolitischBilden: Project = {
     role: "Lead front-end developer",
     client: Adb,
     partners: [Robole, KnickDesign],
+    tags: ["freelance", "front-end"],
     technologies: [React, Gatsby, Redux, NodeJS, Express, REST, GraphQL, GitLab, Swagger, Redmine],
     industry: "Education",
     teamSize: 4,
