@@ -91,33 +91,62 @@ if (project.teamSize) {
         "group",
         "border border-neutral-800 rounded-lg overflow-hidden",
         "transition-all",
-        "open:text-neutral-950 open:bg-gradient-to-tr from-neutral-600 to-primary-400 open:p-8",
+        "open:text-neutral-950 open:bg-gradient-to-tr from-neutral-600 to-primary-400 md:open:p-8",
     ]}
 >
-    <summary class="details-summary transition-all rounded-lg flex gap-8 items-center hover:bg-neutral-800 hover:bg-opacity-10">
-        <Image
-            src={project.image}
-            alt={`Screenshot of the project ${project.title}`}
-            class="transition-all w-60 group-open:w-96 group-open:rounded-lg"
-            draggable="false"
-        />
-        <div class="flex-1">
-            <div class="font-black">
-                <h3 class="transition-all text-2xl font-black group-open:text-3xl">{project.title}</h3>
-                <p class="transition-all font-black opacity-75 group-open:text-md">{project.subline}</p>
-            </div>
-            <ul class="flex gap-2 mt-4">
-                {project.tags.map((tag) => <li class="hashtag opacity-50 group-open:opacity-75">{tag}</li>)}
-            </ul>
+    <summary
+        class:list={[
+            "details-summary transition-all rounded-lg grid grid-cols-[1fr_min-content]",
+            "md:grid-cols-[auto_1fr_auto] md:grid-rows-[auto_auto] md:gap-x-8",
+            "md:hover:bg-neutral-800 md:hover:bg-opacity-10",
+        ]}
+    >
+        <div
+            class:list={[
+                "transition-all",
+                "w-full md:row-span-2",
+                "group-open:px-4 group-open:pt-4",
+                "row-start-1 row-span-1 col-start-1 col-span-3",
+                "md:w-60 md:col-span-1 md:row-span-3",
+                "md:group-open:w-96 md:group-open:p-0",
+            ]}
+        >
+            <Image
+                src={project.image}
+                alt={`Screenshot of the project ${project.title}`}
+                draggable="false"
+                class="group-open:rounded-lg"
+            />
         </div>
-        <div class="flex flex-0 mx-10">
+        <div class:list={["font-black mt-4 pl-4", "row-start-2", "md:row-start-1 md:col-start-2", "md:mt-4 md:group-open:mt-12"]}>
+            <h3 class="transition-all text-2xl font-black md:group-open:text-3xl">{project.title}</h3>
+            <p class="transition-all font-black opacity-75 group-open:text-md">{project.subline}</p>
+        </div>
+        <ul
+            class:list={[
+                "flex gap-2 px-4 my-4",
+                "row-start-3  col-start-1 col-span-2",
+                "md:row-start-2 md:col-start-2 md:col-span-1",
+                "md:mb-6 md:group-open:mb-14",
+            ]}
+        >
+            {project.tags.map((tag) => <li class="hashtag opacity-50 group-open:opacity-75">{tag}</li>)}
+        </ul>
+        <div
+            class:list={[
+                "flex flex-0 px-4 mt-4",
+                "col-start-3 row-start-2 row-span-2",
+                "md:row-start-1 md:row-span-2",
+                "md:mx-10",
+            ]}
+        >
             <IconArrowDown
                 class="opacity-25 w-6 max-w-6 transition-transform -rotate-90 group-open:rotate-0 group-open:opacity-75"
             />
         </div>
     </summary>
-    <div class="flex gap-8">
-        <div class="transition-all min-w-[15rem] group-open:min-w-[24rem] flex items-end">
+    <div class="flex gap-8 px-4 pb-4 md:p-0">
+        <div class="transition-all min-w-[15rem] group-open:min-w-[24rem] items-end hidden md:flex">
             {
                 project.client?.logo && (
                     <Image
