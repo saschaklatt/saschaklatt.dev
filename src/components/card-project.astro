@@ -89,7 +89,7 @@ if (project.teamSize) {
 <details
     class:list={[
         "group",
-        "border border-neutral-800 rounded-lg overflow-hidden",
+        "border border-neutral-800 rounded-lg",
         "no-tap-highlight",
         "transition-spacing",
         "open:text-neutral-950 open:bg-gradient-to-tr from-neutral-600 to-primary-400 md:open:p-8",
@@ -100,6 +100,7 @@ if (project.teamSize) {
             "details-summary rounded-lg grid grid-cols-[1fr_min-content]",
             "md:grid-cols-[auto_1fr_auto] md:grid-rows-[auto_auto] md:gap-x-8",
             "md:hover:bg-neutral-800 md:hover:bg-opacity-10",
+            "common-focus",
         ]}
     >
         <div
@@ -135,9 +136,8 @@ if (project.teamSize) {
             class:list={[
                 "flex gap-2 px-4 my-4",
                 "row-start-3  col-start-1 col-span-2",
-                "md:mb-6 md:px-0",
+                "md:px-0",
                 "md:row-start-2 md:col-start-2 md:col-span-1",
-                "md:group-open:mb-14",
             ]}
         >
             {project.tags.map((tag) => <li class="hashtag opacity-50 group-open:opacity-75">{tag}</li>)}

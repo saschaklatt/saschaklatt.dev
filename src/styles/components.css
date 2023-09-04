@@ -6,14 +6,13 @@
 
     /*** FOCUS ***/
     .common-focus {
-        @apply focus:ring-4 focus:ring-primary-100 focus:outline-none;
+        @apply focus-visible:ring-4 focus-visible:ring-primary-100 focus-visible:outline-none;
     }
 
     /*** BUTTONS ***/
     .btn-base {
         @apply common-focus
         rounded-md
-        focus:ring-4 focus:ring-primary-100 focus:outline-none
         inline-flex
         px-8
         py-3
