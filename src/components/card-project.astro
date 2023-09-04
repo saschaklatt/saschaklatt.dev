@@ -90,25 +90,26 @@ if (project.teamSize) {
     class:list={[
         "group",
         "border border-neutral-800 rounded-lg overflow-hidden",
-        "transition-all",
+        "no-tap-highlight",
+        "transition-spacing",
         "open:text-neutral-950 open:bg-gradient-to-tr from-neutral-600 to-primary-400 md:open:p-8",
     ]}
 >
     <summary
         class:list={[
-            "details-summary transition-all rounded-lg grid grid-cols-[1fr_min-content]",
+            "details-summary rounded-lg grid grid-cols-[1fr_min-content]",
             "md:grid-cols-[auto_1fr_auto] md:grid-rows-[auto_auto] md:gap-x-8",
             "md:hover:bg-neutral-800 md:hover:bg-opacity-10",
         ]}
     >
         <div
             class:list={[
-                "transition-all",
                 "w-full md:row-span-2",
-                "group-open:px-4 group-open:pt-4",
+                "transition-all",
+                "group-open:scale-95 group-open:mt-1",
                 "row-start-1 row-span-1 col-start-1 col-span-3",
                 "md:w-60 md:col-span-1 md:row-span-3",
-                "md:group-open:w-96 md:group-open:p-0",
+                "md:group-open:w-96 md:group-open:scale-100 md:group-open:mt-0",
             ]}
         >
             <Image
@@ -119,8 +120,8 @@ if (project.teamSize) {
             />
         </div>
         <div class:list={["font-black mt-4 pl-4", "row-start-2", "md:row-start-1 md:col-start-2", "md:mt-4 md:group-open:mt-12"]}>
-            <h3 class="transition-all text-2xl font-black md:group-open:text-3xl">{project.title}</h3>
-            <p class="transition-all font-black opacity-75 group-open:text-md">{project.subline}</p>
+            <h3 class="transition-fonts text-2xl font-black md:group-open:text-3xl">{project.title}</h3>
+            <p class="font-black opacity-75 group-open:text-md">{project.subline}</p>
         </div>
         <ul
             class:list={[
@@ -146,7 +147,7 @@ if (project.teamSize) {
         </div>
     </summary>
     <div class="flex gap-8 px-4 pb-4 md:p-0">
-        <div class="transition-all min-w-[15rem] group-open:min-w-[24rem] items-end hidden md:flex">
+        <div class="min-w-[15rem] group-open:min-w-[24rem] items-end hidden md:flex">
             {
                 project.client?.logo && (
                     <Image
@@ -159,7 +160,7 @@ if (project.teamSize) {
                 )
             }
         </div>
-        <div class="transition-all group-open:block">
+        <div class="group-open:block">
             <p class="my-8">{project.description}</p>
             <dl class="grid grid-cols-[auto,1fr] items-start gap-x-8 gap-y-2">
                 {
