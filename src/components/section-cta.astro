@@ -1,6 +1,4 @@
 ---
-import HeaderUnderline from "./header-underline.astro";
-
 interface Props {
     headline: string;
     message?: string;
@@ -9,9 +7,11 @@ interface Props {
 const {headline, message} = Astro.props;
 ---
 
-<section class="my-64">
+<section class="my-48 md:my-64">
     <div class="content text-center">
-        <HeaderUnderline headline={headline} />
+        <h2 class="font-serif text-4xl md:text-6xl flex flex-col items-center">
+            {headline}
+        </h2>
         {message && <p class="mx-auto opacity-70 text-xl font-semibold max-w-prose leading-tight my-12">{message}</p>}
         <div class="text-center inline-flex gap-4 flex-col md:flex-row">
             <slot name="buttons" />
