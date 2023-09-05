@@ -7,6 +7,8 @@ import {allProjects} from "../data/projects";
 import {Email, allResources} from "../data/resources";
 import CardResource from "../components/card-resource.astro";
 import CardProject from "../components/card-project.astro";
+import SectionTestimonials from "../components/section-testimonials.astro";
+import {allTestimonials} from "../data/testimonials";
 ---
 
 <Layout title="Sascha Klatt | full-stack developer">
@@ -24,6 +26,7 @@ import CardProject from "../components/card-project.astro";
     <SectionCta slot="main" headline="Need dev support?" message="Let me help you creating high-quality digital products.">
         <a slot="actions" class="btn-accent" {...Email.link}>{"send me an email"}</a>
     </SectionCta>
+    <SectionTestimonials slot="main" testimonials={allTestimonials} headline="What others say about me" />
     <SectionHeadlined
         slot="main"
         class="my-20 md:my-32"

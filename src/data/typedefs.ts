@@ -43,13 +43,29 @@ export interface Company {
     city: string;
 }
 
+export interface Link {
+    href: string;
+    rel?: string;
+    target?: "_blank" | "_self";
+}
+
 export interface Resource {
     title: string;
     description: string;
-    link: {
-        href: string;
-        rel?: string;
-        target?: "_blank" | "_self";
-    };
+    link: Link;
     iconId: IconId;
+}
+
+export interface Person {
+    firstName: string;
+    lastName: string;
+    image: ImageMetadata;
+    link?: string;
+}
+
+export interface Testimonial {
+    text: string;
+    referrer: Person;
+    referrerRole: string;
+    referrerCompany?: Company;
 }
