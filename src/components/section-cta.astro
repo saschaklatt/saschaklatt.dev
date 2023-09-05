@@ -12,8 +12,14 @@ const {headline, message} = Astro.props;
         <h2 class="font-serif text-4xl md:text-6xl flex flex-col items-center">
             {headline}
         </h2>
-        {message && <p class="mx-auto opacity-70 text-xl font-semibold max-w-prose leading-tight my-12">{message}</p>}
-        <div class="text-center inline-flex gap-4 flex-col md:flex-row">
+        {
+            message && (
+                <p class="mx-auto opacity-70 text-2xl md:text-3xl font-light max-w-prose leading-tight my-12 md:my-16">
+                    {message}
+                </p>
+            )
+        }
+        <div class="text-center inline-flex gap-4 flex-col md:flex-row mt-2">
             <slot name="buttons" />
         </div>
     </div>
