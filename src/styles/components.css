@@ -45,7 +45,7 @@
 
     /*** HASHTAG ***/
     .hashtag {
-        @apply text-xs font-black uppercase before:content-['#'] before:inline-block;
+        @apply text-xs font-bold uppercase before:content-['#'] before:inline-block;
     }
 
     /*** LINKS ***/

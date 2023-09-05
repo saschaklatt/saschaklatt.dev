@@ -17,7 +17,7 @@ export const RIO: Project = {
     role: "Front-end developer",
     client: MAN,
     employer: XPURE,
-    industry: "Transportation",
+    industry: "Logistics",
     technologies: [React, Redux, ReduxSaga, Bootstrap, Docker],
     tools: [GitLab, JIRA, Swagger],
     teamSize: 8,

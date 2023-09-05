@@ -8,8 +8,8 @@ const {headline, subline} = Astro.props;
 ---
 
 <header
-    class="pl-8 py-4 relative before:content-[' '] before:absolute before:bg-primary before:rounded-md before:w-2 before:top-0 before:left-0 before:-bottom-0"
+    class="pl-8 py-4 mb-16 md:mb-24 relative before:content-[' '] before:absolute before:bg-primary before:rounded-md before:w-2 before:top-0 before:left-0 before:-bottom-0"
 >
-    <h2 class="font-serif text-4xl">{headline}</h2>
-    {subline && <p class="opacity-70 text-lg font-semibold max-w-prose leading-tight mt-2">{subline}</p>}
+    <h2 class="font-serif text-3xl md:text-6xl">{headline}</h2>
+    {subline && <p class="opacity-70 text-lg md:text-xl font-light max-w-prose leading-tight mt-2">{subline}</p>}
 </header>

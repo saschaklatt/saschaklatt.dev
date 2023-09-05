@@ -53,7 +53,7 @@ export default {
         },
         fontFamily: {
             code: ["Source Code Pro", "Courier New", "Courier", "monospace"],
-            sans: ["Nunito", "sans-serif"],
+            sans: ["Mulish", "sans-serif"],
             serif: ["Bungee Inline", "serif"],
         },
         extend: {
