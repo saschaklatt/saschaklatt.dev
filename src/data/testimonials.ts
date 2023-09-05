@@ -18,7 +18,7 @@ export const allTestimonials: Testimonial[] = [
         referrer: MartinWilmer,
         referrerRole: "Managing Director",
         referrerCompany: Robole,
-        text: "Sascha Klatt has been developing sophisticated full-stack solutions with us for several years. His way of working is characterised by the highest quality, adherence to deadlines and professional and friendly communication. We are happy to have such a talented and reliable developer in our network.",
+        text: "Sascha has been developing sophisticated full-stack solutions with us for several years. His way of working is characterised by the highest quality, adherence to deadlines and professional and friendly communication. We are happy to have such a talented and reliable developer in our network.",
     },
     {
         referrer: ChrissyTopal,
@@ -29,6 +29,6 @@ export const allTestimonials: Testimonial[] = [
         referrer: AlexanderBaehr,
         referrerRole: "Team Lead Front-end",
         referrerCompany: InviaFlights,
-        text: "I had the pleasure of knowing Sascha for almost a year and a half as a fantastic colleague in our team.\nHe has a deep understanding of software development and was quickly able to unfold his solid tech expertise in our complex architecture. Sascha has always been a thoughtful, insightful, motivated developer and his passion and enthusiasm for development helped our team evolve further to create more efficient solutions to lift our projects to the next level.\nBy developing and maintaining smooth and effective working relationships due to his always pleasant, open-minded and accommodating manner, we reached a joy of collaboration, which is still outstanding. He would definitely add value to any software development team I can imagine, so I would be glad to meet Sascha again in future projects.",
+        text: "Sascha has a deep understanding of software development and was quickly able to unfold his solid tech expertise in our complex architecture. He has always been a thoughtful, insightful, motivated developer and his passion and enthusiasm for development helped our team evolve further to create more efficient solutions to lift our projects to the next level.",
     },
 ];

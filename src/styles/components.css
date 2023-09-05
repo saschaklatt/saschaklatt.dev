@@ -8,6 +8,13 @@
     .common-focus {
         @apply focus-visible:ring-4 focus-visible:ring-primary-100 focus-visible:outline-none;
     }
+    .common-focus-label-after:focus-visible + label {
+        @apply ring-4 ring-primary-100 outline-none;
+    }
+
+    .common-focus-within {
+        @apply focus-within:ring-4 focus-within:ring-primary-100 focus-within:outline-none;
+    }
 
     /*** BUTTONS ***/
     .btn-base {
