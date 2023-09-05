@@ -2,9 +2,9 @@
 import Editor from "./editor.astro";
 import {getImage} from "astro:assets";
 import assetImageSascha from "../assets/images/iphone-sascha@2x.png";
-import assetImageWaves from "../assets/images/stage-waves.svg";
 import {numToPx} from "../helpers/converter-helpers";
 import {getBreakpoints} from "../helpers/tailwind-helpers";
+import SvgWavesStage from "./svg-waves-stage.astro";
 
 const breakpoints = getBreakpoints();
 const imageSaschaSm = await getImage({src: assetImageSascha, format: "webp", quality: "max", width: 100});
@@ -40,5 +40,5 @@ const imageSaschaMd = await getImage({src: assetImageSascha, format: "webp", qua
             </div>
         </div>
     </div>
-    <img src={assetImageWaves.src} height={assetImageWaves.height} alt="" />
+    <SvgWavesStage />
 </section>
