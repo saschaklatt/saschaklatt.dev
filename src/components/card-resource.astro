@@ -1,0 +1,21 @@
+---
+import type {Resource} from "../data/typedefs";
+import Icon from "./icons/index.astro";
+
+interface Props extends Resource {}
+
+const {link, title, description, iconId} = Astro.props;
+---
+
+<li class="flex">
+    <a
+        {...link}
+        class="flex items-center gap-x-8 common-focus p-8 w-full border border-neutral-800 rounded-lg transition-bg hover:bg-neutral-800 hover:scale-105"
+    >
+        <Icon iconId={iconId} class="w-12 h-12 flex-initial" />
+        <div class="flex-1">
+            <h3 class="font-bold text-xl">{title}</h3>
+            <p class="opacity-70">{description}</p>
+        </div>
+    </a>
+</li>

@@ -1,0 +1,18 @@
+---
+import HeaderSideline from "./header-sideline.astro";
+
+interface Props {
+    class?: string;
+    headline: string;
+    subline?: string;
+}
+
+const {class: className, headline, subline} = Astro.props;
+---
+
+<section class={className}>
+    <div class="content">
+        <HeaderSideline headline={headline} subline={subline} />
+        <slot />
+    </div>
+</section>

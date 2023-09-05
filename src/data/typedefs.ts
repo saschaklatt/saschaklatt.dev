@@ -1,4 +1,5 @@
 import type {ImageMetadata} from "astro";
+import type {IconId} from "../typedefs";
 
 export interface Website {
     href: string;
@@ -40,4 +41,15 @@ export interface Company {
     website?: Website;
     logo?: ImageMetadata;
     city: string;
+}
+
+export interface Resource {
+    title: string;
+    description: string;
+    link: {
+        href: string;
+        rel?: string;
+        target?: "_blank" | "_self";
+    };
+    iconId: IconId;
 }

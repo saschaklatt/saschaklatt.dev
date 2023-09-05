@@ -7,7 +7,7 @@ interface Props {
 const {headline, message} = Astro.props;
 ---
 
-<section class="my-48 md:my-64">
+<section class="my-48 md:my-96">
     <div class="content text-center">
         <h2 class="font-serif text-4xl md:text-6xl flex flex-col items-center">
             {headline}
@@ -20,7 +20,7 @@ const {headline, message} = Astro.props;
             )
         }
         <div class="text-center inline-flex gap-4 flex-col md:flex-row mt-2">
-            <slot name="buttons" />
+            <slot name="actions" />
         </div>
     </div>
 </section>

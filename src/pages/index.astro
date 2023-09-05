@@ -1,15 +1,37 @@
 ---
 import Layout from "../layouts/layout.astro";
 import SectionStage from "../components/section-stage.astro";
-import SectionProjects from "../components/section-projects.astro";
 import SectionCta from "../components/section-cta.astro";
+import SectionHeadlined from "../components/section-headlined.astro";
 import {allProjects} from "../data/projects";
+import {allResources} from "../data/resources";
+import CardResource from "../components/card-resource.astro";
+import CardProject from "../components/card-project.astro";
 ---
 
 <Layout title="Sascha Klatt | full-stack developer">
     <SectionStage slot="stage" />
-    <SectionProjects slot="main" projects={allProjects} />
+    <SectionHeadlined
+        slot="main"
+        class="my-20 md:my-32"
+        headline="Projects"
+        subline="Hire me as a freelance web developer to realize your project or support your dev team. Here's a selection of the projects I worked on."
+    >
+        <ul class="flex flex-col gap-16">
+            {allProjects.map((project) => <CardProject project={project} />)}
+        </ul>
+    </SectionHeadlined>
     <SectionCta slot="main" headline="Need dev support?" message="Let me help you creating high-quality digital products.">
-        <a slot="buttons" href="mailto:hello@saschaklatt.dev" class="btn-accent">{"send me an email"}</a>
+        <a slot="actions" href="mailto:hello@saschaklatt.dev" class="btn-accent">{"send me an email"}</a>
     </SectionCta>
+    <SectionHeadlined
+        slot="main"
+        class="my-20 md:my-32"
+        headline="Let's connect!"
+        subline="Download my CV and connect with me on other online platforms."
+    >
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {allResources.map((resource) => <CardResource {...resource} />)}
+        </ul>
+    </SectionHeadlined>
 </Layout>
