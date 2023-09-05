@@ -5,6 +5,7 @@ import assetImageSascha from "../assets/images/iphone-sascha@2x.png";
 import {numToPx} from "../helpers/converter-helpers";
 import {getBreakpoints} from "../helpers/tailwind-helpers";
 import SvgWavesStage from "./svg-waves-stage.astro";
+import {Cv, Email} from "../data/resources";
 
 const breakpoints = getBreakpoints();
 const imageSaschaSm = await getImage({src: assetImageSascha, format: "webp", quality: "max", width: 100});
@@ -31,12 +32,13 @@ const imageSaschaMd = await getImage({src: assetImageSascha, format: "webp", qua
                 <li>Node.js</li>
                 <li>MongoDB / MySQL</li>
                 <li>Apollo GraphQL</li>
-                <li>Sanity CMS</li>
-                <li>Figma / Affinity</li>
+                <li>Sanity / Contentful</li>
+                <li>Figma</li>
             </Editor>
 
             <div class="flex flex-col md:flex-row gap-y-2 md:gap-x-4 md:gap-y-0">
-                <button class="btn-accent">Contact me!</button>
+                <a {...Email.link} class="btn-accent">Contact me!</a>
+                <a {...Cv.link} class="btn-neutral">Download CV</a>
             </div>
         </div>
     </div>

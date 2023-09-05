@@ -4,7 +4,7 @@ import SectionStage from "../components/section-stage.astro";
 import SectionCta from "../components/section-cta.astro";
 import SectionHeadlined from "../components/section-headlined.astro";
 import {allProjects} from "../data/projects";
-import {allResources} from "../data/resources";
+import {Email, allResources} from "../data/resources";
 import CardResource from "../components/card-resource.astro";
 import CardProject from "../components/card-project.astro";
 ---
@@ -22,7 +22,7 @@ import CardProject from "../components/card-project.astro";
         </ul>
     </SectionHeadlined>
     <SectionCta slot="main" headline="Need dev support?" message="Let me help you creating high-quality digital products.">
-        <a slot="actions" href="mailto:hello@saschaklatt.dev" class="btn-accent">{"send me an email"}</a>
+        <a slot="actions" class="btn-accent" {...Email.link}>{"send me an email"}</a>
     </SectionCta>
     <SectionHeadlined
         slot="main"
@@ -34,4 +34,11 @@ import CardProject from "../components/card-project.astro";
             {allResources.map((resource) => <CardResource {...resource} />)}
         </ul>
     </SectionHeadlined>
+    <SectionCta
+        slot="main"
+        headline="Thanks for visiting!"
+        message="If you have any questions or want to collaborate do not hestiate to..."
+    >
+        <a slot="actions" class="btn-accent" {...Email.link}>{"send me an email"}</a>
+    </SectionCta>
 </Layout>
