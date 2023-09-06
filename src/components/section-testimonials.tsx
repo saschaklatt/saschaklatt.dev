@@ -17,7 +17,14 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
             <div className="content flex flex-col items-center">
                 <h2 className="font-serif text-4xl md:text-5xl flex flex-col items-center md:mb-20">{headline}</h2>
 
-                <div className="max-w-prose text-base md:text-2xl bg-[url('/img/bg-heart.svg')] bg-no-repeat bg-center">
+                <div className="relative max-w-prose text-base md:text-2xl bg-[url('/img/bg-heart.svg')] bg-no-repeat bg-center">
+                    <img
+                        src="/img/quote.svg"
+                        width="60"
+                        height="60"
+                        className="absolute top-2 md:top-0 left-0 w-10 h-10 md:w-20 md:h-20"
+                    />
+
                     {/* Slides --> */}
                     <ul className="pt-10 pb-4 md:py-20 grid-cols-1 grid-rows-1 grid">
                         {slides.map((slide) => (
