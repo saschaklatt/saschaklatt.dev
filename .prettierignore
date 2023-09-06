@@ -3,5 +3,6 @@
 /.vscode/
 /dist/
 /node_modules/
+/public/sitemap.xml
 pnpm-lock.yaml
 README.md
