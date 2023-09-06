@@ -36,5 +36,3 @@ export const AlexanderBaehr: Person = {
     lastName: "Bähr",
     image: imageAlexanderBaehr,
 };
-
-export const allPersons: Person[] = [MuratKemaldar, ChrissyTopal, ChrissyTopal, MartinWilmer, AlexanderBaehr];

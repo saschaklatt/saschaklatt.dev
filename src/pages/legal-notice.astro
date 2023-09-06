@@ -1,0 +1,66 @@
+---
+import SectionStage from "../components/section-stage.astro";
+import Layout from "../layouts/layout.astro";
+import {SaschaKlatt} from "../data/companies/sascha-klatt";
+
+const {name, email, vatId, address} = SaschaKlatt;
+const {street, streetNumber, city, country, zipCode} = address!;
+---
+
+<Layout title="Legal notice | Sascha Klatt">
+    <SectionStage slot="stage">
+        <div class="content drop-shadow-2xl max-w-6-xl w-full">
+            <a href="/" class="link-dark font-semibold mt-8 md:mt-16 no-underline">{"< Home"}</a>
+            <header class="w-full text-center">
+                <h1 class="block font-serif text-5xl md:text-6xl mb-24 mt-16 md:mt-52 md:mb-64">{"Legal notice"}</h1>
+            </header>
+        </div>
+    </SectionStage>
+    <section slot="main">
+        <div class="content text-lg max-w-prose my-24 md:my-24">
+            <section>
+                <h2 class="headline-2">{"Contact"}</h2>
+                <address class="paragraph">
+                    {name}<br />
+                    {street}
+                    {streetNumber}<br />
+                    {zipCode}
+                    {city}<br />
+                    {country}<br />
+                </address>
+                <a class="link-accent my-2 md:my-4" href={`mailto:${email}`}>{email}</a>
+                <p class="my-2 md:my-4 paragraph">VAT ID: {vatId}</p>
+            </section>
+            <section class="my-20 md:my-32">
+                <h2 class="headline-2">Disclaimer</h2>
+                <h3 class="headline-3">Liability of contents</h3>
+                <p class="paragraph">
+                    I try to keep the contents of this page up to date. Despite careful processing, liability is excluded. As a
+                    service provider I am responsible according to § 7 Abs.1 TMG for own contents on these sides after the general
+                    laws. According to §§ 8 to 10 TMG I am not obliged as a service provider to monitor transmitted or stored
+                    third-party information. As soon as I become aware of any legal infringements, I will remove these contents
+                    immediately. I assume liability in this respect only from the time I become aware of a possible infringement.
+                </p>
+                <h3 class="headline-3">Liablility for links</h3>
+                <p class="paragraph">
+                    This page contains links to external websites of third parties, on whose contents I have no influence. For the
+                    contents of the linked pages always the respective provider or operator of the pages is responsible. For the
+                    contents and the correctness of the information of linked websites of foreign information providers no
+                    guarantee is taken over. The linked pages were checked for possible violations of the law without complaint at
+                    the time of linking. As soon as we become aware of any legal infringements, we will remove such links
+                    immediately.
+                </p>
+                <h2 class="headline-2">Copyright notice</h2>
+                <p class="paragraph">
+                    The contents and works on these pages created by the site operator are subject to German copyright law.
+                    Duplication, processing, distribution and any form of commercialization of such material beyond the scope of
+                    the copyright law shall require the prior written consent of Sascha Klatt.
+                </p>
+                <h2 class="headline-2">Data privacy</h2>
+                <p>
+                    See <a class="link-accent my-2 md:my-4" href={`/data-privacy`}>{"privacy notice"}</a> for further details.
+                </p>
+            </section>
+        </div>
+    </section>
+</Layout>

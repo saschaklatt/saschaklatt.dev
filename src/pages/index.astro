@@ -9,10 +9,13 @@ import CardResource from "../components/card-resource.astro";
 import CardProject from "../components/card-project.astro";
 import SectionTestimonials from "../components/section-testimonials";
 import {allTestimonials} from "../data/testimonials";
+import SectionStageContentIntro from "../components/section-stage-content-intro.astro";
 ---
 
 <Layout title="Sascha Klatt | full-stack developer">
-    <SectionStage slot="stage" />
+    <SectionStage slot="stage">
+        <SectionStageContentIntro />
+    </SectionStage>
     <SectionHeadlined
         slot="main"
         class="my-20 md:my-32"

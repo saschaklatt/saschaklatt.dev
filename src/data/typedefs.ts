@@ -41,6 +41,9 @@ export interface Company {
     website?: Website;
     logo?: ImageMetadata;
     city: string;
+    address?: Address;
+    email?: string;
+    vatId?: string;
 }
 
 export interface Link {
@@ -68,4 +71,12 @@ export interface Testimonial {
     referrer: Person;
     referrerRole: string;
     referrerCompany: string;
+}
+
+export interface Address {
+    street: string;
+    streetNumber: string;
+    zipCode: string;
+    city: string;
+    country: string;
 }
