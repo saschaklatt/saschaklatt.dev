@@ -67,5 +67,5 @@ export interface Testimonial {
     text: string;
     referrer: Person;
     referrerRole: string;
-    referrerCompany?: Company;
+    referrerCompany: string;
 }

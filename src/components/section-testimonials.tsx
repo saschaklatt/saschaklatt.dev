@@ -1,7 +1,5 @@
 import type {Testimonial} from "../data/typedefs";
 import {useMemo, useState} from "react";
-import {AnimatePresence, motion} from "framer-motion";
-import {AnimatedHeight} from "./animated-height";
 
 interface SectionTestimonialProps {
     headline: string;
@@ -21,27 +19,20 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
 
                 <div className="max-w-prose text-base md:text-2xl bg-[url('/img/bg-heart.svg')] bg-no-repeat bg-center">
                     {/* Slides --> */}
-                    <ul className="py-10 md:py-20 grid-cols-1 grid-rows-1 grid">
+                    <ul className="pt-10 pb-4 md:py-20 grid-cols-1 grid-rows-1 grid">
                         {slides.map((slide) => (
-                            <motion.li
+                            <li
                                 key={slide.id}
-                                animate={
+                                aria-hidden={slide !== selectedSlide}
+                                className={[
+                                    `w-full flex justify-center items-center col-start-1 col-span-1 row-start-1 row-span-1 transition-all duration-300`,
                                     slide === selectedSlide
-                                        ? {
-                                              opacity: 1,
-                                              transform: "translateY(0)",
-                                              visibility: "visible",
-                                          }
-                                        : {
-                                              opacity: 0,
-                                              transform: "translateY(-10%)",
-                                              visibility: "hidden",
-                                          }
-                                }
-                                className={`w-full flex justify-center items-center col-start-1 col-span-1 row-start-1 row-span-1`}
+                                        ? "opacity-100 translate-y-0 visible delay-200"
+                                        : "opacity-0 -translate-y-8 invisible",
+                                ].join(" ")}
                             >
                                 <p className="font-thin opacity-90 text-center">{slide.text}</p>
-                            </motion.li>
+                            </li>
                         ))}
                     </ul>
 
@@ -49,10 +40,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                     <section className="text-right self-end mb-14">
                         <h3 className="text-sm md:text-xl font-semibold">{`${selectedSlide.referrer.firstName} ${selectedSlide.referrer.lastName}`}</h3>
                         <p className="text-xs md:text-base font-thin uppercase opacity-75">{`${selectedSlide.referrerRole}`}</p>
-
-                        <p className="text:xs md:text-base font-thin opacity-75">
-                            {selectedSlide.referrerCompany?.name ?? "Freelancer"}
-                        </p>
+                        <p className="text-xs md:text-base font-thin opacity-75">{selectedSlide.referrerCompany}</p>
                     </section>
                 </div>
 
