@@ -85,7 +85,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                                     src={slide.referrer.image.src}
                                     width={slide.referrer.image.width}
                                     height={slide.referrer.image.height}
-                                    alt={`Profile picture of ${slide.referrer.firstName} ${slide.referrer.lastName}`}
+                                    alt={`${slide.referrer.firstName} ${slide.referrer.lastName}`}
                                 />
                             </label>
                         </li>
