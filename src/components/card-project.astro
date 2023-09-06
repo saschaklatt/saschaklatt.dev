@@ -88,12 +88,9 @@ if (project.teamSize) {
 
 <details
     class:list={[
-        "rounded-lg",
         "group",
-        "border border-neutral-800",
+        "border border-neutral-800 rounded-lg no-tap-highlight transition-spacing",
         "md:border-0",
-        "no-tap-highlight",
-        "transition-spacing",
         "open:text-neutral-950 open:bg-gradient-to-tr from-neutral-600 to-primary-400 md:open:p-8",
     ]}
 >
@@ -103,7 +100,8 @@ if (project.teamSize) {
             "transition-bg",
             "details-summary rounded-lg grid grid-cols-[1fr_min-content]",
             "md:grid-cols-[auto_1fr_auto] md:grid-rows-[auto_auto] md:gap-x-8",
-            "md:hover:bg-neutral-800 md:hover:scale-105 md:group-open:hover:scale-100 md:group-open:hover:bg-opacity-10",
+            "md:hover:bg-neutral-800 md:hover:scale-105 md:hover:border-transparent",
+            "md:group-open:hover:scale-100 md:group-open:hover:bg-opacity-10",
             "md:focus-visible:bg-neutral-800 md:focus-visible:bg-opacity-10",
             "common-focus",
         ]}
