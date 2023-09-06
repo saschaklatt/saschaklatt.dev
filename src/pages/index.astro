@@ -26,13 +26,7 @@ import {allTestimonials} from "../data/testimonials";
     <SectionCta slot="main" headline="Need dev support?" message="Let me help you creating high-quality digital products.">
         <a slot="actions" class="btn-accent" {...Email.link}>{"send me an email"}</a>
     </SectionCta>
-    <SectionTestimonials
-        slot="main"
-        testimonials={allTestimonials}
-        headline="What others say about me"
-        name="testimonial"
-        client:visible
-    />
+    <SectionTestimonials slot="main" testimonials={allTestimonials} headline="Testimonials" name="testimonial" client:visible />
     <SectionHeadlined
         slot="main"
         class="my-20 md:my-32"
