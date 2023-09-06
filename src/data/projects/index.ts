@@ -6,6 +6,7 @@ import {Jobvalley} from "./jobvalley";
 import {KlattEis} from "./klatt-eis";
 import {PolitischBilden} from "./politischbilden";
 import {RIO} from "./rio";
+import {SaschaKlatt} from "./saschaklatt";
 
 export {Appocados};
 export {BmbfClientII};
@@ -15,11 +16,13 @@ export {Jobvalley};
 export {KlattEis};
 export {PolitischBilden};
 export {RIO};
+export {SaschaKlatt};
 
 // prettier-ignore
 export const allProjects = [
     Appocados,
     Jobvalley,
+    SaschaKlatt,
     FluegeDe,
     PolitischBilden,
     BmbfClientII,
