@@ -21,38 +21,43 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
 
                 <div className="max-w-prose text-base md:text-2xl bg-[url('/img/bg-heart.svg')] bg-no-repeat bg-center">
                     {/* Slides --> */}
-                    <AnimatedHeight>
-                        <ul className="py-10 md:py-20 grid-cols-1 grid-rows-1 grid">
-                            {slides.map((slide) => (
-                                <AnimatePresence key={slide.id} initial={false} mode="popLayout">
-                                    {slide === selectedSlide && (
-                                        <motion.li
-                                            key={slide.id}
-                                            initial={{opacity: 0, transform: "translateY(-20%)"}}
-                                            animate={{opacity: 1, transform: "translateY(0)"}}
-                                            exit={{opacity: 0, transform: "translateY(20%)"}}
-                                            className={`w-full flex justify-center items-center col-start-1 col-span-1 row-start-1 row-span-1`}
-                                        >
-                                            <p className="font-thin opacity-90 text-center">{slide.text}</p>
-                                        </motion.li>
-                                    )}
-                                </AnimatePresence>
-                            ))}
-                        </ul>
-                    </AnimatedHeight>
+                    <ul className="py-10 md:py-20 grid-cols-1 grid-rows-1 grid">
+                        {slides.map((slide) => (
+                            <motion.li
+                                key={slide.id}
+                                animate={
+                                    slide === selectedSlide
+                                        ? {
+                                              opacity: 1,
+                                              transform: "translateY(0)",
+                                              visibility: "visible",
+                                          }
+                                        : {
+                                              opacity: 0,
+                                              transform: "translateY(-10%)",
+                                              visibility: "hidden",
+                                          }
+                                }
+                                className={`w-full flex justify-center items-center col-start-1 col-span-1 row-start-1 row-span-1`}
+                            >
+                                <p className="font-thin opacity-90 text-center">{slide.text}</p>
+                            </motion.li>
+                        ))}
+                    </ul>
 
                     {/* Author */}
                     <section className="text-right self-end mb-14">
                         <h3 className="text-sm md:text-xl font-semibold">{`${selectedSlide.referrer.firstName} ${selectedSlide.referrer.lastName}`}</h3>
                         <p className="text-xs md:text-base font-thin uppercase opacity-75">{`${selectedSlide.referrerRole}`}</p>
-                        {selectedSlide.referrerCompany && (
-                            <p className="text:xs md:text-base font-thin opacity-75">{selectedSlide.referrerCompany.name}</p>
-                        )}
+
+                        <p className="text:xs md:text-base font-thin opacity-75">
+                            {selectedSlide.referrerCompany?.name ?? "Freelancer"}
+                        </p>
                     </section>
                 </div>
 
                 {/*  Avatars */}
-                <ul className="inline-flex flex-wrap gap-4 items-center justify-center">
+                <ul className="inline-flex flex-wrap gap-4 md:gap-6 items-center justify-center">
                     {slides.map((slide, idx) => (
                         <li key={slide.id} className={`text-center flex items-center`}>
                             <input
