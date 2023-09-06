@@ -7,11 +7,11 @@ import "../styles/index.css";
 interface Props {
     title: string;
     description: string;
-    slug: string;
+    slug?: string;
 }
 
 const {title, description, slug} = Astro.props;
-const canonicalUrl = stripTrailingSlash(new URL(slug, Astro.site).toString());
+const canonicalUrl = slug ? stripTrailingSlash(new URL(slug, Astro.site).toString()) : Astro.url.toString();
 const ogImage = new URL("/img/saschaklatt.dev.jpg", Astro.site).toString();
 ---
 
