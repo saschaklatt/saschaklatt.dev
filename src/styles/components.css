@@ -52,7 +52,7 @@
 
     /*** HASHTAG ***/
     .hashtag {
-        @apply text-xs font-bold uppercase before:content-['#'] before:inline-block;
+        @apply font-bold uppercase before:content-['#'] before:inline-block;
     }
 
     /*** LINKS ***/
