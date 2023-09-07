@@ -27,7 +27,7 @@ import SectionStageContentIntro from "../components/section-stage-content-intro.
         subline="Hire me as a freelance web developer to realize your project or support your dev team. Here's a selection of the projects I worked on."
     >
         <ul class="flex flex-col gap-16">
-            {allProjects.map((project) => <CardProject project={project} />)}
+            {allProjects.map((project) => <CardProject project={project} client:visible />)}
         </ul>
     </SectionHeadlined>
     <SectionCta slot="main" headline="Need dev support?" message="Let me help you creating high-quality digital products.">

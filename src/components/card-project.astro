@@ -86,118 +86,157 @@ if (project.teamSize) {
 }
 ---
 
-<details
-    class:list={[
-        "group",
-        "border border-neutral-800 rounded-lg no-tap-highlight transition-spacing",
-        "md:border-0",
-        "open:text-neutral-950 open:bg-gradient-to-tr from-neutral-600 to-primary-400 md:open:p-8",
-    ]}
->
-    <summary
+<card-project data-project-title={project.title}>
+    <details
         class:list={[
-            "rounded-lg overflow-hidden",
-            "transition-bg",
-            "details-summary rounded-lg grid grid-cols-[1fr_min-content]",
-            "md:grid-cols-[auto_1fr_auto] md:grid-rows-[auto_auto] md:gap-x-8",
-            "md:hover:bg-neutral-800 md:hover:scale-105 md:hover:border-transparent",
-            "md:group-open:hover:scale-100 md:group-open:hover:bg-opacity-10",
-            "md:focus-visible:bg-neutral-800 md:focus-visible:bg-opacity-10",
-            "common-focus",
+            "group",
+            "border border-neutral-800 rounded-lg no-tap-highlight transition-spacing",
+            "md:border-0",
+            "open:text-neutral-950 open:bg-gradient-to-tr from-neutral-600 to-primary-400 md:open:p-8",
         ]}
     >
-        <div
+        <summary
             class:list={[
-                "w-full md:row-span-2",
-                "transition-all",
-                "group-open:scale-95 group-open:mt-1",
-                "row-start-1 row-span-1 col-start-1 col-span-3",
-                "md:w-60 md:col-span-1 md:row-span-3",
-                "md:group-open:w-96 md:group-open:scale-100 md:group-open:mt-0",
+                "rounded-lg overflow-hidden",
+                "transition-bg",
+                "details-summary rounded-lg grid grid-cols-[1fr_min-content]",
+                "md:grid-cols-[auto_1fr_auto] md:grid-rows-[auto_auto] md:gap-x-8",
+                "md:hover:bg-neutral-800 md:hover:scale-105 md:hover:border-transparent",
+                "md:group-open:hover:scale-100 md:group-open:hover:bg-opacity-10",
+                "md:focus-visible:bg-neutral-800 md:focus-visible:bg-opacity-10",
+                "common-focus",
             ]}
         >
-            <Image
-                src={project.image}
-                alt={`Screenshot of the project ${project.title}`}
-                draggable="false"
-                class="group-open:rounded-lg"
-            />
-        </div>
-        <div
-            class:list={[
-                "font-black mt-4 pl-4",
-                "row-start-2",
-                "md:pl-0 md:mt-4",
-                "md:row-start-1 md:col-start-2",
-                "md:group-open:mt-12",
-            ]}
-        >
-            <h3 class="transition-fonts text-2xl font-extrabold md:group-open:text-3xl opacity-75 group-open:opacity-100">
-                {project.title}
-            </h3>
-            <p class="font-light leading-tight opacity-70 group-open:text-md group-open:font-bold">{project.subline}</p>
-        </div>
-        <ul
-            class:list={[
-                "flex gap-2 px-4 my-4",
-                "row-start-3  col-start-1 col-span-2",
-                "md:px-0",
-                "md:row-start-2 md:col-start-2 md:col-span-1",
-            ]}
-        >
-            {project.tags.map((tag) => <li class="hashtag opacity-50 group-open:opacity-70">{tag}</li>)}
-        </ul>
-        <div
-            class:list={[
-                "flex flex-0 px-4 mt-4",
-                "col-start-3 row-start-2 row-span-2",
-                "md:row-start-1 md:row-span-3",
-                "md:mx-4",
-            ]}
-        >
-            <IconArrowDown
-                class="opacity-25 w-6 max-w-6 transition-transform -rotate-90 group-open:rotate-0 group-open:opacity-75"
-            />
-        </div>
-    </summary>
-    <div class="flex gap-8 px-4 pb-4 md:p-0">
-        <div class="min-w-[15rem] group-open:min-w-[24rem] items-end hidden md:flex">
-            {
-                project.client?.logo && (
-                    <Image
-                        src={project.client.logo}
-                        alt={`Logo of the company ${project.client?.name}`}
-                        class="w-auto h-10 max-h-10"
-                        draggable="false"
-                        format="svg"
-                    />
-                )
-            }
-        </div>
-        <div class="group-open:block">
-            <p class="my-8">{project.description}</p>
-            <dl class="grid grid-cols-[auto,1fr] items-start gap-x-8 gap-y-2">
+            <div
+                class:list={[
+                    "w-full md:row-span-2",
+                    "transition-all",
+                    "group-open:scale-95 group-open:mt-1",
+                    "row-start-1 row-span-1 col-start-1 col-span-3",
+                    "md:w-60 md:col-span-1 md:row-span-3",
+                    "md:group-open:w-96 md:group-open:scale-100 md:group-open:mt-0",
+                ]}
+            >
+                <Image
+                    src={project.image}
+                    alt={`Screenshot of the project ${project.title}`}
+                    draggable="false"
+                    class="group-open:rounded-lg"
+                />
+            </div>
+            <div
+                class:list={[
+                    "font-black mt-4 pl-4",
+                    "row-start-2",
+                    "md:pl-0 md:mt-4",
+                    "md:row-start-1 md:col-start-2",
+                    "md:group-open:mt-12",
+                ]}
+            >
+                <h3 class="transition-fonts text-2xl font-extrabold md:group-open:text-3xl opacity-75 group-open:opacity-100">
+                    {project.title}
+                </h3>
+                <p class="font-light leading-tight opacity-70 group-open:text-md group-open:font-bold">{project.subline}</p>
+            </div>
+            <ul
+                class:list={[
+                    "flex gap-2 px-4 my-4",
+                    "row-start-3  col-start-1 col-span-2",
+                    "md:px-0",
+                    "md:row-start-2 md:col-start-2 md:col-span-1",
+                ]}
+            >
+                {project.tags.map((tag) => <li class="hashtag opacity-50 group-open:opacity-70">{tag}</li>)}
+            </ul>
+            <div
+                class:list={[
+                    "flex flex-0 px-4 mt-4",
+                    "col-start-3 row-start-2 row-span-2",
+                    "md:row-start-1 md:row-span-3",
+                    "md:mx-4",
+                ]}
+            >
+                <IconArrowDown
+                    class="opacity-25 w-6 max-w-6 transition-transform -rotate-90 group-open:rotate-0 group-open:opacity-75"
+                />
+            </div>
+        </summary>
+        <div class="flex gap-8 px-4 pb-4 md:p-0">
+            <div class="min-w-[15rem] group-open:min-w-[24rem] items-end hidden md:flex">
                 {
-                    listItems.map(({term, text, href}) => (
-                        <>
-                            <dt class="font-extrabold uppercase text-xs col-start-1 leading-loose">{term}</dt>
-                            <dd class="col-start-2">
-                                {href ? (
-                                    <a href={href} class="link" target="_blank" rel="noreferrer noopener nofollow">
-                                        {text}
-                                    </a>
-                                ) : (
-                                    <>
-                                        {text.split("\n").map((line) => (
-                                            <span class="block">{line}</span>
-                                        ))}
-                                    </>
-                                )}
-                            </dd>
-                        </>
-                    ))
+                    project.client?.logo && (
+                        <Image
+                            src={project.client.logo}
+                            alt={`Logo of the company ${project.client?.name}`}
+                            class="w-auto h-10 max-h-10"
+                            draggable="false"
+                            format="svg"
+                        />
+                    )
                 }
-            </dl>
+            </div>
+            <div class="group-open:block">
+                <p class="my-8">{project.description}</p>
+                <dl class="grid grid-cols-[auto,1fr] items-start gap-x-8 gap-y-2">
+                    {
+                        listItems.map(({term, text, href}) => (
+                            <>
+                                <dt class="font-extrabold uppercase text-xs col-start-1 leading-loose">{term}</dt>
+                                <dd class="col-start-2">
+                                    {href ? (
+                                        <a href={href} class="link" target="_blank" rel="noreferrer noopener nofollow">
+                                            {text}
+                                        </a>
+                                    ) : (
+                                        <>
+                                            {text.split("\n").map((line) => (
+                                                <span class="block">{line}</span>
+                                            ))}
+                                        </>
+                                    )}
+                                </dd>
+                            </>
+                        ))
+                    }
+                </dl>
+            </div>
         </div>
-    </div>
-</details>
+    </details>
+</card-project>
+
+<script>
+    import {matomoTrackEvent} from "../services/matomo";
+
+    class CardProject extends HTMLElement {
+        private projectTitle: string;
+        private detailsElement: HTMLDetailsElement | null;
+
+        constructor() {
+            super();
+            this.projectTitle = this.dataset.projectTitle ?? "undefined";
+            this.detailsElement = this.querySelector("details");
+        }
+
+        connectedCallback() {
+            this.detailsElement?.addEventListener("toggle", this.handleToggle);
+        }
+
+        disconnectedCallback() {
+            this.detailsElement?.removeEventListener("toggle", this.handleToggle);
+        }
+
+        private handleToggle = (event: any) => {
+            return event.target.open ? this.handleExpand() : this.handleCollapse();
+        };
+
+        private handleExpand = () => {
+            matomoTrackEvent({action: "expand", category: "project", name: this.projectTitle});
+        };
+
+        private handleCollapse = () => {
+            matomoTrackEvent({action: "collapse", category: "project", name: this.projectTitle});
+        };
+    }
+
+    customElements.define("card-project", CardProject);
+</script>

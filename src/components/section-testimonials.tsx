@@ -1,5 +1,6 @@
 import type {Testimonial} from "../data/typedefs";
 import {useMemo, useState} from "react";
+import {matomoTrackEvent} from "../services/matomo";
 
 interface SectionTestimonialProps {
     headline: string;
@@ -11,6 +12,13 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
     const slides = useMemo(() => testimonials.map((testimonial, idx) => ({...testimonial, id: `slide-${idx}`})), []);
     const [selectedIdx, setSelectedIdx] = useState(0);
     const selectedSlide = slides[selectedIdx];
+
+    const handleChange = (newIndex: number) => {
+        setSelectedIdx(newIndex);
+        const newSlide = slides[newIndex];
+        const referrerFullName = `${newSlide.referrer.firstName}  ${newSlide.referrer.lastName}`;
+        matomoTrackEvent({action: "select", category: "testimonial", name: referrerFullName, value: newIndex});
+    };
 
     return (
         <section className="my-32 md:my-80">
@@ -69,7 +77,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                                 name={name}
                                 id={slide.id}
                                 checked={slide === selectedSlide}
-                                onChange={() => setSelectedIdx(idx)}
+                                onChange={() => handleChange(idx)}
                                 className="sr-only common-focus-label-after"
                             />
                             <label
