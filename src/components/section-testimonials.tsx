@@ -28,6 +28,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                 <div className="relative max-w-prose text-base md:text-2xl bg-[url('/img/bg-heart.svg')] bg-no-repeat bg-center">
                     <img
                         src="/img/quote.svg"
+                        alt=""
                         width="60"
                         height="60"
                         className="absolute top-2 hidden md:block md:top-0 left-0 w-10 h-10 md:w-20 md:h-20"
@@ -54,8 +55,8 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                     {/* Author */}
                     <section className="text-right self-end mb-14">
                         <h3 className="text-sm md:text-xl font-semibold">{`${selectedSlide.referrer.firstName} ${selectedSlide.referrer.lastName}`}</h3>
-                        <p className="text-xs md:text-base font-thin uppercase opacity-75">{`${selectedSlide.referrerRole}`}</p>
-                        <p className="text-xs md:text-base font-thin opacity-75">{selectedSlide.referrerCompany}</p>
+                        <p className="text-xs md:text-base font-light uppercase opacity-75">{`${selectedSlide.referrerRole}`}</p>
+                        <p className="text-xs md:text-base font-light opacity-75">{selectedSlide.referrerCompany}</p>
                     </section>
                 </div>
 
