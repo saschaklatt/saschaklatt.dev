@@ -1,1 +1,10 @@
-export type IconId = "document" | "envelope" | "github" | "instagram" | "linkedin" | "nomadlist" | "stackoverflow" | "xing";
+export type IconId =
+    | "saschaklatt"
+    | "document"
+    | "envelope"
+    | "github"
+    | "instagram"
+    | "linkedin"
+    | "nomadlist"
+    | "stackoverflow"
+    | "xing";

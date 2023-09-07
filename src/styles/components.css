@@ -33,10 +33,10 @@
         whitespace-nowrap;
     }
     .btn-accent {
-        @apply btn-base bg-accent-600 text-white hover:bg-accent-500 hover:text-white;
+        @apply btn-base bg-accent-600 text-white md:hover:bg-accent-500 md:hover:text-white;
     }
     .btn-neutral {
-        @apply btn-base bg-neutral-600 text-white hover:bg-neutral-500 hover:text-white;
+        @apply btn-base bg-neutral-600 text-white md:hover:bg-neutral-500 md:hover:text-white;
     }
 
     /*** BADGES ***/
@@ -65,10 +65,10 @@
         underline;
     }
     .link-dark {
-        @apply link text-neutral-900 hover:text-neutral-800 underline;
+        @apply link text-neutral-900 md:hover:text-neutral-950 underline;
     }
     .link-accent {
-        @apply link text-accent hover:text-accent-400 underline;
+        @apply link text-accent md:hover:text-accent-400 underline;
     }
 
     /*** DETAILS ELEMENT ***/
