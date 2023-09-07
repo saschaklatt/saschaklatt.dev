@@ -32,9 +32,11 @@ if (project.website) {
     });
 }
 if (project.dateEnd) {
+    const from = formatDate(project.dateStart);
+    const to = formatDate(project.dateEnd);
     listItems.push({
-        term: "From / to",
-        text: `${formatDate(project.dateStart)} - ${formatDate(project.dateEnd)}`,
+        term: "When",
+        text: from === to ? `in ${from}` : `${from} - ${to}`,
     });
 } else {
     listItems.push({
@@ -81,7 +83,7 @@ if (project.industry) {
 if (project.teamSize) {
     listItems.push({
         term: "Team size",
-        text: `${project.teamSize.toFixed(0)} team mates`,
+        text: `${project.teamSize.toFixed(0)} team members`,
     });
 }
 ---

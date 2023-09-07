@@ -8,7 +8,7 @@ import image from "../../assets/images/project-bmbf-client-ii@2x.png";
 export const BmbfClientII: Project = {
     title: "BMBF Client II",
     subline: "Development of the Client II website about the support measures of the German Federal Government.",
-    description: "CLIENT II is a funding measure of the Federal Ministry of Education and Research of the Federal Republic of Germany (BMBF), which supports demand-oriented research cooperations with selected emerging and developing countries. The website presents all funding projects in detail, as well as news, events and other information about CLIENT II.",
+    description: "CLIENT II is an initiative by the Federal Ministry of Education and Research of the Federal Republic of Germany (BMBF) that promotes research collaborations tailored to the needs of select emerging and developing nations. The website offers an in-depth view of all funded projects and provides the latest news, events, and updates related to CLIENT II. I was responsible for implementing Drupal as the website's content management system. Additionally, I developed an interactive global map using Mapbox to showcase the diverse funding projects.",
     dateStart: new Date("2019/01/01"),
     dateEnd: new Date("2019/06/30"),
     contractType: "freelance",

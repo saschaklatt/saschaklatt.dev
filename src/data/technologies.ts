@@ -149,3 +149,8 @@ export const Docker: Technology = {
     id: "docker",
     name: "Docker",
 };
+
+export const Matomo: Technology = {
+    id: "matomo",
+    name: "Matomo",
+};

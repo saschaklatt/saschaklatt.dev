@@ -8,7 +8,7 @@ import image from "../../assets/images/project-politischbilden@2x.png";
 export const PolitischBilden: Project = {
     title: "politischbilden.de",
     subline: "Front-end development and REST API design for an online portal to share educational resources.",
-    description: "Together with robole and Knick Design I had the opportunity to build the online platform politischbilden.de. The project plays a pioneering role in the field of political Open Educational Resources (OER) in Germany. Actors from educational practice are networked, strengthened and supported. The platform is particularly aimed at actors in the field of political education. This includes educational institutions and independent educators as well as respect coaches, teachers and students, and people who work on political issues in general.",
+    description: "In cooperation with robole and Knick Design, we developed the online platform politischbilden.de for our client Adb - Arbeitskreis deutscher Bildungsstätten. This platform serves as a unique hub for teachers to share resources on political education. My task was to develop the front-end and design a RESTful API using Swagger to create a seamless interface to our custom CMS. Using React and Gatsby as foundational tools, we ensured exceptionally fast loading speeds due to Gatsby's static page generation and advanced image optimization.",
     dateStart: new Date("2019-07-01"),
     dateEnd: new Date("2020-02-28"),
     contractType: "freelance",

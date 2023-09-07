@@ -7,8 +7,8 @@ import {GitLab, JIRA, Swagger} from "../tools";
 // prettier-ignore
 export const FluegeDe: Project = {
     title: "fluege.de",
-    subline: "I had the chance to support the front-end team of fluege.de - a comparison portal for air travel.",
-    description: "The web application go.fluege.de quickly and reliably compares thousands of airlines and offers the users the most suitable flight connections at the lowest price.",
+    subline: "I had the privilege of collaborating with the front-end team at fluege.de, a leading German air travel comparison portal.",
+    description: "The web application go.fluege.de efficiently sifts through thousands of airlines to give users the best flight options at unbeatable prices. In this project, I had the chance to work with Invia Flights' front-end team to modernize the existing platform. We made use of technologies such as Web Components, Polymer, Lit, and Redux and integrated the booking forms with a complex REST-based microservice architecture.",
     website: {
         href: "https://go.fluege.de",
         label: "go.fluege.de",

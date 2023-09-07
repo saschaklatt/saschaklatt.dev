@@ -1,5 +1,5 @@
 import type {Project} from "../typedefs";
-import {Apollo, Astro, GraphQL, MongoDB, Netlify, NodeJS, Svelte, TypeScript} from "../technologies";
+import {Apollo, Astro, GraphQL, Matomo, MongoDB, Netlify, NodeJS, Svelte, TypeScript} from "../technologies";
 import {Figma, GitLab, JIRA} from "../tools";
 import {NataschaFadeeva} from "../companies/natascha-fadeeva";
 import image from "../../assets/images/project-appocados@2x.png";
@@ -7,8 +7,8 @@ import image from "../../assets/images/project-appocados@2x.png";
 // prettier-ignore
 export const Appocados: Project = {
     title: "appocados.com",
-    subline: "Development of a web application to manage and share recipes.",
-    description: "Appocados is a web application that allows you to manage and share recipes with your friends. The project was created as part of a hackathon and was developed in a team of four people. I was responsible for the front-end development and the implementation of the REST API. The project was built with React, Redux, Redux Saga, Node.js, Express and MongoDB.",
+    subline: "Bulding our own startup - a vegan recipe platform.",
+    description: `In February 2023, Natascha Fadeeva and I collaborated to create "appocados", a comprehensive vegan recipe platform. Designed specificly for the vegan community, this platform allows vegan food bloggers and influencers to showcase their recipes through the appocados mobile app. The system comprises a user-friendly mobile app providing high-quality vegan recipes and a dedicated web backend for recipe creators. The client applications seamlessly integrate with our platform via our GraphQL-based recipe API which is built with Apollo.`,
     website: {
         href: "https://www.appocados.com",
         label: "www.appocados.com",
@@ -18,7 +18,7 @@ export const Appocados: Project = {
     industry: "Food",
     role: "Systems architect, full-stack developer, and UX/UI",
     tags: ["startup", "front-end", "back-end", "ux/ui"],
-    technologies: [TypeScript, Svelte, Astro, MongoDB, NodeJS, Apollo, GraphQL, Netlify],
+    technologies: [TypeScript, Svelte, Astro, MongoDB, NodeJS, Apollo, GraphQL, Netlify, Matomo],
     tools: [Figma, GitLab, JIRA],
     partners: [NataschaFadeeva],
     teamSize: 2,

@@ -24,3 +24,8 @@ export const GitLab: Tool = {
     id: "gitlab",
     name: "GitLab",
 };
+
+export const AffinityDesigner: Tool = {
+    id: "affinity-designer",
+    name: "Affinity Designer",
+};

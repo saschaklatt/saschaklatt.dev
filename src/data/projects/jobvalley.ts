@@ -8,7 +8,7 @@ import {JIRA} from "../tools";
 export const Jobvalley: Project = {
     title: "jobvalley.com",
     subline: "Website relaunch from slow WordPress to fast-loading headless CMS solution.",
-    description: "I was hired by Studitemps GmbH to help realising the relaunch of the corporate website jobvalley.com (former studitemps.de) and convert the previous WordPress site to a fast loading headless solution using modern technologies such as Contentful, Next.js and Tailwind. Working closely with the Marketing and UX/UI departments, we formed a great team to get the project started. With a tight schedule in mind, we managed to create the first version within a few weeks and improved the project in the following months.",
+    description: "I was engaged by Studitemps GmbH to spearhead the transformation of their corporate website from studitemps.de to jobvalley.com. Transitioning away from the initial WordPress infrastructure, we employed cutting-edge technologies including Contentful, Next.js, and Tailwind to achieve a high-speed, headless solution. Collaborating seamlessly with the Marketing and UX/UI departments, our cohesive team efficiently initiated the project. Despite a tight deadline, we launched the primary version in just a few weeks. Over the subsequent months, we further enhanced the platform by incorporating features such as automated job postings through an in-house job API, and integration with prominent external job platforms like Xing and Indeed.",
     website: {
         href: "https://jobvalley.com",
         label: "jobvalley.com",
