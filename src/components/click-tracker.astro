@@ -1,0 +1,43 @@
+---
+import type {MatomoTrackingEvent} from "../services/matomo/typedefs";
+
+interface Props {
+    trackingEvent: MatomoTrackingEvent;
+}
+
+const {trackingEvent} = Astro.props;
+---
+
+<click-tracker data-tracking-event={JSON.stringify(trackingEvent)}>
+    <slot />
+</click-tracker>
+
+<script>
+    import type {MatomoTrackingEvent} from "../services/matomo/typedefs";
+    import {matomoTrackEvent} from "../services/matomo";
+
+    class ClickTracker extends HTMLElement {
+        private trackingEvent: MatomoTrackingEvent | null;
+
+        constructor() {
+            super();
+            this.trackingEvent = JSON.parse(this.dataset.trackingEvent as string);
+        }
+
+        connectedCallback() {
+            this.addEventListener("click", this.handleClick);
+        }
+
+        disconnectedCallback() {
+            this.removeEventListener("click", this.handleClick);
+        }
+
+        private handleClick = () => {
+            if (this.trackingEvent) {
+                matomoTrackEvent(this.trackingEvent);
+            }
+        };
+    }
+
+    customElements.define("click-tracker", ClickTracker);
+</script>

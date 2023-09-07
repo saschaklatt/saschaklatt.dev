@@ -10,6 +10,7 @@ import CardProject from "../components/card-project.astro";
 import SectionTestimonials from "../components/section-testimonials";
 import {allTestimonials} from "../data/testimonials";
 import SectionStageContentIntro from "../components/section-stage-content-intro.astro";
+import ClickTracker from "../components/click-tracker.astro";
 ---
 
 <Layout
@@ -31,7 +32,12 @@ import SectionStageContentIntro from "../components/section-stage-content-intro.
         </ul>
     </SectionHeadlined>
     <SectionCta slot="main" headline="Need dev support?" message="Let me help you creating high-quality digital products.">
-        <a slot="actions" class="btn-accent" {...Email.link}>{"send me an email"}</a>
+        <ClickTracker
+            slot="actions"
+            trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-dev-support"}}
+        >
+            <a class="btn-accent" {...Email.link}>{"send me an email"}</a>
+        </ClickTracker>
     </SectionCta>
     <SectionTestimonials slot="main" testimonials={allTestimonials} headline="Testimonials" name="testimonial" client:visible />
     <SectionHeadlined
@@ -49,6 +55,11 @@ import SectionStageContentIntro from "../components/section-stage-content-intro.
         headline="Thanks for visiting!"
         message="If you have any questions or want to collaborate do not hestiate to..."
     >
-        <a slot="actions" class="btn-accent" {...Email.link}>{"send me an email"}</a>
+        <ClickTracker
+            slot="actions"
+            trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-thanks"}}
+        >
+            <a class="btn-accent" {...Email.link}>{"send me an email"}</a>
+        </ClickTracker>
     </SectionCta>
 </Layout>

@@ -5,6 +5,7 @@ import {getBreakpoints} from "../helpers/tailwind-helpers";
 import Editor from "./editor.astro";
 import {numToPx} from "../helpers/converter-helpers";
 import {Cv, Email} from "../data/resources";
+import ClickTracker from "./click-tracker.astro";
 
 const breakpoints = getBreakpoints();
 const imageSaschaSm = await getImage({src: assetImageSascha, format: "webp", quality: "max", width: 100});
@@ -35,8 +36,12 @@ const imageSaschaMd = await getImage({src: assetImageSascha, format: "webp", qua
         </Editor>
 
         <div class="flex flex-col md:flex-row gap-y-2 md:gap-x-4 md:gap-y-0">
-            <a {...Email.link} class="btn-accent">Contact me!</a>
-            <a {...Cv.link} class="btn-neutral">Download CV</a>
+            <ClickTracker trackingEvent={{action: "click", category: "cta_email", name: "cta_email_stage-main"}}>
+                <a {...Email.link} class="btn-accent">Contact me!</a>
+            </ClickTracker>
+            <ClickTracker trackingEvent={{action: "click", category: "cta_cv", name: "cta_cv_stage-main"}}>
+                <a {...Cv.link} class="btn-neutral">Download CV</a>
+            </ClickTracker>
         </div>
     </div>
 </div>
