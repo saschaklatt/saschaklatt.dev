@@ -12,7 +12,7 @@ export const Cv: Resource = {
 
 export const Email: Resource = {
     title: "Email",
-    description: "Let's get in touch.",
+    description: "Let's get in touch!",
     link: {
         href: "mailto:hello@saschaklatt.dev",
     },
@@ -43,7 +43,7 @@ export const LinkedIn: Resource = {
 
 export const StackOverflow: Resource = {
     title: "StackOverflow",
-    description: "My go-to place to copy other peoples' code into my projects ;)",
+    description: "Find my answers and questions about JavaScript, TypeScript, React, and more.",
     link: {
         href: "https://stackoverflow.com/users/2438049/sascha-klatt",
         target: "_blank",
@@ -54,7 +54,7 @@ export const StackOverflow: Resource = {
 
 export const Xing: Resource = {
     title: "Xing",
-    description: "My second favorite place to get spammed by recruiters.",
+    description: "Connect with me on Xing for new freelance projects.",
     link: {
         href: "https://www.xing.com/profile/Sascha_Klatt/cv",
         target: "_blank",
@@ -76,7 +76,7 @@ export const Nomadlist: Resource = {
 
 export const Instagram: Resource = {
     title: "Instagram",
-    description: "Updates on non-client related work.",
+    description: "Updates on my developer journey.",
     link: {
         href: "https://www.instagram.com/saschaklatt.dev/",
         target: "_blank",
