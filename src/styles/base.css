@@ -4,11 +4,11 @@
 
 @layer base {
     ::-moz-selection {
-        @apply bg-accent-300;
+        @apply bg-accent-200;
     }
 
     ::selection {
-        @apply bg-accent-300;
+        @apply bg-accent-200;
     }
 
     html {

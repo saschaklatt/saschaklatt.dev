@@ -57,6 +57,9 @@ export default {
             serif: ["Bungee Inline", "serif"],
         },
         extend: {
+            animation: {
+                pulse: "pulse 900ms cubic-bezier(0.4, 0, 0.6, 1) infinite;",
+            },
             dropShadow: {
                 "sm": `0 1px 1px rgb(0 0 0 / 0.05)`,
                 "md": `0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)`,

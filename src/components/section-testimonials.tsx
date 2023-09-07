@@ -69,7 +69,9 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                                 "after:transition-all after:duration-300",
                                 "after:content-[' '] after:absolute after:w-1/2 after:h-1 after:bg-accent after:-bottom-5 after:left-1/2 after:block after:rounded-full after:-translate-x-1/2",
                                 "after:md:h-1.5 after:md:-bottom-8",
-                                slide === selectedSlide ? "after:opacity-100 after:scale-100" : "after:opacity-0 after:scale-75",
+                                slide === selectedSlide
+                                    ? "after:opacity-100 after:scale-100 after:animate-pulse"
+                                    : "after:opacity-0 after:scale-75",
                             ].join(" ")}
                         >
                             <input

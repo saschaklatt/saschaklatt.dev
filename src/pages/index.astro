@@ -36,7 +36,9 @@ import ClickTracker from "../components/click-tracker.astro";
             slot="actions"
             trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-dev-support"}}
         >
-            <a class="btn-accent" {...Email.link}>{"send me an email"}</a>
+            <a class="btn-accent" {...Email.link}>
+                {"send me an email"}
+            </a>
         </ClickTracker>
     </SectionCta>
     <SectionTestimonials slot="main" testimonials={allTestimonials} headline="Testimonials" name="testimonial" client:visible />
