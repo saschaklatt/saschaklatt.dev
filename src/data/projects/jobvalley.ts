@@ -1,8 +1,10 @@
 import type {Project} from "../typedefs";
 import {Studitemps} from "../companies";
 import {Contentful, MongoDB, NextJS, NodeJS, React, Storybook, Tailwind, Vercel} from "../technologies";
-import image from "../../assets/images/project-jobvalley@2x.png";
 import {JIRA} from "../tools";
+import image from "../../assets/images/project-jobvalley.webp";
+import image2x from "../../assets/images/project-jobvalley@2x.webp";
+import image4x from "../../assets/images/project-jobvalley@4x.webp";
 
 // prettier-ignore
 export const Jobvalley: Project = {
@@ -25,4 +27,6 @@ export const Jobvalley: Project = {
     tools: [JIRA],
     partners: [],
     image,
+    image2x,
+    image4x,
 };

@@ -2,7 +2,9 @@ import type {Project} from "../typedefs";
 import {Adb, KnickDesign, Robole} from "../companies";
 import {Express, Gatsby, GraphQL, NodeJS, REST, React, Redux} from "../technologies";
 import {GitLab, Redmine, Swagger} from "../tools";
-import image from "../../assets/images/project-politischbilden@2x.png";
+import image from "../../assets/images/project-politischbilden.webp";
+import image2x from "../../assets/images/project-politischbilden@2x.webp";
+import image4x from "../../assets/images/project-politischbilden@4x.webp";
 
 // prettier-ignore
 export const PolitischBilden: Project = {
@@ -24,5 +26,7 @@ export const PolitischBilden: Project = {
         href: "https://politischbilden.de",
         label: "politischbilden.de",
     },
-    image
+    image,
+    image2x,
+    image4x,
 };

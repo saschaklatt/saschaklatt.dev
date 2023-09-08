@@ -1,6 +1,8 @@
 import {Jest, Rollup, TypeScript} from "../technologies";
 import type {Project} from "../typedefs";
-import image from "../../assets/images/project-gridl@2x.png";
+import image from "../../assets/images/project-gridl.webp";
+import image2x from "../../assets/images/project-gridl@2x.webp";
+import image4x from "../../assets/images/project-gridl@4x.webp";
 
 // prettier-ignore
 export const Gridl: Project = {
@@ -19,4 +21,6 @@ export const Gridl: Project = {
         label: "gridl.js.org",
     },
     image,
+    image2x,
+    image4x,
 };

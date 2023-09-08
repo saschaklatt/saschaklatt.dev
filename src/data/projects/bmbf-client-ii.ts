@@ -2,7 +2,9 @@ import type {Project} from "../typedefs";
 import {BMBF, KnickDesign, Robole} from "../companies";
 import {Drupal, Mapbox} from "../technologies";
 import {Redmine} from "../tools";
-import image from "../../assets/images/project-bmbf-client-ii@2x.png";
+import image from "../../assets/images/project-bmbf-client-ii.webp";
+import image2x from "../../assets/images/project-bmbf-client-ii@2x.webp";
+import image4x from "../../assets/images/project-bmbf-client-ii@4x.webp";
 
 // prettier-ignore
 export const BmbfClientII: Project = {
@@ -25,4 +27,6 @@ export const BmbfClientII: Project = {
         label: "bmbf-client.de",
     },
     image,
+    image2x,
+    image4x,
 };

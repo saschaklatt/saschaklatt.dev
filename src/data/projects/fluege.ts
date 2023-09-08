@@ -1,8 +1,10 @@
 import type {Project} from "../typedefs";
 import {InviaFlights} from "../companies";
 import {Lit, Polymer, Redux, ReduxSaga, WebComponents} from "../technologies";
-import image from "../../assets/images/project-fluege@2x.png";
 import {GitLab, JIRA, Swagger} from "../tools";
+import image from "../../assets/images/project-fluege.webp";
+import image2x from "../../assets/images/project-fluege@2x.webp";
+import image4x from "../../assets/images/project-fluege@4x.webp";
 
 // prettier-ignore
 export const FluegeDe: Project = {
@@ -23,5 +25,7 @@ export const FluegeDe: Project = {
     technologies: [WebComponents, Lit, Polymer, Redux, ReduxSaga],
     tools: [GitLab, JIRA, Swagger],
     partners: [],
-    image
+    image,
+    image2x,
+    image4x,
 };

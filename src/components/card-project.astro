@@ -2,6 +2,8 @@
 import {Image} from "astro:assets";
 import type {Project} from "../data/typedefs";
 import IconArrowDown from "./icon-arrow-down.astro";
+import {getBreakpoints} from "../helpers/tailwind-helpers";
+import {numToPx} from "../helpers/converter-helpers";
 
 interface Props {
     project: Project;
@@ -15,6 +17,7 @@ interface ListItem {
 
 const {project} = Astro.props;
 
+const breakpoints = getBreakpoints();
 const listItems: ListItem[] = [];
 
 function formatDate(date: Date): string {
@@ -119,12 +122,24 @@ if (project.teamSize) {
                     "md:group-open:w-96 md:group-open:scale-100 md:group-open:mt-0",
                 ]}
             >
-                <Image
-                    src={project.image}
-                    alt={`Screenshot of the project ${project.title}`}
-                    draggable="false"
-                    class="rounded-lg"
-                />
+                <picture>
+                    <source
+                        srcset={`${project.image.src}, ${project.image2x.src} 2x`}
+                        media={`(max-width: ${numToPx(breakpoints.md)})`}
+                    />
+                    <source
+                        srcset={`${project.image.src}, ${project.image2x.src} 2x`}
+                        media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
+                    />
+                    <img
+                        src={project.image.src}
+                        alt={`Screenshot of the project ${project.title}`}
+                        width="384"
+                        height="216"
+                        draggable="false"
+                        class="rounded-lg"
+                    />
+                </picture>
             </div>
             <div
                 class:list={[

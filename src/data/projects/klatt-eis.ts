@@ -2,7 +2,9 @@ import type {Project} from "../typedefs";
 import {RicoKlatt} from "../companies";
 import {Contentful, Netlify, NextJS, React, Tailwind} from "../technologies";
 import {GitLab, JIRA} from "../tools";
-import image from "../../assets/images/project-klatt-eis@2x.png";
+import image from "../../assets/images/project-klatt-eis.webp";
+import image2x from "../../assets/images/project-klatt-eis@2x.webp";
+import image4x from "../../assets/images/project-klatt-eis@4x.webp";
 
 // prettier-ignore
 export const KlattEis: Project = {
@@ -23,4 +25,6 @@ export const KlattEis: Project = {
         label: "klatt-eis.de",
     },
     image,
+    image2x,
+    image4x,
 };

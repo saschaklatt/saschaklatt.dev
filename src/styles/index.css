@@ -1,3 +1,231 @@
-@import "./base.css";
-@import "./fonts.css";
-@import "./components.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    ::-moz-selection {
+        @apply bg-accent-200;
+    }
+
+    ::selection {
+        @apply bg-accent-200;
+    }
+
+    html {
+        font-size: 1rem;
+    }
+    body {
+        text-rendering: optimizelegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        @apply font-sans;
+    }
+    html,
+    body {
+        @apply bg-neutral-900 text-white;
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply break-words;
+    }
+
+    address {
+        font-style: normal;
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 100;
+        src: url("/fonts/mulish.woff2") format("woff2-variations");
+    }
+    @font-face {
+        font-display: swap;
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 200;
+        src: url("/fonts/mulish.woff2") format("woff2-variations");
+    }
+    @font-face {
+        font-display: swap;
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 300;
+        src: url("/fonts/mulish.woff2") format("woff2-variations");
+    }
+    @font-face {
+        font-display: swap;
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 400;
+        src: url("/fonts/mulish.woff2") format("woff2-variations");
+    }
+    @font-face {
+        font-display: swap;
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 500;
+        src: url("/fonts/mulish.woff2") format("woff2-variations");
+    }
+    @font-face {
+        font-display: swap;
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 600;
+        src: url("/fonts/mulish.woff2") format("woff2-variations");
+    }
+    @font-face {
+        font-display: swap;
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 700;
+        src: url("/fonts/mulish.woff2") format("woff2-variations");
+    }
+    @font-face {
+        font-display: swap;
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 800;
+        src: url("/fonts/mulish.woff2") format("woff2-variations");
+    }
+    @font-face {
+        font-display: swap;
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 900;
+        src: url("/fonts/mulish.woff2") format("woff2-variations");
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: "Source Code Pro";
+        font-style: normal;
+        font-weight: 400;
+        src: url("/fonts/sourcecodepro.woff2") format("woff2-variations");
+    }
+    @font-face {
+        font-display: swap;
+        font-family: "Source Code Pro";
+        font-style: normal;
+        font-weight: 600;
+        src: url("/fonts/sourcecodepro.woff2") format("woff2-variations");
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: "Bungee Inline";
+        font-weight: 400;
+        src: url("/fonts/bungee-inline-regular.woff2") format("woff2");
+    }
+}
+
+@layer components {
+    /*** PAGE LAYOUT ***/
+    .content {
+        @apply mx-auto max-w-screen-xl px-4;
+    }
+
+    /*** FOCUS ***/
+    .common-focus {
+        @apply focus-visible:ring-4 focus-visible:ring-primary-100 focus-visible:outline-none;
+    }
+    .common-focus-label-after:focus-visible + label {
+        @apply ring-4 ring-primary-100 outline-none;
+    }
+
+    .common-focus-within {
+        @apply focus-within:ring-4 focus-within:ring-primary-100 focus-within:outline-none;
+    }
+
+    /*** BUTTONS ***/
+    .btn-base {
+        @apply common-focus
+        rounded-md
+        inline-flex
+        px-8
+        py-3
+        items-center
+        justify-center
+        text-center 
+        text-lg
+        font-bold
+        transition-colors
+        select-none
+        whitespace-nowrap;
+    }
+    .btn-accent {
+        @apply btn-base bg-accent-600 text-white md:hover:bg-accent-500 md:hover:text-white;
+    }
+    .btn-neutral {
+        @apply btn-base bg-neutral-700 text-white md:hover:bg-neutral-600 md:hover:text-white;
+    }
+
+    /*** BADGES ***/
+    .badge {
+        @apply inline-flex items-center justify-center rounded-full text-xs font-black px-2.5 py-1.5 uppercase border;
+    }
+    .badge-light {
+        @apply badge text-neutral-100 border-neutral-100 opacity-50;
+    }
+    .badge-dark {
+        @apply badge text-neutral-900 border-neutral-900 opacity-100;
+    }
+
+    /*** HASHTAG ***/
+    .hashtag {
+        @apply font-bold uppercase before:content-['#'] before:inline-block;
+    }
+
+    /*** LINKS ***/
+    .link {
+        @apply common-focus
+        rounded-md
+        inline-block
+        transition-colors
+        text-current
+        underline;
+    }
+    .link-dark {
+        @apply link text-neutral-900 md:hover:text-neutral-950 underline;
+    }
+    .link-accent {
+        @apply link text-accent md:hover:text-accent-400 underline;
+    }
+
+    /*** DETAILS ELEMENT ***/
+    .details-summary {
+        @apply cursor-pointer select-none;
+    }
+    .details-summary::marker,
+    .details-summary::-webkit-details-marker {
+        content: "";
+        display: none;
+    }
+
+    /*** TEXT ***/
+    .headline-2 {
+        @apply text-4xl md:text-5xl font-extrabold mt-12 mb-4 md:mt-32 md:mb-8;
+    }
+    .headline-3 {
+        @apply text-2xl md:text-3xl font-extrabold mt-8 mb-4 md:mt-16 md:mb-8;
+    }
+    .paragraph {
+        @apply opacity-75 my-2 md:my-4;
+    }
+    .ul {
+        @apply list-disc opacity-75 my-2 md:my-4;
+    }
+    .ul > li {
+        @apply leading-relaxed ml-4 pl-2;
+    }
+
+    /*** UTILS ***/
+    .no-tap-highlight {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+    }
+}

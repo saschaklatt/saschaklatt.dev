@@ -24,6 +24,8 @@ export interface Project {
     employer?: Company;
     partners: Company[];
     image: ImageMetadata;
+    image2x: ImageMetadata;
+    image4x: ImageMetadata;
 }
 
 export interface Technology {

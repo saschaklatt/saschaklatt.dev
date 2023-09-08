@@ -2,7 +2,9 @@ import type {Project} from "../typedefs";
 import {MAN, XPURE} from "../companies";
 import {Bootstrap, Docker, React, Redux, ReduxSaga} from "../technologies";
 import {GitLab, JIRA, Swagger} from "../tools";
-import image from "../../assets/images/project-rio@2x.png";
+import image from "../../assets/images/project-rio.webp";
+import image2x from "../../assets/images/project-rio@2x.webp";
+import image4x from "../../assets/images/project-rio@4x.webp";
 
 // prettier-ignore
 export const RIO: Project = {
@@ -22,6 +24,8 @@ export const RIO: Project = {
     tools: [GitLab, JIRA, Swagger],
     teamSize: 8,
     image,
+    image2x,
+    image4x,
     website: {
         href: "https://rio.cloud",
         label: "rio.cloud",

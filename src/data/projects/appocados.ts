@@ -2,7 +2,9 @@ import type {Project} from "../typedefs";
 import {Apollo, Astro, GraphQL, Matomo, MongoDB, Netlify, NodeJS, Svelte, TypeScript} from "../technologies";
 import {Figma, GitLab, JIRA} from "../tools";
 import {NataschaFadeeva} from "../companies/natascha-fadeeva";
-import image from "../../assets/images/project-appocados@2x.png";
+import image from "../../assets/images/project-appocados.webp";
+import image2x from "../../assets/images/project-appocados@2x.webp";
+import image4x from "../../assets/images/project-appocados@4x.webp";
 
 // prettier-ignore
 export const Appocados: Project = {
@@ -23,4 +25,6 @@ export const Appocados: Project = {
     partners: [NataschaFadeeva],
     teamSize: 2,
     image,
+    image2x,
+    image4x,
 };

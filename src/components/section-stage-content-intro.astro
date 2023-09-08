@@ -1,6 +1,7 @@
 ---
-import {getImage} from "astro:assets";
-import assetImageSascha from "../assets/images/iphone-sascha@2x.png";
+import imageIphone from "../assets/images/iphone-sascha.webp";
+import imageIphone2x from "../assets/images/iphone-sascha@2x.webp";
+import imageIphone4x from "../assets/images/iphone-sascha@4x.webp";
 import {getBreakpoints} from "../helpers/tailwind-helpers";
 import Editor from "./editor.astro";
 import {numToPx} from "../helpers/converter-helpers";
@@ -9,8 +10,6 @@ import ClickTracker from "./click-tracker.astro";
 import Icon from "./icons/icon.astro";
 
 const breakpoints = getBreakpoints();
-const imageSaschaSm = await getImage({src: assetImageSascha, format: "webp", quality: "max", width: 100});
-const imageSaschaMd = await getImage({src: assetImageSascha, format: "webp", quality: "max", width: 251});
 ---
 
 <div class="content pt-32 pb-20 inline-flex items-center flex-col-reverse md:flex-row-reverse gap-x-32 gap-y-8 drop-shadow-2xl">
@@ -44,13 +43,17 @@ const imageSaschaMd = await getImage({src: assetImageSascha, format: "webp", qua
     </div>
     <div class="relative">
         <picture>
-            <source srcset={imageSaschaSm.src} media={`(max-width: ${numToPx(breakpoints.md)})`} />
-            <source srcset={imageSaschaMd.src} media={`(min-width: ${numToPx(breakpoints.md + 1)})`} />
+            <source srcset={`${imageIphone.src}, ${imageIphone2x.src} 2x`} media={`(max-width: ${numToPx(breakpoints.md)})`} />
+            <source
+                srcset={`${imageIphone2x.src}, ${imageIphone4x.src} 2x`}
+                media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
+            />
             <img
-                class="-rotate-6 -translate-x-10 md:translate-x-8 lg:translate-x-0"
-                src={imageSaschaMd.src}
+                class="-rotate-6 -translate-x-10 md:translate-x-8 lg:translate-x-0 w-32 md:w-auto"
+                src={imageIphone2x.src}
+                width="251"
+                height="451"
                 alt="An iPhone showing Sascha Klatt."
-                loading="lazy"
             />
         </picture>
     </div>
