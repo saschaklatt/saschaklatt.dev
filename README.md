@@ -1,5 +1,7 @@
 # saschaklatt.dev
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9008f0b9-b681-42be-af32-19e2efb19170/deploy-status)](https://app.netlify.com/sites/saschaklatt/deploys)
+
 This repository contains the source code of my personal dev portfolio website [saschaklatt.dev](https://saschaklatt.dev).
 
 ## Commands
