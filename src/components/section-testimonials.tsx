@@ -93,29 +93,32 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                         className="absolute hidden md:block md:-top-8 left-0 w-10 h-10 md:w-20 md:h-20"
                     />
 
-                    {/* Slides --> */}
-                    <ul className="pt-4 md:pt-10 pb-4 md:py-20 grid grid-cols-1 grid-rows-1">
+                    {/* Quotes --> */}
+                    <div className="pt-4 md:pt-10 pb-4 md:py-20 grid grid-cols-1 grid-rows-1">
                         {slides.map((slide) => (
-                            <li
+                            <q
                                 key={slide.id}
                                 aria-hidden={slide !== selectedSlide}
                                 className={[
-                                    "relative w-full flex justify-center items-center col-start-1 col-span-1 row-start-1 row-span-1 transition-all duration-300",
+                                    "relative w-full flex justify-center items-center col-start-1 col-span-1 row-start-1 row-span-1",
+                                    "transition-all duration-300",
+                                    "font-thin text-center",
                                     slide === selectedSlide
-                                        ? "opacity-100 scale-100 visible delay-200"
+                                        ? "opacity-90 scale-100 visible delay-200"
                                         : "opacity-0 scale-75 invisible",
                                 ].join(" ")}
                             >
-                                <p className="font-thin opacity-90 text-center">{slide.text}</p>
-                            </li>
+                                {slide.text}
+                            </q>
                         ))}
-                    </ul>
+                    </div>
 
                     {/* Author */}
-                    <ul className="grid grid-cols-1 grid-rows-1 self-end mb-14 text-right">
+                    <div className="grid grid-cols-1 grid-rows-1 self-end mb-14 text-right">
                         {slides.map((slide) => (
-                            <li
+                            <address
                                 key={slide.id}
+                                rel="author"
                                 aria-hidden={slide !== selectedSlide}
                                 className={[
                                     "transition-all duration-300 origin-right col-start-1 col-span-1 row-start-1 row-span-1",
@@ -127,9 +130,9 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                                 <h3 className="text-sm md:text-xl font-semibold">{`${slide.referrer.firstName} ${slide.referrer.lastName}`}</h3>
                                 <p className="text-xs md:text-base font-light uppercase opacity-75">{`${slide.referrerRole}`}</p>
                                 <p className="text-xs md:text-base font-light opacity-75">{slide.referrerCompany}</p>
-                            </li>
+                            </address>
                         ))}
-                    </ul>
+                    </div>
                 </div>
             </div>
         </section>

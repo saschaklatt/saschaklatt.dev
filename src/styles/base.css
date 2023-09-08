@@ -35,4 +35,8 @@
     address {
         font-style: normal;
     }
+
+    q {
+        quotes: none;
+    }
 }
