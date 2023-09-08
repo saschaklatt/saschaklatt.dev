@@ -4,6 +4,7 @@
     "version": "0.0.1",
     "scripts": {
         "astro": "astro",
+        "clean:build": "rm -rf dist",
         "dev": "astro dev",
         "start": "astro dev",
         "build": "pnpm build:app-meta && astro build",

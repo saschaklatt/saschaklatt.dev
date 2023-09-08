@@ -1,4 +1,4 @@
-import type {ImageMetadata} from "astro";
+import type {GetImageResult, ImageMetadata} from "astro";
 import type {IconId} from "../typedefs";
 
 export interface Website {
@@ -62,7 +62,10 @@ export interface Resource {
 export interface Person {
     firstName: string;
     lastName: string;
-    image: ImageMetadata;
+    image60: ImageMetadata;
+    image60_2x: ImageMetadata;
+    image96: ImageMetadata;
+    image96_2x: ImageMetadata;
     link?: string;
 }
 

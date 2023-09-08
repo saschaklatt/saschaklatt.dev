@@ -6,7 +6,7 @@ import Editor from "./editor.astro";
 import {numToPx} from "../helpers/converter-helpers";
 import {Cv, Email} from "../data/resources";
 import ClickTracker from "./click-tracker.astro";
-import Icon from "./icons/index.astro";
+import Icon from "./icons/icon.astro";
 
 const breakpoints = getBreakpoints();
 const imageSaschaSm = await getImage({src: assetImageSascha, format: "webp", quality: "max", width: 100});
@@ -49,7 +49,7 @@ const imageSaschaMd = await getImage({src: assetImageSascha, format: "webp", qua
             <img
                 class="-rotate-6 -translate-x-10 md:translate-x-8 lg:translate-x-0"
                 src={imageSaschaMd.src}
-                alt="An iPhone showing Sascha Klatt smiling."
+                alt="An iPhone showing Sascha Klatt."
                 loading="lazy"
             />
         </picture>

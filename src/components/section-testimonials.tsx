@@ -1,12 +1,16 @@
 import type {Testimonial} from "../data/typedefs";
 import {useMemo, useState} from "react";
 import {matomoTrackEvent} from "../services/matomo";
+import {getBreakpoints} from "../helpers/tailwind-helpers";
+import {numToPx} from "../helpers/converter-helpers";
 
 interface SectionTestimonialProps {
     headline: string;
     testimonials: Testimonial[];
     name: string;
 }
+
+const breakpoints = getBreakpoints();
 
 const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialProps) => {
     const slides = useMemo(() => testimonials.map((testimonial, idx) => ({...testimonial, id: `slide-${idx}`})), []);
@@ -92,12 +96,23 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                                         : "opacity-40 md:hover:scale-110 shadow-md"
                                 }`}
                             >
-                                <img
-                                    src={slide.referrer.image.src}
-                                    width={slide.referrer.image.width}
-                                    height={slide.referrer.image.height}
-                                    alt={`${slide.referrer.firstName} ${slide.referrer.lastName}`}
-                                />
+                                <picture>
+                                    <source
+                                        srcSet={`${slide.referrer.image60.src}, ${slide.referrer.image60_2x.src} 2x`}
+                                        media={`(max-width: ${numToPx(breakpoints.md)})`}
+                                    />
+                                    <source
+                                        srcSet={`${slide.referrer.image96.src}, ${slide.referrer.image96_2x.src} 2x`}
+                                        media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
+                                    />
+                                    <img
+                                        src={slide.referrer.image96.src}
+                                        alt={`${slide.referrer.firstName} ${slide.referrer.lastName}`}
+                                        width="96"
+                                        height="96"
+                                        loading="lazy"
+                                    />
+                                </picture>
                             </label>
                         </li>
                     ))}
