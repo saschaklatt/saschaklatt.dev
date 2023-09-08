@@ -94,13 +94,13 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                     />
 
                     {/* Slides --> */}
-                    <ul className="pt-4 md:pt-10 pb-4 md:py-20 grid-cols-1 grid-rows-1 grid">
+                    <ul className="pt-4 md:pt-10 pb-4 md:py-20 grid grid-cols-1 grid-rows-1">
                         {slides.map((slide) => (
                             <li
                                 key={slide.id}
                                 aria-hidden={slide !== selectedSlide}
                                 className={[
-                                    `relative w-full flex justify-center items-center col-start-1 col-span-1 row-start-1 row-span-1 transition-all duration-300`,
+                                    "relative w-full flex justify-center items-center col-start-1 col-span-1 row-start-1 row-span-1 transition-all duration-300",
                                     slide === selectedSlide
                                         ? "opacity-100 scale-100 visible delay-200"
                                         : "opacity-0 scale-75 invisible",
@@ -112,11 +112,24 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                     </ul>
 
                     {/* Author */}
-                    <section className="text-right self-end mb-14">
-                        <h3 className="text-sm md:text-xl font-semibold">{`${selectedSlide.referrer.firstName} ${selectedSlide.referrer.lastName}`}</h3>
-                        <p className="text-xs md:text-base font-light uppercase opacity-75">{`${selectedSlide.referrerRole}`}</p>
-                        <p className="text-xs md:text-base font-light opacity-75">{selectedSlide.referrerCompany}</p>
-                    </section>
+                    <ul className="grid grid-cols-1 grid-rows-1 self-end mb-14 text-right">
+                        {slides.map((slide) => (
+                            <li
+                                key={slide.id}
+                                aria-hidden={slide !== selectedSlide}
+                                className={[
+                                    "transition-all duration-300 origin-right col-start-1 col-span-1 row-start-1 row-span-1",
+                                    slide === selectedSlide
+                                        ? "opacity-100 translate-x-0 visible scale-100 delay-200"
+                                        : "opacity-0 translate-x-8 scale-90 invisible delay-50",
+                                ].join(" ")}
+                            >
+                                <h3 className="text-sm md:text-xl font-semibold">{`${slide.referrer.firstName} ${slide.referrer.lastName}`}</h3>
+                                <p className="text-xs md:text-base font-light uppercase opacity-75">{`${slide.referrerRole}`}</p>
+                                <p className="text-xs md:text-base font-light opacity-75">{slide.referrerCompany}</p>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </section>
