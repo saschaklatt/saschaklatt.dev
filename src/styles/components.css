@@ -1,7 +1,7 @@
 @layer components {
     /*** PAGE LAYOUT ***/
     .content {
-        @apply mx-auto max-w-screen-xl px-4;
+        @apply mx-auto max-w-screen-xl px-4 md:px-8;
     }
 
     /*** FOCUS ***/
