@@ -6,7 +6,7 @@ import image from "../../assets/images/project-gridl@2x.png";
 export const Gridl: Project = {
     title: "gridl",
     subline: "An open-source library I built to handle 2D grid data structures.",
-    description: `In 2018, I found myself deeply drawn to a career in game development. I frequently engaged with grid data structures, useful in applications like board games or arranging objects within rooms. These structures are often visualized as two-dimensional arrays, commonly termed "grids". Realizing I was repeatedly crafting similar helper functions for these grids, I consolidated them into an open-source library named "gridl", which I then shared on npm. For users' convenience, I also launched a dedicated documentation site, gridl.js.org, crafted using Gatsby and TailwindCSS. This documentation is auto-generated via TypeDoc, sourced directly from the library's internal JSDocs comments.`,
+    description: `In 2018, I found myself deeply drawn to a career in game development. I frequently engaged with grid data structures, useful in applications like board games or arranging objects within 2D rooms. These structures are often visualized as two-dimensional arrays, commonly termed "grids". Realizing I was repeatedly crafting similar helper functions for these grids, I consolidated them into an open-source library named "gridl", which I then shared on npm. For users' convenience, I also launched a dedicated documentation site, gridl.js.org, crafted using Gatsby and TailwindCSS. This documentation is auto-generated via TypeDoc, sourced directly from the library's internal JSDocs comments.`,
     contractType: "sideProject",
     dateStart: new Date("2018-01-17"),
     partners: [],

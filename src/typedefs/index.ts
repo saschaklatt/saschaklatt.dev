@@ -7,4 +7,5 @@ export type IconId =
     | "linkedin"
     | "nomadlist"
     | "stackoverflow"
+    | "x"
     | "xing";

@@ -21,7 +21,7 @@ export const Email: Resource = {
 
 export const GitHub: Resource = {
     title: "GitHub",
-    description: "Check out the source code of this website and other things I've worked on.",
+    description: "Check out the source code of this website and other things I've been working on.",
     link: {
         href: "https://github.com/saschaklatt",
         target: "_blank",
@@ -52,15 +52,15 @@ export const StackOverflow: Resource = {
     iconId: "stackoverflow",
 };
 
-export const Xing: Resource = {
-    title: "Xing",
-    description: "Connect with me on Xing for new freelance projects.",
+export const X: Resource = {
+    title: "X",
+    description: "I just started to document my web dev journey on X. Feel free to follow me and see what I'm up to.",
     link: {
-        href: "https://www.xing.com/profile/Sascha_Klatt/cv",
+        href: "https://twitter.com/saschaklatt_dev",
         target: "_blank",
         rel: "noopener noreferrer nofollow",
     },
-    iconId: "xing",
+    iconId: "x",
 };
 
 export const Nomadlist: Resource = {
@@ -76,7 +76,7 @@ export const Nomadlist: Resource = {
 
 export const Instagram: Resource = {
     title: "Instagram",
-    description: "Updates on my developer journey.",
+    description: "Same as X - just started to document my dev journey here. Feel free to follow me :)",
     link: {
         href: "https://www.instagram.com/saschaklatt.dev/",
         target: "_blank",
@@ -85,4 +85,4 @@ export const Instagram: Resource = {
     iconId: "instagram",
 };
 
-export const allResources = [Cv, Email, GitHub, LinkedIn, StackOverflow, Xing, Nomadlist, Instagram];
+export const allResources = [Cv, Email, GitHub, StackOverflow, X, Nomadlist, Instagram, LinkedIn];
