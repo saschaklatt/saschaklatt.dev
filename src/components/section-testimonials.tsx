@@ -27,7 +27,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
     return (
         <section className="my-32 md:my-80">
             <div className="content flex flex-col items-center">
-                <h2 className="font-serif text-4xl md:text-5xl flex flex-col items-center md:mb-20">{headline}</h2>
+                <h2 className="font-serif text-center text-4xl md:text-5xl flex flex-col items-center md:mb-20">{headline}</h2>
 
                 <div className="relative max-w-prose text-base md:text-2xl bg-[url('/img/bg-heart.svg')] bg-no-repeat bg-center">
                     <img
@@ -89,7 +89,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                             />
                             <label
                                 htmlFor={slide.id}
-                                className={`cursor-pointer inline-block rounded-full overflow-hidden transition-all h-10 w-10 md:w-16 md:h-16
+                                className={`cursor-pointer no-tap-highlight inline-block rounded-full overflow-hidden transition-all h-10 w-10 md:w-16 md:h-16
                                 ${
                                     slide === selectedSlide
                                         ? "scale-150 opacity-100 shadow-2xl"
