@@ -1,6 +1,7 @@
 ---
 import ButtonHome from "../components/button-home.astro";
 import SectionStage from "../components/section-stage.astro";
+import {CheckboxMatomoUserOptOut} from "../components/checkbox-matomo-opt-out";
 import Layout from "../layouts/main.astro";
 ---
 
@@ -158,6 +159,18 @@ import Layout from "../layouts/main.astro";
                 <p class="paragraph">
                     I use this service to gain an impression of the usage behaviour of my website visitors and to optimise the
                     website in terms of content, usability and stability accordingly.
+                </p>
+                <p class="paragraph">
+                    However, if you wish to stop Matomo tracking completely, you can do so by ticking the following checkbox:<br
+                    />
+                    <CheckboxMatomoUserOptOut
+                        client:load
+                        className="my-4 inline-block"
+                        id="matomo-opt-out"
+                        labelLoading="Loading Matomo settings..."
+                        labelOptedIn="You are currently opted in. Check this box to opt out."
+                        labelOptedOut="You are currently opted out. Uncheck this box to opt in."
+                    />
                 </p>
             </section>
         </div>

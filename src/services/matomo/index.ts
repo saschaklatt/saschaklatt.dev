@@ -26,8 +26,8 @@ export const matomoTrackEvent = (event: MatomoTrackingEvent) => {
     matomoPush(toTrackingArray(event));
 };
 
-export function checkHasConsent() {
-    return getCookie(COOKIE_NAME_CONSENT_REMOVED) === undefined;
+export function hasOptOutCookie() {
+    return getCookie(COOKIE_NAME_CONSENT_REMOVED) !== undefined;
 }
 
 export function giveConsent() {
