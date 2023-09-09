@@ -9,7 +9,7 @@ import image4x from "../../assets/images/project-appocados@4x.webp";
 // prettier-ignore
 export const Appocados: Project = {
     title: "appocados.com",
-    subline: "Bulding our own startup - a vegan recipe platform.",
+    subline: "Building our own startup - a vegan recipe platform.",
     description: `In February 2023, Natascha Fadeeva and I collaborated to create "appocados", a comprehensive vegan recipe platform. Designed specificly for the vegan community, this platform allows vegan food bloggers and influencers to showcase their recipes through the appocados mobile app. The system comprises a user-friendly mobile app providing high-quality vegan recipes and a dedicated web backend for recipe creators. The client applications seamlessly integrate with our platform via our GraphQL-based recipe API which is built with Apollo.`,
     website: {
         href: "https://www.appocados.com",
