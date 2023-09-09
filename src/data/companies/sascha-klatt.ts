@@ -1,4 +1,5 @@
 import type {Company} from "../typedefs";
+import logo from "../../assets/images/logo-saschaklatt.dev.svg";
 
 export const SaschaKlatt: Company = {
     name: "Sascha Klatt",
@@ -16,4 +17,5 @@ export const SaschaKlatt: Company = {
         country: "Germany",
     },
     vatId: "DE300904615",
+    logo,
 };

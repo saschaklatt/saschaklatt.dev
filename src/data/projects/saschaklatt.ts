@@ -1,6 +1,7 @@
 import type {Project} from "../typedefs";
 import {Astro, GitHub, Matomo, Netlify, React, Tailwind, TypeScript} from "../technologies";
 import {AffinityDesigner, JIRA} from "../tools";
+import {SaschaKlatt as SaschaKlattCompany} from "../companies/sascha-klatt";
 import image from "../../assets/images/project-saschaklatt.webp";
 import image2x from "../../assets/images/project-saschaklatt@2x.webp";
 import image4x from "../../assets/images/project-saschaklatt@4x.webp";
@@ -14,6 +15,7 @@ export const SaschaKlatt: Project = {
         href: "https://saschaklatt.dev",
         label: "saschaklatt.dev",
     },
+    client: SaschaKlattCompany,
     contractType: "sideProject",
     dateStart: new Date("2023-09-01"),
     dateEnd: new Date("2023-09-07"),

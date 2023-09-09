@@ -1,4 +1,5 @@
 import type {Company} from "../typedefs";
+import logo from "../../assets/images/logo-adb.svg";
 
 export const Adb: Company = {
     name: "Arbeitskreis deutscher Bildungsstätten e. V.",
@@ -7,4 +8,5 @@ export const Adb: Company = {
         label: "adb.de",
     },
     city: "Berlin",
+    logo,
 };
