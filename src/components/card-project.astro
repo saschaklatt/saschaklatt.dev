@@ -133,11 +133,12 @@ if (project.teamSize) {
                         media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
                     />
                     <img
-                        src={project.image.src}
+                        src={project.image2x.src}
                         alt={`Screenshot of the project ${project.title}`}
                         width="384"
                         height="216"
                         draggable="false"
+                        loading="lazy"
                         class="rounded-lg w-full h-full object-cover object-center"
                     />
                 </picture>
@@ -193,6 +194,7 @@ if (project.teamSize) {
                             class="w-auto h-10 max-h-10"
                             draggable="false"
                             format="svg"
+                            loading="lazy"
                         />
                     )
                 }

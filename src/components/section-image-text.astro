@@ -1,5 +1,8 @@
 ---
 import type {ImageMetadata} from "astro";
+import {getBreakpoints} from "../helpers/tailwind-helpers";
+import {numToPx} from "../helpers/converter-helpers";
+
 interface Props {
     class?: string;
     headline: string;
@@ -8,11 +11,14 @@ interface Props {
         title: string;
         text: string;
         image: ImageMetadata;
+        image2x: ImageMetadata;
+        image4x: ImageMetadata;
         imageAlt: string;
     }[];
 }
 
 const {class: className, headline, subline, items} = Astro.props;
+const breakpoints = getBreakpoints();
 ---
 
 <section class={className}>
@@ -33,14 +39,25 @@ const {class: className, headline, subline, items} = Astro.props;
                             "md:before:-top-36 md:before:h-24 md:before:w-1.5",
                         ]}
                     >
-                        <div class:list={["flex-1 flex", idx % 2 ? "justify-end" : "justify-start"]}>
-                            <img
-                                class="w-full md:w-4/5 rounded-lg drop-shadow-lg md:drop-shadow-2xl"
-                                src={item.image.src}
-                                alt={item.imageAlt}
-                                width={item.image.width}
-                                height={item.image.height}
-                            />
+                        <div class:list={["flex-1 flex w-full", idx % 2 ? "justify-end" : "justify-start"]}>
+                            <picture class="flex w-full md:w-4/5 drop-shadow-lg md:drop-shadow-2xl">
+                                <source
+                                    srcset={`${item.image.src}, ${item.image2x.src} 2x`}
+                                    media={`(max-width: ${numToPx(breakpoints.md)})`}
+                                />
+                                <source
+                                    srcset={`${item.image.src}, ${item.image4x.src} 2x`}
+                                    media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
+                                />
+                                <img
+                                    src={item.image.src}
+                                    alt={item.imageAlt}
+                                    width={item.image.width}
+                                    height={item.image.height}
+                                    loading="lazy"
+                                    class="rounded-lg w-full"
+                                />
+                            </picture>
                         </div>
                         <div class:list={["flex-1", idx % 2 ? "md:text-right" : "md:text-left"]}>
                             <h3 class="text-xl md:text-3xl font-extrabold opacity-90">{item.title}</h3>
