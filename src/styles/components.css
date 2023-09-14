@@ -107,7 +107,7 @@
     }
 
     .editor-pane {
-        @apply ml-0 pl-2 list-none leading-7 font-code hidden text-sm md:text-base;
+        @apply list-none leading-7 font-code hidden text-sm md:text-base;
     }
     .editor-pane > li {
         @apply md:pl-1;
