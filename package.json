@@ -1,7 +1,7 @@
 {
     "name": "astro",
     "type": "module",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "scripts": {
         "astro": "astro",
         "clean": "pnpm clean:build && pnpm clean:dependencies",
