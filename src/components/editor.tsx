@@ -1,9 +1,8 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {classList} from "../helpers/string-helpers";
 
 interface Props {
     className?: string;
-    children?: React.ReactElement[];
     panes: {
         tab: string;
         lines: string[];
@@ -36,6 +35,7 @@ const Editor = ({className, panes}: Props) => {
             <div className="px-6 py-4 bg-gradient-to-b from-neutral-800 to-neutral-900">
                 {panes.map(({lines}, paneIdx) => (
                     <ol
+                        key={paneIdx}
                         className={classList(["editor-pane", paneIdx === selectedIndex && "active"])}
                         aria-hidden={paneIdx !== selectedIndex}
                     >

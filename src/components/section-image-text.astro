@@ -25,11 +25,11 @@ const breakpoints = getBreakpoints();
     <div class="content">
         <header class="text-center mb-36 md:mb-48">
             <h2 class="font-serif text-3xl md:text-5xl">{headline}</h2>
-            <p class="text-lg md:text-2xl opacity-75 my-8">{subline}</p>
+            <p class="text-lg md:text-2xl opacity-75 mt-2 md:my-8">{subline}</p>
         </header>
         <ul class="flex flex-col gap-y-36 md:gap-y-48">
             {
-                items.map((item, idx, src) => (
+                items.map((item, idx) => (
                     <li
                         class:list={[
                             "flex items-center relative flex-col gap-y-8",
