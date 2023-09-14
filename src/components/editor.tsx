@@ -59,9 +59,7 @@ const Editor = ({className, panes}: Props) => {
                         aria-hidden={paneIdx !== selectedIndex}
                     >
                         {lines.map((line, lineIdx) => (
-                            <li className="md:pl-4" key={`${line}-${lineIdx}`}>
-                                {line}
-                            </li>
+                            <li key={`${line}-${lineIdx}`}>{line}</li>
                         ))}
                     </ol>
                 ))}

@@ -107,7 +107,13 @@
     }
 
     .editor-pane {
-        @apply ml-6 pl-0 list-decimal leading-7 font-code hidden text-sm md:text-base;
+        @apply ml-6 pl-2 list-none leading-7 font-code hidden text-sm md:text-base;
+    }
+    .editor-pane > li {
+        @apply md:pl-1;
+    }
+    .editor-pane > li::marker {
+        content: counter(list-item) "\a0\a0";
     }
     .editor-pane.active {
         @apply block;
