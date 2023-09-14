@@ -15,9 +15,18 @@ interface Props {
 const Editor = ({className, panes}: Props) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const handleTabClick = (pane: EditorPane, idx: number) => {
+    const selectTab = (pane: EditorPane, idx: number) => {
         setSelectedIndex(idx);
-        matomoTrackEvent({category: "editor", action: "click-tab", name: pane.tab, value: idx});
+        matomoTrackEvent({category: "editor", action: "select-tab", name: pane.tab, value: idx});
+    };
+
+    const handleTabClick = (pane: EditorPane, idx: number) => {
+        selectTab(pane, idx);
+    };
+
+    const handleKeyDown = (pane: EditorPane, idx: number, evt: React.KeyboardEvent) => {
+        if (evt.code !== "Enter") return;
+        selectTab(pane, idx);
     };
 
     return (
@@ -27,14 +36,16 @@ const Editor = ({className, panes}: Props) => {
                 <span className="bg-[#FDBC2E] h-3 w-3 rounded-full inline-block"></span>
                 <span className="bg-[#28C83E] h-3 w-3 rounded-full inline-block"></span>
             </div>
-            <ul className="bg-neutral-900 flex">
+            <ul className="bg-neutral-900 flex gap-x-1 px-4 ">
                 {panes.map((pane, idx) => (
                     <li
                         key={`${pane.tab}-${idx}`}
                         className={classList(["editor-tab", idx === selectedIndex && "active"])}
                         onClick={() => handleTabClick(pane, idx)}
+                        onKeyUp={(evt) => handleKeyDown(pane, idx, evt)}
                         aria-selected={idx === selectedIndex}
                         role="tab"
+                        tabIndex={0}
                     >
                         {pane.tab}
                     </li>

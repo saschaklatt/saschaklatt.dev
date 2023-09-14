@@ -100,7 +100,7 @@
 
     /*** EDITOR ***/
     .editor-tab {
-        @apply rounded-t-lg px-4 py-2 font-bold cursor-pointer select-none;
+        @apply rounded-t-lg px-4 py-2 font-bold cursor-pointer select-none common-focus;
     }
     .editor-tab.active {
         @apply bg-neutral-800;
