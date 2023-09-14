@@ -98,6 +98,21 @@
         @apply leading-relaxed ml-4 pl-2;
     }
 
+    /*** EDITOR ***/
+    .editor-tab {
+        @apply rounded-t-lg px-4 py-2 font-bold cursor-pointer select-none;
+    }
+    .editor-tab.active {
+        @apply bg-neutral-800;
+    }
+
+    .editor-pane {
+        @apply ml-6 pl-0 list-decimal leading-7 font-code hidden text-sm md:text-base;
+    }
+    .editor-pane.active {
+        @apply block;
+    }
+
     /*** UTILS ***/
     .no-tap-highlight {
         -webkit-tap-highlight-color: transparent;
