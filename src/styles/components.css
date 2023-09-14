@@ -107,12 +107,12 @@
     }
 
     .editor-pane {
-        @apply ml-6 pl-2 list-none leading-7 font-code hidden text-sm md:text-base;
+        @apply ml-0 pl-2 list-none leading-7 font-code hidden text-sm md:text-base;
     }
     .editor-pane > li {
         @apply md:pl-1;
     }
-    .editor-pane > li::marker {
+    .editor-pane > li::before {
         content: counter(list-item) "\a0\a0";
     }
     .editor-pane.active {
