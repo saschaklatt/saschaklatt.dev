@@ -1,16 +1,24 @@
 import {useState} from "react";
 import {classList} from "../helpers/string-helpers";
+import {matomoTrackEvent} from "../services/matomo";
+
+interface EditorPane {
+    tab: string;
+    lines: string[];
+}
 
 interface Props {
     className?: string;
-    panes: {
-        tab: string;
-        lines: string[];
-    }[];
+    panes: EditorPane[];
 }
 
 const Editor = ({className, panes}: Props) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
+
+    const handleTabClick = (pane: EditorPane, idx: number) => {
+        setSelectedIndex(idx);
+        matomoTrackEvent({category: "editor", action: "click-tab", name: pane.tab, value: idx});
+    };
 
     return (
         <section className={classList(["rounded-lg", "overflow-hidden", className])}>
@@ -20,15 +28,15 @@ const Editor = ({className, panes}: Props) => {
                 <span className="bg-[#28C83E] h-3 w-3 rounded-full inline-block"></span>
             </div>
             <ul className="bg-neutral-900 flex">
-                {panes.map(({tab}, idx) => (
+                {panes.map((pane, idx) => (
                     <li
-                        key={`${tab}-${idx}`}
+                        key={`${pane.tab}-${idx}`}
                         className={classList(["editor-tab", idx === selectedIndex && "active"])}
-                        onClick={() => setSelectedIndex(idx)}
+                        onClick={() => handleTabClick(pane, idx)}
                         aria-selected={idx === selectedIndex}
                         role="tab"
                     >
-                        {tab}
+                        {pane.tab}
                     </li>
                 ))}
             </ul>
