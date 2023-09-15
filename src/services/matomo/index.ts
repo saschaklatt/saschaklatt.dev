@@ -1,5 +1,6 @@
 import type {MatomoTrackingEvent} from "./typedefs";
 import {getCookie} from "../cookies";
+import {isNil} from "../../helpers/misc-helpers";
 
 export const COOKIE_NAME_CONSENT_REMOVED = "mtm_consent_removed";
 
@@ -10,13 +11,13 @@ export const matomoPush = (data: any[]) => {
 
 const toTrackingArray = (event: MatomoTrackingEvent) => {
     const result = ["trackEvent", event.category, event.action];
-    if (event.name && !event.value) {
+    if (event.name && isNil(event.value)) {
         return [...result, event.name];
     }
-    if (event.name && event.value) {
+    if (event.name && !isNil(event.value)) {
         return [...result, event.name, event.value];
     }
-    if (!event.name && event.value) {
+    if (!event.name && !isNil(event.value)) {
         return [...result, undefined, event.value];
     }
     return result;

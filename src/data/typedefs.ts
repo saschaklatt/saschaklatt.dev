@@ -1,4 +1,4 @@
-import type {GetImageResult, ImageMetadata} from "astro";
+import type {ImageMetadata} from "astro";
 import type {IconId} from "../typedefs";
 
 export interface Website {

@@ -18,15 +18,26 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
     const [selectedIdx, setSelectedIdx] = useState(0);
     const selectedSlide = slides[selectedIdx];
 
-    const selectPrevSlide = () => setSelectedIdx((prevIdx) => (prevIdx > 0 ? prevIdx - 1 : slides.length - 1));
-    const selectNextSlide = () => setSelectedIdx((prevIdx) => (prevIdx < slides.length - 1 ? prevIdx + 1 : 0));
+    const getReferrerFullName = (referrer: {firstName: string; lastName: string}) => {
+        return `${referrer.firstName}  ${referrer.lastName}`;
+    };
 
     const swipeHandlers = useSwipeable({
-        onSwipedLeft: selectNextSlide,
-        onSwipedRight: selectPrevSlide,
+        onSwipedLeft: () => {
+            const nextIdx = selectedIdx < slides.length - 1 ? selectedIdx + 1 : 0;
+            const referrerFullName = getReferrerFullName(slides[nextIdx].referrer);
+            setSelectedIdx(nextIdx);
+            matomoTrackEvent({action: "swipe-left", category: "testimonial", name: referrerFullName, value: nextIdx});
+        },
+        onSwipedRight: () => {
+            const prevIdx = selectedIdx > 0 ? selectedIdx - 1 : slides.length - 1;
+            const referrerFullName = getReferrerFullName(slides[prevIdx].referrer);
+            setSelectedIdx(prevIdx);
+            matomoTrackEvent({action: "swipe-right", category: "testimonial", name: referrerFullName, value: prevIdx});
+        },
     });
 
-    const handleChange = (newIndex: number) => {
+    const handleRadioChange = (newIndex: number) => {
         setSelectedIdx(newIndex);
         const newSlide = slides[newIndex];
         const referrerFullName = `${newSlide.referrer.firstName}  ${newSlide.referrer.lastName}`;
@@ -57,7 +68,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                                 name={name}
                                 id={slide.id}
                                 checked={slide === selectedSlide}
-                                onChange={() => handleChange(idx)}
+                                onChange={() => handleRadioChange(idx)}
                                 className="sr-only common-focus-label-after"
                             />
                             <label
