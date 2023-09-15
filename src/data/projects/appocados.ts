@@ -11,7 +11,7 @@ import image4x from "../../assets/images/project-appocados@4x.webp";
 export const Appocados: Project = {
     title: "appocados.com",
     subline: "Building our own startup - a vegan recipe platform.",
-    description: `In February 2023, Natascha Fadeeva and I collaborated to create "appocados", a comprehensive vegan recipe platform. Designed specificly for the vegan community, this platform allows vegan food bloggers and influencers to showcase their recipes through the appocados mobile app. The system comprises a user-friendly mobile app providing high-quality vegan recipes and a dedicated web backend for recipe creators. The client applications seamlessly integrate with our platform via our GraphQL-based recipe API which is built with Apollo. In addition to that, I concepted, designed, and implemented our company's website www.appocados.com which built with Astro and Svelte.`,
+    description: `In February 2023, Natascha Fadeeva and I joined forces to launch "appocados," a premier vegan recipe platform tailored for the vegan community. This dynamic platform empowers vegan food bloggers and influencers to prominently display their recipes via the appocados mobile application. At its core, the system boasts a user-friendly mobile app filled with premium vegan recipes, complemented by a specialized web backend for content creators. Client applications effortlessly synchronize with our platform, thanks to our GraphQL-based recipe API, developed using Apollo. Furthermore, I took the initiative to conceptualize, design, and bring to life our company's website at www.appocados.com, crafted with Astro and Svelte.`,
     website: {
         href: "https://www.appocados.com",
         label: "www.appocados.com",
