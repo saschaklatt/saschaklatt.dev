@@ -33,6 +33,7 @@ import imageServiceCreative4x from "../assets/images/project-type-wanderers@4x.w
     </SectionStage>
     <SectionImageText
         slot="main"
+        id="services"
         class="mt-20 my-48 md:mt-48 md:mb-64"
         headline="my services"
         subline="Here's what I can do for you 🧑🏻‍💻"
@@ -68,11 +69,12 @@ import imageServiceCreative4x from "../assets/images/project-type-wanderers@4x.w
         class="my-20 md:my-32"
         headline="Projects"
         subline="Hire me as a freelance web developer to realize your project or support your dev team. Here's a selection of the projects I worked on."
+        id="projects"
     >
         <ul class="flex flex-col gap-16">
             {
                 allProjects.map((project) => (
-                    <li>
+                    <li id={`project-${project.id}`}>
                         <CardProject project={project} />
                     </li>
                 ))

@@ -7,6 +7,7 @@ export interface Website {
 }
 
 export interface Project {
+    id: string;
     title: string;
     subline: string;
     description: string;

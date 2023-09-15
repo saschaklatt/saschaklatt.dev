@@ -8,6 +8,7 @@ import image4x from "../../assets/images/project-fluege@4x.webp";
 
 // prettier-ignore
 export const FluegeDe: Project = {
+    id: "fluege-de",
     title: "fluege.de",
     subline: "I had the privilege of collaborating with the front-end team at fluege.de, a leading German air travel comparison portal.",
     description: "The web application go.fluege.de efficiently sifts through thousands of airlines to give users the best flight options at unbeatable prices. In this project, I had the chance to work with Invia Flights' front-end team to modernize the existing platform. We made use of technologies such as Web Components, Polymer, Lit, and Redux and integrated the booking forms with a complex REST-based microservice architecture.",

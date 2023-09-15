@@ -6,6 +6,7 @@ import {numToPx} from "../helpers/converter-helpers";
 interface Props {
     class?: string;
     headline: string;
+    id?: string;
     subline?: string;
     items: {
         title: string;
@@ -17,11 +18,11 @@ interface Props {
     }[];
 }
 
-const {class: className, headline, subline, items} = Astro.props;
+const {class: className, headline, subline, items, id} = Astro.props;
 const breakpoints = getBreakpoints();
 ---
 
-<section class={className}>
+<section class={className} id={id}>
     <div class="content">
         <header class="text-center mb-36 md:mb-48">
             <h2 class="font-serif text-3xl md:text-5xl">{headline}</h2>

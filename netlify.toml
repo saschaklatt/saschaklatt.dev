@@ -1,0 +1,45 @@
+[[redirects]]
+  from = "/projects"
+  to = "/#projects"
+  status = 301
+
+[[redirects]]
+  from = "/expertise"
+  to = "/#services"
+  status = 301
+
+[[redirects]]
+  from = "/projects/gridl"
+  to = "/#project-gridl"
+  status = 301
+
+[[redirects]]
+  from = "/projects/adb-politisch-bilden-website"
+  to = "/#project-politisch-bilden"
+  status = 301
+
+[[redirects]]
+  from = "/projects/bmbf-client-ii-website"
+  to = "/#project-bmbf-client-ii"
+  status = 301
+
+[[redirects]]
+  from = "/projects/fluege-de-comparison-portal"
+  to = "/#project-fluege-de"
+  status = 301
+
+[[redirects]]
+  from = "/projects/saschaklatt-dev"
+  to = "/#project-saschaklatt-dev"
+  status = 301
+
+[[redirects]]
+  from = "/projects/jobvalley-website"
+  to = "/#project-jobvalley"
+  status = 301
+
+[[redirects]]
+  from = "/projects/klatt-eis-website"
+  to = "/#project-klatt-eis"
+  status = 301
+
