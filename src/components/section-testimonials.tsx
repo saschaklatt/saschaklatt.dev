@@ -3,6 +3,7 @@ import {useMemo, useState} from "react";
 import {matomoTrackEvent} from "../services/matomo";
 import {getBreakpoints} from "../helpers/tailwind-helpers";
 import {numToPx} from "../helpers/converter-helpers";
+import {useSwipeable} from "react-swipeable";
 
 interface SectionTestimonialProps {
     headline: string;
@@ -16,6 +17,14 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
     const slides = useMemo(() => testimonials.map((testimonial, idx) => ({...testimonial, id: `slide-${idx}`})), []);
     const [selectedIdx, setSelectedIdx] = useState(0);
     const selectedSlide = slides[selectedIdx];
+
+    const selectPrevSlide = () => setSelectedIdx((prevIdx) => (prevIdx > 0 ? prevIdx - 1 : slides.length - 1));
+    const selectNextSlide = () => setSelectedIdx((prevIdx) => (prevIdx < slides.length - 1 ? prevIdx + 1 : 0));
+
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: selectPrevSlide,
+        onSwipedRight: selectNextSlide,
+    });
 
     const handleChange = (newIndex: number) => {
         setSelectedIdx(newIndex);
@@ -94,7 +103,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                     />
 
                     {/* Quotes --> */}
-                    <div className="pt-4 md:pt-10 pb-4 md:py-20 grid grid-cols-1 grid-rows-1">
+                    <div className="pt-4 md:pt-10 pb-4 md:py-20 grid grid-cols-1 grid-rows-1" {...swipeHandlers}>
                         {slides.map((slide) => (
                             <q
                                 key={slide.id}
@@ -103,6 +112,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                                     "relative w-full flex justify-center items-center col-start-1 col-span-1 row-start-1 row-span-1",
                                     "transition-all duration-300",
                                     "font-thin text-center",
+                                    "pointer-events-none lg:pointer-events-auto",
                                     slide === selectedSlide
                                         ? "opacity-90 scale-100 visible delay-200"
                                         : "opacity-0 scale-75 invisible",
