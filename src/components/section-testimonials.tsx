@@ -22,8 +22,8 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
     const selectNextSlide = () => setSelectedIdx((prevIdx) => (prevIdx < slides.length - 1 ? prevIdx + 1 : 0));
 
     const swipeHandlers = useSwipeable({
-        onSwipedLeft: selectPrevSlide,
-        onSwipedRight: selectNextSlide,
+        onSwipedLeft: selectNextSlide,
+        onSwipedRight: selectPrevSlide,
     });
 
     const handleChange = (newIndex: number) => {
