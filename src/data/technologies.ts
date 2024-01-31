@@ -154,3 +154,8 @@ export const Matomo: Technology = {
     id: "matomo",
     name: "Matomo",
 };
+
+export const MaterialUI: Technology = {
+    id: "mui",
+    name: "Material UI",
+};

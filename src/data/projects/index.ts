@@ -1,5 +1,6 @@
 import {Appocados} from "./appocados";
 import {BmbfClientII} from "./bmbf-client-ii";
+import {BettercodeBID} from "./bettercodelabs-bid";
 import {FluegeDe} from "./fluege";
 import {Gridl} from "./gridl";
 import {Jobvalley} from "./jobvalley";
@@ -10,6 +11,7 @@ import {SaschaKlatt} from "./saschaklatt";
 
 export {Appocados};
 export {BmbfClientII};
+export {BettercodeBID};
 export {FluegeDe};
 export {Gridl};
 export {Jobvalley};
@@ -21,6 +23,7 @@ export {SaschaKlatt};
 // prettier-ignore
 export const allProjects = [
     Appocados,
+    BettercodeBID,
     SaschaKlatt,
     Jobvalley,
     FluegeDe,

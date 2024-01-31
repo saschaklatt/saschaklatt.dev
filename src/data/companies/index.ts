@@ -1,4 +1,5 @@
 export {Adb} from "./adb";
+export {BettercodeLABS} from "./bettercodelabs";
 export {BMBF} from "./bmbf";
 export {InviaFlights} from "./invia";
 export {KnickDesign} from "./knick-design";
