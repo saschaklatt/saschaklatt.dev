@@ -15,6 +15,16 @@ export const Figma: Tool = {
     name: "Figma",
 };
 
+export const Landbot: Tool = {
+    id: "landbot",
+    name: "Landbot",
+};
+
+export const Make: Tool = {
+    id: "make",
+    name: "Make",
+};
+
 export const Swagger: Tool = {
     id: "swagger",
     name: "Swagger",
