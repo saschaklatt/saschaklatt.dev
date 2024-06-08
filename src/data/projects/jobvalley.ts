@@ -17,7 +17,6 @@ export const Jobvalley: Project = {
         label: "jobvalley.com",
     },
     dateStart: new Date("2021-02-01"),
-    dateEnd: new Date("2022-12-31"),
     contractType: "freelance",
     industry: "Recruitment",
     teamSize: 5,

@@ -22,10 +22,10 @@ export {SaschaKlatt};
 
 // prettier-ignore
 export const allProjects = [
+    Jobvalley,
     Appocados,
     BettercodeBID,
     SaschaKlatt,
-    Jobvalley,
     FluegeDe,
     PolitischBilden,
     BmbfClientII,

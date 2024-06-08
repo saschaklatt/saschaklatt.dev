@@ -85,4 +85,13 @@ export const Instagram: Resource = {
     iconId: "instagram",
 };
 
-export const allResources = [Cv, Email, GitHub, StackOverflow, X, Nomadlist, Instagram, LinkedIn];
+export const allResources = [
+    Cv,
+    Email,
+    GitHub,
+    // StackOverflow,
+    X,
+    Nomadlist,
+    // Instagram,
+    LinkedIn
+];
