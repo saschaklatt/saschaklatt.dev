@@ -12,15 +12,21 @@ import {allTestimonials} from "../data/testimonials";
 import SectionStageContentIntro from "../components/section-stage-content-intro.astro";
 import ClickTracker from "../components/click-tracker.astro";
 import SectionImageText from "../components/section-image-text.astro";
-import illustrationFrontendDev from "../assets/images/illustration-mobile-tablet-desktop.webp";
-import illustrationFrontendDev2x from "../assets/images/illustration-mobile-tablet-desktop@2x.webp";
-import illustrationFrontendDev4x from "../assets/images/illustration-mobile-tablet-desktop@4x.webp";
+import illustrationUiComponentsPhone from "../assets/images/illustration-ui-components-phone.webp";
+import illustrationUiComponentsPhone2x from "../assets/images/illustration-ui-components-phone@2x.webp";
+import illustrationUiComponentsPhone4x from "../assets/images/illustration-ui-components-phone@4x.webp";
 import illustrationHeadlessCms from "../assets/images/illustration-headless-cms.webp";
 import illustrationHeadlessCms2x from "../assets/images/illustration-headless-cms@2x.webp";
 import illustrationHeadlessCms4x from "../assets/images/illustration-headless-cms@4x.webp";
-import illustrationUxUi from "../assets/images/illustration-ui-components-phone.webp";
-import illustrationUxUi2x from "../assets/images/illustration-ui-components-phone@2x.webp";
-import illustrationUxUi4x from "../assets/images/illustration-ui-components-phone@4x.webp";
+import illustrationConnectedCloudsByWires from "../assets/images/illustration-connected-clouds-by-wires.webp";
+import illustrationConnectedCloudsByWires2x from "../assets/images/illustration-connected-clouds-by-wires@2x.webp";
+import illustrationConnectedCloudsByWires4x from "../assets/images/illustration-connected-clouds-by-wires@4x.webp";
+import illustrationRocketCloud from "../assets/images/illustration-rocket-cloud.webp";
+import illustrationRocketCloud2x from "../assets/images/illustration-rocket-cloud@2x.webp";
+import illustrationRocketCloud4x from "../assets/images/illustration-rocket-cloud@4x.webp";
+import illustrationMongodb from "../assets/images/illustration-mongodb.webp";
+import illustrationMongodb2x from "../assets/images/illustration-mongodb@2x.webp";
+import illustrationMongodb4x from "../assets/images/illustration-mongodb@4x.webp";
 ---
 
 <Layout
@@ -39,28 +45,44 @@ import illustrationUxUi4x from "../assets/images/illustration-ui-components-phon
         subline="Here's what I can do for you 🧑🏻‍💻"
         items={[
             {
-                image: illustrationFrontendDev,
-                image2x: illustrationFrontendDev2x,
-                image4x: illustrationFrontendDev4x,
+                image: illustrationUiComponentsPhone,
+                image2x: illustrationUiComponentsPhone2x,
+                image4x: illustrationUiComponentsPhone4x,
                 imageAlt: "Illustration of a mobile phone, a tablet, and a desktop computer.",
-                title: "Frontend Development",
-                text: "I specialize in creating responsive and fast-loading marketing websites, as well as data-heavy web applications and insightful data visualizations. Additionally, I build component libraries with Storybook to ensure consistency and efficiency in development workflows. With experience in integrating complex state management and fetching data seamlessly from various APIs, including REST and GraphQL, I prioritize accessibility, crafting crisp interfaces, and smooth micro animations that enhance user experience. With a keen eye for aesthetics, I ensure your digital presence stands out and performs at its best.",
+                title: "Front-end web development",
+                text: `Let's a build high-performing, composable website together! With years of expertise in front-end development, I can help you create engaging and robust user experiences across all modern browsers and devices. I ensure your site delights your audience with smooth animations while also meeting accessibility guidelines to include everyone. Beyond aesthetics, I offer development of component libraries, load time improvements, on-site SEO optimizations, multi-language content support, robust third-party API integrations, user tracking, A/B testing, and of course Core Web Vitals monitoring and optimizations.`,
             },
             {
                 image: illustrationHeadlessCms,
                 image2x: illustrationHeadlessCms2x,
                 image4x: illustrationHeadlessCms4x,
                 imageAlt: "Illustration of all content of the headless CMS distributed to different devices.",
-                title: "Headless CMS",
-                text: "Unlock the full potential of your content with cutting-edge headless CMS solutions. Specializing in Contentful and Sanity, I help you manage content for various platforms, including websites, mobile apps, e-commerce, games, or content hubs for multiple distribution channels. With expertise in content modeling, data migrations, and tailored editing experiences for content editors, I provide solutions that transform your digital presence and meet your unique business needs.",
+                title: "Headless CMS integration",
+                text: "Your content management is chaotic and time-consuming? With cutting-edge headless CMS solutions like Contentful or Sanity, I can help set up a content hub to streamline your content across all your platforms, including websites, mobile apps, e-commerce platforms, games, museum guides, you name it. From setting up to seamlessly connecting your Headless CMS to your website or application, I offer expertise in content modeling, data migrations, and customized content editing experiences, providing solutions that cater to your unique business needs.",
             },
             {
-                image: illustrationUxUi,
-                image2x: illustrationUxUi2x,
-                image4x: illustrationUxUi4x,
+                image: illustrationMongodb,
+                image2x: illustrationMongodb2x,
+                image4x: illustrationMongodb4x,
                 imageAlt: "Illustration of a phone with UI components.",
-                title: "UX/UI",
-                text: "Let's craft seamless and engaging digital experiences! Utilizing industry-leading tools like Figma, I specialize in creating comprehensive design systems, building wireframes, mockups, and clickable prototypes, assessing technical feasibility, and developing intuitive interfaces that captivate users. Whether you need to establish a cohesive visual identity or enhance the usability of your product, I can help your digital presence be both functional and visually outstanding.",
+                title: "MongoDB modeling & integration",
+                text: "With my expertise in MongoDB, I can help you design and implement scalable, high-performance databases tailored to your needs. Whether you're building a data-heavy application, managing complex data structures, or optimizing existing databases, I provide solutions that ensure efficient data storage, retrieval, and management. Let’s transform your data management strategy and elevate your application’s performance.",
+            },
+            {
+                image: illustrationConnectedCloudsByWires,
+                image2x: illustrationConnectedCloudsByWires2x,
+                image4x: illustrationConnectedCloudsByWires4x,
+                imageAlt: "Illustration of a phone with UI components.",
+                title: "API design & development",
+                text: "Looking to power your web application with a robust and scalable API? With my expertise in Express and Apollo GraphQL I can help you build powerful and flexible back-end solutions tailored to your needs. Whether you're looking to develop RESTful APIs for seamless data exchange or harness the flexibility and efficiency of GraphQL for your application, I've got you covered. Let's work together to craft an API that powers your applications with speed and reliability.",
+            },
+            {
+                image: illustrationRocketCloud,
+                image2x: illustrationRocketCloud2x,
+                image4x: illustrationRocketCloud4x,
+                imageAlt: "Illustration of a phone with UI components.",
+                title: "Cloud hosting & CI/CD",
+                text: "With expertise in leading cloud hosting providers like Vercel and Netlify, as well as comprehensive CI/CD solutions, I'll streamline your deployment process for maximum efficiency. Leveraging modern technologies such as incremental static regeneration (ISR), I can help ensure fast deployments, even for websites with thousands of pages. By harnessing the power of CDNs and serving static generated pages, your website will not only load blazingly fast but also handle high traffic volumes with ease, providing an exceptional user experience.",
             },
         ]}
     />
@@ -68,7 +90,7 @@ import illustrationUxUi4x from "../assets/images/illustration-ui-components-phon
         slot="main"
         class="my-20 md:my-32"
         headline="Projects"
-        subline="Hire me as a freelance web developer to realize your project or support your dev team. Here's a selection of the projects I worked on."
+        subline="Curious about what I can deliver? Explore a selection of projects I've worked on."
         id="projects"
     >
         <ul class="flex flex-col gap-16">

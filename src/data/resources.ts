@@ -90,8 +90,8 @@ export const allResources = [
     Email,
     GitHub,
     // StackOverflow,
-    X,
-    Nomadlist,
+    // X,
+    // Nomadlist,
     // Instagram,
     LinkedIn
 ];

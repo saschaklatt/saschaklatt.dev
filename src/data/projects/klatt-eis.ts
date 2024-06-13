@@ -15,7 +15,7 @@ export const KlattEis: Project = {
     contractType: "sideProject",
     dateStart: new Date("2021-06-01"),
     partners: [],
-    tags: ["side project", "front-end", "ux/ui", "cms"],
+    tags: ["side project", "front-end", "back-end", "ux/ui", "cms"],
     technologies: [React, NextJS, Tailwind, Contentful, Netlify],
     tools: [GitLab, JIRA],
     client: RicoKlatt,

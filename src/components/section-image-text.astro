@@ -45,7 +45,7 @@ const breakpoints = getBreakpoints();
                             <p class="opacity-75 font-light mt-4 md:mt-6 text-base md:text-lg">{item.text}</p>
                         </div>
                         <div class:list={["flex-1 flex w-full", idx % 2 ? "justify-end" : "justify-start"]}>
-                            <picture class="mx-auto flex w-4/5 md:w-3/5">
+                            <picture class="mx-auto flex w-full">
                                 <source
                                     srcset={`${item.image.src}, ${item.image2x.src} 2x`}
                                     media={`(max-width: ${numToPx(breakpoints.md)})`}

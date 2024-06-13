@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1037 887" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-7821,-6276)">
+        <g id="bg-heart" transform="matrix(1.00091,0,0,1.00079,-7.92113,1629.91)">
+            <rect x="7821.81" y="4643.06" width="1036.06" height="885.303" style="fill:none;"/>
+            <g id="bg-heart1" serif:id="bg-heart" transform="matrix(7.95662,0,0,11.7181,12943.2,4203.98)">
+                <g transform="matrix(0.125567,0,0,0.0852708,-1047.61,-784.403)">
+                    <path d="M3741.61,9794.99C3845.5,9624.07 4053.3,9624.07 4157.2,9709.53C4261.1,9794.99 4261.1,9965.91 4157.2,10136.8C4084.47,10265 3897.45,10393.2 3741.61,10478.7C3585.76,10393.2 3398.74,10265 3326.02,10136.8C3222.12,9965.91 3222.12,9794.99 3326.02,9709.53C3429.91,9624.07 3637.71,9624.07 3741.61,9794.99Z" style="fill:url(#_Radial1);"/>
+                </g>
+                <g transform="matrix(0.125567,0,0,0.0852708,-1045.31,-781.785)">
+                    <path d="M3741.61,9794.99C3845.5,9624.07 4053.3,9624.07 4157.2,9709.53C4261.1,9794.99 4261.1,9965.91 4157.2,10136.8C4084.47,10265 3897.45,10393.2 3741.61,10478.7C3585.76,10393.2 3398.74,10265 3326.02,10136.8C3222.12,9965.91 3222.12,9794.99 3326.02,9709.53C3429.91,9624.07 3637.71,9624.07 3741.61,9794.99Z" style="fill:url(#_Radial2);"/>
+                </g>
+                <g transform="matrix(0.125567,3.5325e-51,-3.96942e-50,0.0852708,-1051.46,-781.955)">
+                    <path d="M3741.61,9794.99C3845.5,9624.07 4053.3,9624.07 4157.2,9709.53C4261.1,9794.99 4261.1,9965.91 4157.2,10136.8C4084.47,10265 3897.45,10393.2 3741.61,10478.7C3585.76,10393.2 3398.74,10265 3326.02,10136.8C3222.12,9965.91 3222.12,9794.99 3326.02,9709.53C3429.91,9624.07 3637.71,9624.07 3741.61,9794.99Z" style="fill:url(#_Radial3);"/>
+                </g>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="_Radial1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(583.588,-545.581,545.581,583.588,3540.39,10248.3)"><stop offset="0" style="stop-color:rgb(163,224,97);stop-opacity:0.25"/><stop offset="1" style="stop-color:rgb(30,125,174);stop-opacity:0"/></radialGradient>
+        <radialGradient id="_Radial2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(583.588,-545.581,545.581,583.588,3540.39,10248.3)"><stop offset="0" style="stop-color:rgb(163,224,97);stop-opacity:0.25"/><stop offset="1" style="stop-color:rgb(30,125,174);stop-opacity:0"/></radialGradient>
+        <radialGradient id="_Radial3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(583.588,-545.581,545.581,583.588,3540.39,10248.3)"><stop offset="0" style="stop-color:rgb(163,224,97);stop-opacity:0.25"/><stop offset="1" style="stop-color:rgb(30,125,174);stop-opacity:0"/></radialGradient>
+    </defs>
+</svg>
