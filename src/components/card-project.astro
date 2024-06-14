@@ -101,6 +101,7 @@ if (project.teamSize) {
     >
         <summary
             class:list={[
+                "group/summary",
                 "rounded-lg overflow-hidden",
                 "transition-bg",
                 "details-summary rounded-lg grid grid-cols-[1fr_min-content]",
@@ -138,7 +139,11 @@ if (project.teamSize) {
                         height="216"
                         draggable="false"
                         loading="lazy"
-                        class="rounded-lg w-full h-full object-cover object-center"
+                        class:list={[
+                            "rounded-lg w-full h-full object-cover object-center",
+                            "lg:opacity-75 transition-opacity",
+                            "lg:group-hover:opacity-100 lg:group-focus-visible/summary:opacity-100 lg:group-open:opacity-100",
+                        ]}
                     />
                 </picture>
             </div>
