@@ -29,6 +29,9 @@ const Editor = ({className, panes}: Props) => {
         selectTab(pane, idx);
     };
 
+    const getEditorTabId = (idx: number) => `editor-tab-${idx}`;
+    const getEditorPaneId = (idx: number) => `editor-pane-${idx}`;
+
     return (
         <section className={classList(["rounded-lg", "overflow-hidden", className])}>
             <div className="bg-gradient-to-b from-neutral-900 to-neutral-950 h-10 flex items-center px-4 gap-x-2">
@@ -36,7 +39,7 @@ const Editor = ({className, panes}: Props) => {
                 <span className="bg-[#F2F598] h-3 w-3 rounded-full inline-block"></span>
                 <span className="bg-[#00FFBD] h-3 w-3 rounded-full inline-block"></span>
             </div>
-            <ul className="bg-neutral-900 flex gap-x-1 px-4 ">
+            <ul className="bg-neutral-900 flex gap-x-1 px-4" role="tablist" aria-label="editor tabs">
                 {panes.map((pane, idx) => (
                     <li
                         key={`${pane.tab}-${idx}`}
@@ -44,8 +47,10 @@ const Editor = ({className, panes}: Props) => {
                         onClick={() => handleTabClick(pane, idx)}
                         onKeyUp={(evt) => handleKeyDown(pane, idx, evt)}
                         aria-selected={idx === selectedIndex}
+                        aria-controls={getEditorPaneId(idx)}
                         role="tab"
                         tabIndex={0}
+                        id={getEditorTabId(idx)}
                     >
                         {pane.tab}
                     </li>
@@ -57,6 +62,9 @@ const Editor = ({className, panes}: Props) => {
                         key={paneIdx}
                         className={classList(["editor-pane", paneIdx === selectedIndex && "active"])}
                         aria-hidden={paneIdx !== selectedIndex}
+                        aria-labelledby={getEditorTabId(paneIdx)}
+                        role="tabpanel"
+                        id={getEditorPaneId(paneIdx)}
                     >
                         {lines.map((line, lineIdx) => (
                             <li key={`${line}-${lineIdx}`}>{line}</li>
