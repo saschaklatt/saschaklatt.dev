@@ -32,9 +32,9 @@ const Editor = ({className, panes}: Props) => {
     return (
         <section className={classList(["rounded-lg", "overflow-hidden", className])}>
             <div className="bg-gradient-to-b from-neutral-900 to-neutral-950 h-10 flex items-center px-4 gap-x-2">
-                <span className="bg-[#FF5F57] h-3 w-3 rounded-full inline-block"></span>
-                <span className="bg-[#FDBC2E] h-3 w-3 rounded-full inline-block"></span>
-                <span className="bg-[#28C83E] h-3 w-3 rounded-full inline-block"></span>
+                <span className="bg-accent h-3 w-3 rounded-full inline-block"></span>
+                <span className="bg-[#F2F598] h-3 w-3 rounded-full inline-block"></span>
+                <span className="bg-[#00FFBD] h-3 w-3 rounded-full inline-block"></span>
             </div>
             <ul className="bg-neutral-900 flex gap-x-1 px-4 ">
                 {panes.map((pane, idx) => (
