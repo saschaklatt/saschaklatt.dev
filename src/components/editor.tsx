@@ -56,22 +56,26 @@ const Editor = ({className, panes}: Props) => {
                     </li>
                 ))}
             </ul>
-            <div className="px-6 py-4 bg-gradient-to-b from-neutral-800 to-neutral-900">
-                {panes.map(({lines}, paneIdx) => (
+            {panes.map(({lines}, paneIdx) => (
+                <article
+                    key={paneIdx}
+                    className={classList([
+                        "editor-pane",
+                        "px-6 py-4 bg-gradient-to-b from-neutral-800 to-neutral-900",
+                        paneIdx === selectedIndex && "active",
+                    ])}
+                    aria-hidden={paneIdx !== selectedIndex}
+                    aria-labelledby={getEditorTabId(paneIdx)}
+                    id={getEditorPaneId(paneIdx)}
+                >
                     <ol
-                        key={paneIdx}
-                        className={classList(["editor-pane", paneIdx === selectedIndex && "active"])}
-                        aria-hidden={paneIdx !== selectedIndex}
-                        aria-labelledby={getEditorTabId(paneIdx)}
-                        role="tabpanel"
-                        id={getEditorPaneId(paneIdx)}
                     >
                         {lines.map((line, lineIdx) => (
                             <li key={`${line}-${lineIdx}`}>{line}</li>
                         ))}
                     </ol>
-                ))}
-            </div>
+                </article>
+            ))}
         </section>
     );
 };

@@ -107,16 +107,19 @@
     }
 
     .editor-pane {
-        @apply list-none leading-7 font-code hidden text-sm md:text-base;
-    }
-    .editor-pane > li {
-        @apply md:pl-1;
-    }
-    .editor-pane > li::before {
-        content: counter(list-item) "\a0\a0";
+        @apply hidden;
     }
     .editor-pane.active {
         @apply block;
+    }
+    .editor-pane > ol {
+        @apply list-none leading-7 font-code text-sm md:text-base;
+    }
+    .editor-pane > ol > li {
+        @apply md:pl-1;
+    }
+    .editor-pane > ol > li::before {
+        content: counter(list-item) "\a0\a0";
     }
 
     /*** UTILS ***/
