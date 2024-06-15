@@ -3,6 +3,7 @@ export {BettercodeLABS} from "./bettercodelabs";
 export {BMBF} from "./bmbf";
 export {InviaFlights} from "./invia";
 export {KnickDesign} from "./knick-design";
+export {Mahena} from "./mahena";
 export {MAN} from "./man";
 export {NataschaFadeeva} from "./natascha-fadeeva";
 export {RicoKlatt} from "./rico-klatt";
