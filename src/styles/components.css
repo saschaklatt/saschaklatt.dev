@@ -120,6 +120,7 @@
     }
     .editor-pane > ol > li::before {
         content: counter(list-item) "\a0\a0";
+        @apply opacity-50 text-right;
     }
 
     /*** UTILS ***/
