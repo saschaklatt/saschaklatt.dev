@@ -159,3 +159,8 @@ export const MaterialUI: Technology = {
     id: "mui",
     name: "Material UI",
 };
+
+export const Keycloak: Technology = {
+    id: "keycloak",
+    name: "Keycloak",
+};
