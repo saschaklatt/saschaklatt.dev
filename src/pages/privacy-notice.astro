@@ -3,6 +3,7 @@ import ButtonHome from "../components/button-home.astro";
 import SectionStage from "../components/section-stage.astro";
 import {CheckboxMatomoUserOptOut} from "../components/checkbox-matomo-opt-out";
 import Layout from "../layouts/main.astro";
+import {SaschaKlatt} from "../data/companies";
 ---
 
 <Layout
@@ -43,9 +44,9 @@ import Layout from "../layouts/main.astro";
                     addresses, user behaviour.
                 </p>
                 <p class="paragraph">
-                    b) The data controller for this website pursuant to Art. 4 (7) of the EU General Data Protection Regulation
-                    (GDPR) is Sascha Klatt, Schmidener Str. 16, 70372, Stuttgart. You can contact by sending an email or by
-                    writing to my postal address.
+                    {
+                        `b) The data controller for this website pursuant to Art. 4 (7) of the EU General Data Protection Regulation (GDPR) is ${SaschaKlatt.name}, ${SaschaKlatt.address?.street} ${SaschaKlatt.address?.streetNumber}, ${SaschaKlatt.address?.zipCode} ${SaschaKlatt.address?.city}. You can contact by sending an email or by writing to my postal address.`
+                    }
                 </p>
                 <p class="paragraph">
                     c) When you contact me by email, I will store the data you disclose (your email address, name and phone
