@@ -19,6 +19,10 @@ import imageMuratKemaldar_60 from "../assets/images/profile-murat-kemaldar_60.pn
 import imageMuratKemaldar_60_2x from "../assets/images/profile-murat-kemaldar_60@2x.png";
 import imageMuratKemaldar_96 from "../assets/images/profile-murat-kemaldar_96.png";
 import imageMuratKemaldar_96_2x from "../assets/images/profile-murat-kemaldar_96@2x.png";
+import imageThomasRoth_60 from "../assets/images/profile-thomas-roth_60.png";
+import imageThomasRoth_60_2x from "../assets/images/profile-thomas-roth_60@2x.png";
+import imageThomasRoth_96 from "../assets/images/profile-thomas-roth_96.png";
+import imageThomasRoth_96_2x from "../assets/images/profile-thomas-roth_96@2x.png";
 
 /**
  * Note:
@@ -71,4 +75,13 @@ export const MuratKemaldar: Person = {
     image60_2x: imageMuratKemaldar_60_2x,
     image96: imageMuratKemaldar_96,
     image96_2x: imageMuratKemaldar_96_2x,
+};
+
+export const ThomasRoth: Person = {
+    firstName: "Thomas",
+    lastName: "Roth",
+    image60: imageThomasRoth_60,
+    image60_2x: imageThomasRoth_60_2x,
+    image96: imageThomasRoth_96,
+    image96_2x: imageThomasRoth_96_2x,
 };

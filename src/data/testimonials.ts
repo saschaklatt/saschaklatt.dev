@@ -1,8 +1,14 @@
 import {InviaFlights, Robole, Studitemps} from "./companies";
-import {AlexanderBaehr, ChrissyTopal, FelixWolf, MartinWilmer, MuratKemaldar} from "./persons";
+import {AlexanderBaehr, ChrissyTopal, FelixWolf, MartinWilmer, MuratKemaldar, ThomasRoth} from "./persons";
 import type {Testimonial} from "./typedefs";
 
 export const allTestimonials: Testimonial[] = [
+    {
+        referrer: ThomasRoth,
+        referrerRole: "Head Of Development",
+        referrerCompany: "MAHENA - marketing.services.kommunikation",
+        text: "Sascha is one of those rare people you just don't come across often – genuinely kind, rock-solid, and 100% trustworthy. We've been working together for years on Landbot and Ninox projects, and he always delivers: fast, pragmatic, and solid. Low-code wasn't his thing at first, but now he's really got the hang of it. Would we recommend him? Only if we have to – we'd rather keep him to ourselves.",
+    },
     {
         referrer: MuratKemaldar,
         referrerRole: "Front-end Developer / Designer",
