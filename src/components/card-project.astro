@@ -86,7 +86,7 @@ if (project.industry) {
 if (project.teamSize) {
     listItems.push({
         term: "Team size",
-        text: `${project.teamSize.toFixed(0)} team members`,
+        text: project.teamSize === 1 ? "Solo" : `${project.teamSize.toFixed(0)} team members`,
     });
 }
 ---
@@ -141,7 +141,7 @@ if (project.teamSize) {
                         loading="lazy"
                         class:list={[
                             "rounded-lg w-full h-full object-cover object-center",
-                            "lg:opacity-75 transition-opacity",
+                            "lg:opacity-95 transition-opacity",
                             "lg:group-hover:opacity-100 lg:group-focus-visible/summary:opacity-100 lg:group-open:opacity-100",
                         ]}
                     />

@@ -32,7 +32,7 @@ export const GitHub: Resource = {
 
 export const LinkedIn: Resource = {
     title: "LinkedIn",
-    description: "My favorite place to get spammed by recruiters.",
+    description: "I share insights about my work here every now and then.",
     link: {
         href: "https://www.linkedin.com/in/sascha-klatt/",
         target: "_blank",
@@ -54,7 +54,7 @@ export const StackOverflow: Resource = {
 
 export const X: Resource = {
     title: "X",
-    description: "I just started to document my web dev journey on X. Feel free to follow me and see what I'm up to.",
+    description: "Follow updates of my personal projects and thoughts.",
     link: {
         href: "https://twitter.com/saschaklatt_dev",
         target: "_blank",
@@ -76,9 +76,9 @@ export const Nomadlist: Resource = {
 
 export const Instagram: Resource = {
     title: "Instagram",
-    description: "Same as X - just started to document my dev journey here. Feel free to follow me :)",
+    description: "If you're interested in my personal life → I'm an open book ;)",
     link: {
-        href: "https://www.instagram.com/saschaklatt.dev/",
+        href: "https://www.instagram.com/klattmansash/",
         target: "_blank",
         rel: "noopener noreferrer nofollow",
     },
@@ -88,10 +88,10 @@ export const Instagram: Resource = {
 export const allResources = [
     Cv,
     Email,
-    GitHub,
+    LinkedIn,
+    // GitHub,
     // StackOverflow,
-    // X,
+    X,
     // Nomadlist,
-    // Instagram,
-    LinkedIn
+    Instagram,
 ];

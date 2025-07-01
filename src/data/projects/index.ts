@@ -8,6 +8,7 @@ import {KlattEis} from "./klatt-eis";
 import {PolitischBilden} from "./politischbilden";
 import {RIO} from "./rio";
 import {SaschaKlatt} from "./saschaklatt";
+import { Pitchfox } from "./pitchfox";
 
 export {Appocados};
 export {BmbfClientII};
@@ -18,18 +19,19 @@ export {Jobvalley};
 export {KlattEis};
 export {PolitischBilden};
 export {RIO};
-export {SaschaKlatt};
+// export {SaschaKlatt};
 
 // prettier-ignore
 export const allProjects = [
+    Pitchfox,
     Jobvalley,
     Appocados,
     BettercodeBID,
-    SaschaKlatt,
+    // SaschaKlatt,
     FluegeDe,
     PolitischBilden,
     BmbfClientII,
     RIO,
-    KlattEis,
+    // KlattEis,
     Gridl,
 ];

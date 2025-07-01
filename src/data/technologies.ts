@@ -164,3 +164,28 @@ export const Keycloak: Technology = {
     id: "keycloak",
     name: "Keycloak",
 };
+
+export const AuthJS: Technology = {
+    id: "authjs",
+    name: "Auth.js",
+};
+
+export const Stripe: Technology = {
+    id: "stripe",
+    name: "Stripe",
+};
+
+export const PostHog: Technology = {
+    id: "posthog",
+    name: "PostHog",
+};
+
+export const OpenAI: Technology = {
+    id: "openai",
+    name: "OpenAI",
+};
+
+export const Shadcn: Technology = {
+    id: "shadcn",
+    name: "Shadcn",
+};

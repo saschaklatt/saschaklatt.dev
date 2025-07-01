@@ -39,3 +39,8 @@ export const AffinityDesigner: Tool = {
     id: "affinity-designer",
     name: "Affinity Designer",
 };
+
+export const Whimsical: Tool = {
+    id: "whimsical",
+    name: "Whimsical",
+};
