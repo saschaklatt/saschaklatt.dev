@@ -11,7 +11,7 @@
         "dev": "pnpm build:app-meta && astro dev",
         "build": "pnpm build:app-meta && astro build",
         "build:noindex": "pnpm build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
-        "build:app-meta": "node -p \"'export const version = ' + JSON.stringify(require('./package.json').version) + ';'\" > src/data/app-meta.ts",
+        "build:app-meta": "node -p \"'export const version = ' + JSON.stringify(require('./package.json').version) + ';'\" > src/app-meta.ts",
         "lint": "pnpm lint:astro && pnpm lint:prettier",
         "lint:astro": "astro check",
         "lint:prettier": "prettier --check .",

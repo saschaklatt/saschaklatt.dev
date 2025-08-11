@@ -21,4 +21,4 @@ pnpm-debug.log*
 .DS_Store
 
 # project-specific
-src/data/app-meta.ts
+src/app-meta.ts
