@@ -1,6 +1,6 @@
 ---
 id: martin-wilmer
-priority: 5
+order: 5
 referrer: Martin Wilmer
 referrerRole: Managing Director
 referrerCompany: robole - Kabisch & Wilmer GbR

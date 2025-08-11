@@ -3,10 +3,12 @@ id: bettercodelabs-bid
 title: bettercode BID
 subline: UX/UI design and front-end development for a bidding platform
 client: bettercodeLABS L.L.C-FC
+clientLogo: /img/brand-logos/bettercodelabs.svg
 contractType: freelance
 dateStart: 2023-10-01
 dateEnd: 2023-12-31
 industry: Food
+order: 6
 role: front-end developer and UX/UI designer
 tags:
     - freelance

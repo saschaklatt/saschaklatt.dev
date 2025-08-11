@@ -1,6 +1,6 @@
 ---
 id: thomas-roth
-priority: 10
+order: 0
 referrer: Thomas Roth
 referrerRole: Head Of Development
 referrerCompany: MAHENA - marketing.services.kommunikation

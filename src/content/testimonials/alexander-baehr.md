@@ -1,6 +1,6 @@
 ---
 id: alexander-baehr
-priority: 8
+order: 2
 referrer: Alexander Baehr
 referrerRole: Team Lead Front-end
 referrerCompany: Invia Flights Germany GmbH

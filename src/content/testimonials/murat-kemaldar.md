@@ -1,6 +1,6 @@
 ---
 id: murat-kemaldar
-priority: 7
+order: 3
 referrer: Murat Kemaldar
 referrerRole: Front-end Developer
 referrerCompany: Freelancer

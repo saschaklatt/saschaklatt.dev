@@ -1,6 +1,6 @@
 ---
 id: felix-wolf
-priority: 9
+order: 1
 referrer: Felix Wolf
 referrerRole: Online Marketing Manager
 referrerCompany: Studitemps GmbH

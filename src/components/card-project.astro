@@ -1,12 +1,12 @@
 ---
-import {Image} from "astro:assets";
-import type {Project} from "../data/typedefs";
+import type {CollectionEntry} from "astro:content";
+
 import IconArrowDown from "./icon-arrow-down.astro";
 import {getBreakpoints} from "../helpers/tailwind-helpers";
 import {numToPx} from "../helpers/converter-helpers";
 
 interface Props {
-    project: Project;
+    project: CollectionEntry<"projects">;
 }
 
 interface ListItem {
@@ -27,16 +27,16 @@ function formatDate(date: Date): string {
     return `${months[m]} ${y}`;
 }
 
-if (project.website) {
+if (project.data.website) {
     listItems.push({
         term: "Website",
-        text: project.website.label,
-        href: project.website.href,
+        text: project.data.website.label,
+        href: project.data.website.href,
     });
 }
-if (project.dateEnd) {
-    const from = formatDate(project.dateStart);
-    const to = formatDate(project.dateEnd);
+if (project.data.dateEnd) {
+    const from = formatDate(project.data.dateStart);
+    const to = formatDate(project.data.dateEnd);
     listItems.push({
         term: "When",
         text: from === to ? `in ${from}` : `${from} - ${to}`,
@@ -44,54 +44,54 @@ if (project.dateEnd) {
 } else {
     listItems.push({
         term: "From / to",
-        text: `since ${formatDate(project.dateStart)}`,
+        text: `since ${formatDate(project.data.dateStart)}`,
     });
 }
-if (project.technologies.length > 0) {
+if (project.data.technologies.length > 0) {
     listItems.push({
         term: "Tech-stack",
-        text: project.technologies.map((tech) => tech.name).join(", "),
+        text: project.data.technologies.join(", "),
     });
 }
-if (project.tools.length > 0) {
+if (project.data.tools && project.data.tools.length > 0) {
     listItems.push({
         term: "Tools",
-        text: project.tools.map((tool) => tool.name).join(", "),
+        text: project.data.tools.join(", "),
     });
 }
-if (project.employer) {
+if (project.data.employer) {
     listItems.push({
         term: "Employer",
-        text: project.employer.name,
+        text: project.data.employer,
     });
 }
-if (project.client) {
+if (project.data.client) {
     listItems.push({
         term: "Client",
-        text: project.client.name,
+        text: project.data.client,
     });
 }
-if (project.partners.length > 0) {
+if (project.data.partners && project.data.partners.length > 0) {
     listItems.push({
         term: "in cooperation with",
-        text: `${project.partners.map((partner) => partner.name).join("\n")}`,
+        text: project.data.partners.join("\n"),
     });
 }
-if (project.industry) {
+if (project.data.industry) {
     listItems.push({
         term: "Industry",
-        text: project.industry,
+        text: project.data.industry,
     });
 }
-if (project.teamSize) {
+if (project.data.teamSize) {
     listItems.push({
         term: "Team size",
-        text: project.teamSize === 1 ? "Solo" : `${project.teamSize.toFixed(0)} team members`,
+        text: project.data.teamSize === 1 ? "Solo" : `${project.data.teamSize} team members`,
     });
 }
 ---
 
-<card-project data-project-title={project.title}>
+<card-project data-project-title={project.data.title}>
     <details
         class:list={[
             "group",
@@ -125,16 +125,16 @@ if (project.teamSize) {
             >
                 <picture>
                     <source
-                        srcset={`${project.image.src}, ${project.image2x.src} 2x`}
+                        srcset={`/img/projects/${project.data.imageBaseName}.webp, /img/projects/${project.data.imageBaseName}@2x.webp 2x`}
                         media={`(max-width: ${numToPx(breakpoints.md)})`}
                     />
                     <source
-                        srcset={`${project.image.src}, ${project.image2x.src} 2x`}
+                        srcset={`/img/projects/${project.data.imageBaseName}@2x.webp, /img/projects/${project.data.imageBaseName}@4x.webp 2x`}
                         media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
                     />
                     <img
-                        src={project.image2x.src}
-                        alt={`Screenshot of the project ${project.title}`}
+                        src={`/img/projects/${project.data.imageBaseName}.webp`}
+                        alt={`Screenshot of the project ${project.data.title}`}
                         width="384"
                         height="216"
                         draggable="false"
@@ -161,10 +161,10 @@ if (project.teamSize) {
                 <h3
                     class="transition-fonts text-2xl md:text-3xl font-extrabold md:group-open:text-3xl opacity-75 group-open:opacity-100"
                 >
-                    {project.title}
+                    {project.data.title}
                 </h3>
                 <p class="font-light leading-tight opacity-70 md:text-lg group-open:text-md group-open:font-bold">
-                    {project.subline}
+                    {project.data.subline}
                 </p>
             </div>
             <ul
@@ -177,7 +177,11 @@ if (project.teamSize) {
                     "md:row-start-2 md:col-start-2 md:col-span-1",
                 ]}
             >
-                {project.tags.map((tag) => <li class="hashtag text-xs md:text-sm opacity-50 group-open:opacity-70">{tag}</li>)}
+                {
+                    project.data.tags.map((tag) => (
+                        <li class="hashtag text-xs md:text-sm opacity-50 group-open:opacity-70">{tag}</li>
+                    ))
+                }
             </ul>
             <div
                 class:list={[
@@ -195,20 +199,19 @@ if (project.teamSize) {
         <div class="flex gap-x-0 gap-y-8 px-0 group-open:px-4 md:group-open:px-0 pb-4 lg:gap-x-8 md:py-0 transition-spacing">
             <div class="lg:group-open:min-w-[24rem] items-end hidden lg:flex">
                 {
-                    project.client?.logo && (
-                        <Image
-                            src={project.client.logo}
-                            alt={`Logo of the company ${project.client?.name}`}
+                    project.data.clientLogo && (
+                        <img
+                            src={project.data.clientLogo}
+                            alt={`Logo of the company ${project.data.client}`}
                             class="w-auto h-10 max-h-10"
                             draggable="false"
-                            format="svg"
                             loading="lazy"
                         />
                     )
                 }
             </div>
             <div>
-                <p class="my-8">{project.description}</p>
+                <p class="my-8">{project.body}</p>
                 <dl class="grid grid-cols-[auto,1fr] items-start gap-x-8 md:gap-y-2">
                     {
                         listItems.map(({term, text, href}) => (

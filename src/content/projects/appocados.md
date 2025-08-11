@@ -6,9 +6,11 @@ website:
     href: https://www.appocados.com
     label: www.appocados.com
 client: appocados
+clientLogo: /img/brand-logos/appocados.svg
 contractType: startup
 dateStart: 2023-02-01
 industry: Food
+order: 7
 role: Systems architect, full-stack developer, and UX/UI
 tags: 
     - startup

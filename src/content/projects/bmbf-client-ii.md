@@ -7,9 +7,11 @@ dateEnd: 2019/06/30
 contractType: freelance
 role: Drupal developer
 client: German Federal Ministry of Education and Research
+clientLogo: /img/brand-logos/bmbf.svg
+order: 3
 partners:
     - robole Kabisch & Wilmer GbR
-    - KnickDesign
+    - Knick Design - Müller, Schopf GbR
 tags: 
     - freelance
     - back-end

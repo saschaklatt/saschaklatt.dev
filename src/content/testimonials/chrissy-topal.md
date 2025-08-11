@@ -1,6 +1,6 @@
 ---
 id: chrissy-topal
-priority: 6
+order: 4
 referrer: Chrissy Topal
 referrerRole: Front-end Developer
 referrerCompany: Freelancer
