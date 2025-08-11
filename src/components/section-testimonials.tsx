@@ -1,33 +1,33 @@
-import type {Testimonial} from "../data/typedefs";
-import {useMemo, useState} from "react";
-import {matomoTrackEvent} from "../services/matomo";
-import {getBreakpoints} from "../helpers/tailwind-helpers";
-import {numToPx} from "../helpers/converter-helpers";
+import type { CollectionEntry } from "astro:content";
+import {useState} from "react";
 import {useSwipeable} from "react-swipeable";
+
+import {numToPx} from "../helpers/converter-helpers";
+import {getBreakpoints} from "../helpers/tailwind-helpers";
+import {matomoTrackEvent} from "../services/matomo";
 
 interface SectionTestimonialProps {
     headline: string;
-    testimonials: Testimonial[];
+    testimonials: CollectionEntry<"testimonials">[];
     name: string;
 }
 
 const breakpoints = getBreakpoints();
 
 const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialProps) => {
-    const slides = useMemo(() => testimonials.map((testimonial, idx) => ({...testimonial, id: `slide-${idx}`})), []);
     const [selectedIdx, setSelectedIdx] = useState(0);
-    const selectedSlide = slides[selectedIdx];
+    const selectedSlide = testimonials[selectedIdx];
 
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => {
-            const nextIdx = selectedIdx < slides.length - 1 ? selectedIdx + 1 : 0;
-            const referrerFullName = getReferrerFullName(slides[nextIdx].referrer);
+            const nextIdx = selectedIdx < testimonials.length - 1 ? selectedIdx + 1 : 0;
+            const referrerFullName = testimonials[nextIdx].data.referrer;
             setSelectedIdx(nextIdx);
             matomoTrackEvent({action: "swipe-left", category: "testimonial", name: referrerFullName, value: nextIdx});
         },
         onSwipedRight: () => {
-            const prevIdx = selectedIdx > 0 ? selectedIdx - 1 : slides.length - 1;
-            const referrerFullName = getReferrerFullName(slides[prevIdx].referrer);
+            const prevIdx = selectedIdx > 0 ? selectedIdx - 1 : testimonials.length - 1;
+            const referrerFullName = testimonials[prevIdx].data.referrer;
             setSelectedIdx(prevIdx);
             matomoTrackEvent({action: "swipe-right", category: "testimonial", name: referrerFullName, value: prevIdx});
         },
@@ -35,9 +35,8 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
 
     const handleRadioChange = (newIndex: number) => {
         setSelectedIdx(newIndex);
-        const newSlide = slides[newIndex];
-        const referrerFullName = `${newSlide.referrer.firstName}  ${newSlide.referrer.lastName}`;
-        matomoTrackEvent({action: "select", category: "testimonial", name: referrerFullName, value: newIndex});
+        const name = testimonials[newIndex].data.referrer;
+        matomoTrackEvent({action: "select", category: "testimonial", name, value: newIndex});
     };
 
     return (
@@ -49,7 +48,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
 
                 {/*  Avatars */}
                 <ul className="inline-flex flex-wrap gap-4 md:gap-6 items-center justify-center md:mb-10">
-                    {slides.map((slide, idx) => (
+                    {testimonials.map((slide, idx) => (
                         <li
                             key={slide.id}
                             className={[
@@ -78,16 +77,16 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                             >
                                 <picture>
                                     <source
-                                        srcSet={`${slide.referrer.image60.src}, ${slide.referrer.image60_2x.src} 2x`}
+                                        srcSet={`/img/avatars/${slide.data.referrerImgBaseName}_60.webp, /img/avatars/${slide.data.referrerImgBaseName}_60@2x.webp 2x`}
                                         media={`(max-width: ${numToPx(breakpoints.md)})`}
                                     />
                                     <source
-                                        srcSet={`${slide.referrer.image96.src}, ${slide.referrer.image96_2x.src} 2x`}
+                                        srcSet={`/img/avatars/${slide.data.referrerImgBaseName}_96.webp, /img/avatars/${slide.data.referrerImgBaseName}_96@2x.webp 2x`}
                                         media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
                                     />
                                     <img
-                                        src={slide.referrer.image96.src}
-                                        alt={`${slide.referrer.firstName} ${slide.referrer.lastName}`}
+                                        src={`/img/avatars/${slide.data.referrerImgBaseName}_96.webp`}
+                                        alt={`Profile picture of ${slide.data.referrer}`}
                                         className="w-10 h-10 md:w-16 md:h-16"
                                         width="96"
                                         height="96"
@@ -111,7 +110,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
 
                     {/* Quotes --> */}
                     <div className="pt-4 md:pt-10 pb-4 md:py-20 grid grid-cols-1 grid-rows-1" {...swipeHandlers}>
-                        {slides.map((slide) => (
+                        {testimonials.map((slide) => (
                             <q
                                 key={slide.id}
                                 aria-hidden={slide !== selectedSlide}
@@ -125,14 +124,14 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                                         : "opacity-0 scale-75 invisible",
                                 ].join(" ")}
                             >
-                                {slide.text}
+                                {slide.body}
                             </q>
                         ))}
                     </div>
 
                     {/* Author */}
                     <div className="grid grid-cols-1 grid-rows-1 self-end mb-14 text-right">
-                        {slides.map((slide) => (
+                        {testimonials.map((slide) => (
                             <address
                                 key={slide.id}
                                 rel="author"
@@ -144,9 +143,9 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                                         : "opacity-0 translate-x-8 scale-90 invisible delay-50",
                                 ].join(" ")}
                             >
-                                <h3 className="text-sm md:text-xl font-semibold">{`${slide.referrer.firstName} ${slide.referrer.lastName}`}</h3>
-                                <p className="text-xs md:text-base font-light uppercase opacity-75">{`${slide.referrerRole}`}</p>
-                                <p className="text-xs md:text-base font-light opacity-75">{slide.referrerCompany}</p>
+                                <h3 className="text-sm md:text-xl font-semibold">{`${slide.data.referrer}`}</h3>
+                                <p className="text-xs md:text-base font-light uppercase opacity-75">{`${slide.data.referrerRole}`}</p>
+                                <p className="text-xs md:text-base font-light opacity-75">{slide.data.referrerCompany}</p>
                             </address>
                         ))}
                     </div>
@@ -154,10 +153,6 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
             </div>
         </section>
     );
-};
-
-const getReferrerFullName = (referrer: {firstName: string; lastName: string}) => {
-    return `${referrer.firstName}  ${referrer.lastName}`;
 };
 
 export default SectionTestimonial;

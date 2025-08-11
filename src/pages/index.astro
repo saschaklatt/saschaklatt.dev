@@ -1,4 +1,6 @@
 ---
+import {getCollection} from "astro:content";
+
 import Layout from "../layouts/main.astro";
 import SectionStage from "../components/section-stage.astro";
 import SectionCta from "../components/section-cta.astro";
@@ -8,7 +10,6 @@ import {Email, allResources} from "../data/resources";
 import CardResource from "../components/card-resource.astro";
 import CardProject from "../components/card-project.astro";
 import SectionTestimonials from "../components/section-testimonials";
-import {allTestimonials} from "../data/testimonials";
 import SectionStageContentIntro from "../components/section-stage-content-intro.astro";
 import ClickTracker from "../components/click-tracker.astro";
 import SectionImageText from "../components/section-image-text.astro";
@@ -27,6 +28,13 @@ import illustrationRocketCloud4x from "../assets/images/illustration-rocket-clou
 import illustrationMongodb from "../assets/images/illustration-mongodb.webp";
 import illustrationMongodb2x from "../assets/images/illustration-mongodb@2x.webp";
 import illustrationMongodb4x from "../assets/images/illustration-mongodb@4x.webp";
+import type {CollectionEntry} from "astro:content";
+
+const sortByPriority = (testimonials: CollectionEntry<"testimonials">[]) => {
+    return testimonials.sort((a, b) => b.data.priority - a.data.priority);
+};
+
+const allTestimonials = await getCollection("testimonials").then(sortByPriority);
 ---
 
 <Layout
