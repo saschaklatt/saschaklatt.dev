@@ -18,10 +18,6 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
     const [selectedIdx, setSelectedIdx] = useState(0);
     const selectedSlide = slides[selectedIdx];
 
-    const getReferrerFullName = (referrer: {firstName: string; lastName: string}) => {
-        return `${referrer.firstName}  ${referrer.lastName}`;
-    };
-
     const swipeHandlers = useSwipeable({
         onSwipedLeft: () => {
             const nextIdx = selectedIdx < slides.length - 1 ? selectedIdx + 1 : 0;
@@ -158,6 +154,10 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
             </div>
         </section>
     );
+};
+
+const getReferrerFullName = (referrer: {firstName: string; lastName: string}) => {
+    return `${referrer.firstName}  ${referrer.lastName}`;
 };
 
 export default SectionTestimonial;
