@@ -5,12 +5,14 @@ import imageIphone4x from "../assets/images/iphone-sascha@4x.webp";
 import {getBreakpoints} from "../helpers/tailwind-helpers";
 import Editor from "./editor";
 import {numToPx} from "../helpers/converter-helpers";
-import {Cv} from "../content/cv";
 import ClickTracker from "./click-tracker.astro";
 import Icon from "./icons/icon.astro";
-import {Me} from "../content/me";
+import Cv from "../content/cv.json" assert {type: "json"};
+import Me from "../content/me.json" assert {type: "json"};
 
 const breakpoints = getBreakpoints();
+const currentYear = new Date().getFullYear();
+const yearsOfExperience = currentYear - Me.careerStartedIn;
 ---
 
 <div
@@ -35,8 +37,8 @@ const breakpoints = getBreakpoints();
                         "🙋🏻‍♂️ Hi, I'm Sascha",
                         "",
                         "💻 Freelance web developer",
-                        "🗿 14 years of work experience",
-                        "🎯 Focus on JS/TS and Node.js",
+                        `🗿 ${yearsOfExperience} years of work experience`,
+                        "🎯 Focus on TypeScript and Node.js",
                         "🧩 Headless CMS integrator",
                         "👨🏻‍🎨 Eye for aesthetics",
                         "",
@@ -46,15 +48,15 @@ const breakpoints = getBreakpoints();
                 {
                     tab: "Tech-stack",
                     lines: [
-                        "💻 I'm experienced with:",
+                        "💻 I'm focusing on:",
                         "",
-                        "- JavaScript / TypeScript",
-                        "- React / Next.js / Astro",
+                        "- TypeScript",
+                        "- React, Next.js, Astro",
                         "- Node.js",
-                        "- Contentful / Sanity",
-                        "- MongoDB / MySQL",
-                        "- Docker / Vercel / Netlify",
-                        "- Figma / Whimsical",
+                        "- Contentful, Sanity",
+                        "- MongoDB, PostgreSQL",
+                        "- Docker, Vercel, Netlify",
+                        "- Figma, Whimsical",
                     ],
                 },
             ]}
@@ -65,7 +67,7 @@ const breakpoints = getBreakpoints();
                 <a href={`mailto:${Me.email}`} class="btn-accent w-full md:w-auto">Contact me!</a>
             </ClickTracker>
             <ClickTracker trackingEvent={{action: "click", category: "cta_cv", name: "cta_cv_stage-main"}}>
-                <a href={Cv.link.href} class="btn-neutral w-full md:w-auto">Download CV</a>
+                <a href={Cv.href} class="btn-neutral w-full md:w-auto">Download CV</a>
             </ClickTracker>
         </div>
     </div>

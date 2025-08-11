@@ -26,7 +26,8 @@ import illustrationRocketCloud4x from "../assets/images/illustration-rocket-clou
 import illustrationMongodb from "../assets/images/illustration-mongodb.webp";
 import illustrationMongodb2x from "../assets/images/illustration-mongodb@2x.webp";
 import illustrationMongodb4x from "../assets/images/illustration-mongodb@4x.webp";
-import {Me} from "../content/me";
+import Me from "../content/me.json" assert {type: "json"};
+import Cv from "../content/cv.json" assert {type: "json"};
 
 const sortByOrder =
     (direction: "asc" | "desc") =>
@@ -40,8 +41,8 @@ const allProjects = await getCollection("projects").then(sortByOrder("desc"));
 
 <Layout
     slug="/"
-    title="Sascha Klatt | full-stack developer"
-    description="Freelance full-stack developer building web apps and enterprise websites preferably with React, Next.js and Node.js."
+    title={`${Me.name} | full-stack developer`}
+    description={`Freelance full-stack developer building web apps and enterprise websites preferably with React, Next.js and Node.js.`}
 >
     <SectionStage slot="stage">
         <SectionStageContentIntro />
@@ -134,7 +135,7 @@ const allProjects = await getCollection("projects").then(sortByOrder("desc"));
                 title="CV"
                 description="Download my up-to-date CV."
                 link={{
-                    href: "/pdfs/CV-Sascha-Klatt.pdf?update=05092023",
+                    href: Cv.href,
                     target: "_blank",
                 }}
                 iconId="document"
@@ -143,7 +144,7 @@ const allProjects = await getCollection("projects").then(sortByOrder("desc"));
                 title="Email"
                 description="Let's get in touch!"
                 link={{
-                    href: "mailto:hello@saschaklatt.dev",
+                    href: `mailto:${Me.email}`,
                 }}
                 iconId="envelope"
             />
@@ -151,7 +152,7 @@ const allProjects = await getCollection("projects").then(sortByOrder("desc"));
                 title="LinkedIn"
                 description="I share insights about my work here every now and then."
                 link={{
-                    href: "https://www.linkedin.com/in/sascha-klatt/",
+                    href: Me.socials.linkedin,
                     target: "_blank",
                 }}
                 iconId="linkedin"
@@ -160,7 +161,7 @@ const allProjects = await getCollection("projects").then(sortByOrder("desc"));
                 title="X"
                 description="I share insights about my work here every now and then."
                 link={{
-                    href: "https://www.linkedin.com/in/sascha-klatt/",
+                    href: Me.socials.x,
                     target: "_blank",
                 }}
                 iconId="x"
@@ -169,7 +170,7 @@ const allProjects = await getCollection("projects").then(sortByOrder("desc"));
                 title="Instagram"
                 description="If you're interested in my personal life → I'm an open book ;)"
                 link={{
-                    href: "https://www.instagram.com/klattmansash/",
+                    href: Me.socials.instagram,
                     target: "_blank",
                 }}
                 iconId="instagram"

@@ -1,5 +1,5 @@
 ---
-id: fluege-de
+id: fluege
 title: fluege.de
 subline: I had the privilege of collaborating with the front-end team at fluege.de, a leading German air travel comparison portal.
 website:
@@ -21,7 +21,7 @@ technologies:
     - Lit
     - Polymer
     - Redux
-    - ReduxSaga
+    - Redux Saga
 tools: 
     - GitLab
     - JIRA

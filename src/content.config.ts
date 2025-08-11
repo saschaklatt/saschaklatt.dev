@@ -11,10 +11,9 @@ const projects = defineCollection({
         dateEnd: z.coerce.date().optional(),
         employer: z.string().optional(),
         id: z.string(),
-        imageBaseName: z.string(),
         industry: z.string(), // TODO: enum
-        partners: z.array(z.string()).optional(),
         order: z.number().int().optional(),
+        partners: z.array(z.string()).optional(),
         role: z.string().optional(),
         subline: z.string(),
         tags: z.array(z.string()),

@@ -11,7 +11,7 @@ contractType: freelance
 industry: Recruitment
 teamSize: 5
 role: Lead developer, full-stack
-client: Studitemps
+client: Studitemps GmbH
 clientLogo: /img/brand-logos/jobvalley.svg
 order: 7
 tags:
@@ -21,10 +21,10 @@ tags:
     - cms
 technologies:
     - React
-    - NextJS
+    - Next.js
     - Tailwind
     - MongoDB
-    - NodeJS
+    - Node.js
     - Contentful
     - Storybook
     - Vercel

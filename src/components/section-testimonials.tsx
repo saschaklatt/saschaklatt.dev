@@ -46,7 +46,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                     {headline}
                 </h2>
 
-                {/*  Avatars */}
+                {/* Avatars */}
                 <ul className="inline-flex flex-wrap gap-4 md:gap-6 items-center justify-center md:mb-10">
                     {testimonials.map((slide, idx) => (
                         <li
@@ -108,7 +108,7 @@ const SectionTestimonial = ({headline, testimonials, name}: SectionTestimonialPr
                         className="absolute hidden md:block md:-top-8 left-0 w-10 h-10 md:w-20 md:h-20"
                     />
 
-                    {/* Quotes --> */}
+                    {/* Quotes */}
                     <div className="pt-4 md:pt-10 pb-4 md:py-20 grid grid-cols-1 grid-rows-1" {...swipeHandlers}>
                         {testimonials.map((slide) => (
                             <q

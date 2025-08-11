@@ -125,15 +125,15 @@ if (project.data.teamSize) {
             >
                 <picture>
                     <source
-                        srcset={`/img/projects/${project.data.imageBaseName}.webp, /img/projects/${project.data.imageBaseName}@2x.webp 2x`}
+                        srcset={`/img/projects/${project.data.id}.webp, /img/projects/${project.data.id}@2x.webp 2x`}
                         media={`(max-width: ${numToPx(breakpoints.md)})`}
                     />
                     <source
-                        srcset={`/img/projects/${project.data.imageBaseName}@2x.webp, /img/projects/${project.data.imageBaseName}@4x.webp 2x`}
+                        srcset={`/img/projects/${project.data.id}@2x.webp, /img/projects/${project.data.id}@4x.webp 2x`}
                         media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
                     />
                     <img
-                        src={`/img/projects/${project.data.imageBaseName}.webp`}
+                        src={`/img/projects/${project.data.id}.webp`}
                         alt={`Screenshot of the project ${project.data.title}`}
                         width="384"
                         height="216"

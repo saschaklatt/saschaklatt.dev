@@ -1,5 +1,5 @@
 ---
-id: politisch-bilden
+id: politischbilden
 title: politischbilden.de
 subline: Front-end development and REST API design for an online portal to share educational resources.
 dateStart: 2019-07-01
@@ -19,7 +19,7 @@ technologies:
     - React
     - Gatsby
     - Redux
-    - NodeJS
+    - Node.js
     - Express
     - REST
     - GraphQL

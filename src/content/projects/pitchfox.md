@@ -18,14 +18,13 @@ tags:
     - ai
 technologies:
     - TypeScript
-    - NextJS
-    - Shadcn
+    - Next.js
+    - shadcn/ui
     - MongoDB
-    - NodeJS
+    - Node.js
     - OpenAI
-    - AuthJS
+    - Auth.js
     - Vercel
-    - Stripe
     - PostHog
 tools: 
     - GitLab

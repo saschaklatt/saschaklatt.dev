@@ -22,7 +22,7 @@ technologies:
     - Svelte
     - Astro
     - MongoDB
-    - NodeJS
+    - Node.js
     - Apollo
     - GraphQL
     - Docker

@@ -18,9 +18,9 @@ order: 1
 technologies:
     - React
     - Redux
-    - ReduxSaga
+    - Redux Saga
     - Bootstrap
-    - Docker],
+    - Docker
 tools:
     - GitLab
     - JIRA
