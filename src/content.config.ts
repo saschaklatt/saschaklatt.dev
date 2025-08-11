@@ -46,7 +46,22 @@ const testimonials = defineCollection({
     })),
 });
 
+const services = defineCollection({
+    loader: glob({ base: "./src/content/services", pattern: "**/*.md" }),
+    schema: z.object({
+        id: z.string(),
+        imageBaseName: z.string(),
+        imageAlt: z.string(),
+        order: z.number().int().optional(),
+        title: z.string(),
+    }).transform((data) => ({
+        ...data,
+        order: data.order ?? 0,
+    })),
+});
+
 export const collections = {
     projects,
     testimonials,
+    services,
 };

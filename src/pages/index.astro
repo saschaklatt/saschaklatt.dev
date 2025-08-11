@@ -1,7 +1,6 @@
 ---
 import {getCollection} from "astro:content";
 
-import Layout from "../layouts/main.astro";
 import SectionStage from "../components/section-stage.astro";
 import SectionCta from "../components/section-cta.astro";
 import SectionHeadlined from "../components/section-headlined.astro";
@@ -11,23 +10,9 @@ import SectionTestimonials from "../components/section-testimonials";
 import SectionStageContentIntro from "../components/section-stage-content-intro.astro";
 import ClickTracker from "../components/click-tracker.astro";
 import SectionImageText from "../components/section-image-text.astro";
-import illustrationUiComponentsPhone from "../assets/images/illustration-ui-components-phone.webp";
-import illustrationUiComponentsPhone2x from "../assets/images/illustration-ui-components-phone@2x.webp";
-import illustrationUiComponentsPhone4x from "../assets/images/illustration-ui-components-phone@4x.webp";
-import illustrationHeadlessCms from "../assets/images/illustration-headless-cms.webp";
-import illustrationHeadlessCms2x from "../assets/images/illustration-headless-cms@2x.webp";
-import illustrationHeadlessCms4x from "../assets/images/illustration-headless-cms@4x.webp";
-import illustrationApiCloudScreen from "../assets/images/illustration-api-cloud-screen.webp";
-import illustrationApiCloudScreen2x from "../assets/images/illustration-api-cloud-screen@2x.webp";
-import illustrationApiCloudScreen4x from "../assets/images/illustration-api-cloud-screen@4x.webp";
-import illustrationRocketCloud from "../assets/images/illustration-rocket-cloud.webp";
-import illustrationRocketCloud2x from "../assets/images/illustration-rocket-cloud@2x.webp";
-import illustrationRocketCloud4x from "../assets/images/illustration-rocket-cloud@4x.webp";
-import illustrationMongodb from "../assets/images/illustration-mongodb.webp";
-import illustrationMongodb2x from "../assets/images/illustration-mongodb@2x.webp";
-import illustrationMongodb4x from "../assets/images/illustration-mongodb@4x.webp";
 import Me from "../content/me.json" assert {type: "json"};
 import Cv from "../content/cv.json" assert {type: "json"};
+import Layout from "../layouts/main.astro";
 
 const sortByOrder =
     (direction: "asc" | "desc") =>
@@ -37,6 +22,7 @@ const sortByOrder =
 
 const allTestimonials = await getCollection("testimonials").then(sortByOrder("asc"));
 const allProjects = await getCollection("projects").then(sortByOrder("desc"));
+const allServices = await getCollection("services").then(sortByOrder("asc"));
 ---
 
 <Layout
@@ -53,48 +39,7 @@ const allProjects = await getCollection("projects").then(sortByOrder("desc"));
         class="mt-20 my-48 md:mt-48 md:mb-64"
         headline="my services"
         subline="Here's what I can do for you 🧑🏻‍💻"
-        items={[
-            {
-                image: illustrationUiComponentsPhone,
-                image2x: illustrationUiComponentsPhone2x,
-                image4x: illustrationUiComponentsPhone4x,
-                imageAlt: "Illustration of a mobile phone with UI components floating on top.",
-                title: "Front-end Web Development",
-                text: `Want to build a composable website, a data-heavy web app, or something in between? With years of front-end development expertise, I can create engaging, robust user experiences across all modern browsers and devices. I create component libraries, ensure smooth animations, adherence to accessibility guidelines, and provide load time improvements, on-site SEO, automated testing, multi-language support, third-party API integrations, user tracking, A/B testing, and Core Web Vitals optimization.`,
-            },
-            {
-                image: illustrationHeadlessCms,
-                image2x: illustrationHeadlessCms2x,
-                image4x: illustrationHeadlessCms4x,
-                imageAlt: "Illustration of all content of the headless CMS distributed to different devices.",
-                title: "Headless CMS Integration",
-                text: "Is your content management chaotic and time-consuming? With cutting-edge headless CMS solutions like Contentful or Sanity, I can help set up a content hub to streamline your content across all platforms, including websites, mobile apps, e-commerce platforms, and games. From setup to seamlessly connecting your headless CMS to your website or application, I offer expertise in content modeling, data migrations, and customized content editing experiences, providing solutions tailored to your unique business needs.",
-            },
-            {
-                image: illustrationMongodb,
-                image2x: illustrationMongodb2x,
-                image4x: illustrationMongodb4x,
-                imageAlt: "Illustration of a MongoDB database with documents and a lock.",
-                title: "MongoDB Modeling & Integration",
-                text: "With my expertise in MongoDB, I can help you design and implement scalable, high-performance databases tailored to your needs. Whether you're building a data-heavy application, managing complex data structures, or optimizing existing databases, I provide solutions that ensure efficient data storage, retrieval, and management. Let's transform your data management strategy and elevate your application's performance.",
-            },
-            {
-                image: illustrationApiCloudScreen,
-                image2x: illustrationApiCloudScreen2x,
-                image4x: illustrationApiCloudScreen4x,
-                imageAlt: "Illustration of a cloud and a screen connected by wires.",
-                title: "API Design & Development",
-                text: "Looking to power your web application with a robust and scalable API? With my expertise in modern back-end technologies, I can help you build powerful and flexible solutions tailored to your needs. Whether you're looking to develop RESTful APIs for seamless data exchange or harness the flexibility and efficiency of GraphQL for your application, I've got you covered. Let's work together to craft an API that powers your applications with speed and reliability.",
-            },
-            {
-                image: illustrationRocketCloud,
-                image2x: illustrationRocketCloud2x,
-                image4x: illustrationRocketCloud4x,
-                imageAlt: "Illustration of a rocket deploying content to a cloud.",
-                title: "Cloud Hosting, CI/CD & Docker",
-                text: "With expertise in modern cloud hosting platforms like Vercel and Netlify, as well as comprehensive CI/CD pipelines, I help streamline deployment processes for maximum efficiency. I also bring solid experience with Docker, enabling consistent and portable development and production environments, simplifying builds, and improving scalability. Leveraging technologies such as incremental static regeneration (ISR) and global CDNs, I ensure fast, reliable deployments — even for large websites with thousands of pages. The result: blazing-fast load times, robust handling of high traffic, and an exceptional user experience.",
-            },
-        ]}
+        services={allServices}
     />
     <SectionHeadlined
         slot="main"

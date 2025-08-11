@@ -2,23 +2,17 @@
 import type {ImageMetadata} from "astro";
 import {getBreakpoints} from "../helpers/tailwind-helpers";
 import {numToPx} from "../helpers/converter-helpers";
+import type {CollectionEntry} from "astro:content";
 
 interface Props {
     class?: string;
     headline: string;
     id?: string;
     subline?: string;
-    items: {
-        title: string;
-        text: string;
-        image: ImageMetadata;
-        image2x: ImageMetadata;
-        image4x: ImageMetadata;
-        imageAlt: string;
-    }[];
+    services: CollectionEntry<"services">[];
 }
 
-const {class: className, headline, subline, items, id} = Astro.props;
+const {class: className, headline, subline, services, id} = Astro.props;
 const breakpoints = getBreakpoints();
 ---
 
@@ -30,7 +24,7 @@ const breakpoints = getBreakpoints();
         </header>
         <ul class="flex flex-col gap-y-36 md:gap-y-48">
             {
-                items.map((item, idx) => (
+                services.map((service, idx) => (
                     <li
                         class:list={[
                             "flex items-center relative flex-col gap-y-8",
@@ -41,24 +35,22 @@ const breakpoints = getBreakpoints();
                         ]}
                     >
                         <div class:list={["flex-1", idx % 2 ? "md:text-right" : "md:text-left"]}>
-                            <h3 class="text-xl md:text-3xl font-extrabold opacity-90">{item.title}</h3>
-                            <p class="opacity-75 font-light mt-4 md:mt-6 text-base md:text-lg">{item.text}</p>
+                            <h3 class="text-xl md:text-3xl font-extrabold opacity-90">{service.data.title}</h3>
+                            <p class="opacity-75 font-light mt-4 md:mt-6 text-base md:text-lg">{service.body}</p>
                         </div>
                         <div class:list={["flex-1 flex w-full", idx % 2 ? "justify-end" : "justify-start"]}>
                             <picture class="mx-auto flex w-full">
                                 <source
-                                    srcset={`${item.image.src}, ${item.image2x.src} 2x`}
+                                    srcset={`/img/illustrations/${service.data.imageBaseName}.webp, /img/illustrations/${service.data.imageBaseName}@2x.webp 2x`}
                                     media={`(max-width: ${numToPx(breakpoints.md)})`}
                                 />
                                 <source
-                                    srcset={`${item.image.src}, ${item.image4x.src} 2x`}
+                                    srcset={`/img/illustrations/${service.data.imageBaseName}.webp, /img/illustrations/${service.data.imageBaseName}@2x.webp 2x`}
                                     media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
                                 />
                                 <img
-                                    src={item.image.src}
-                                    alt={item.imageAlt}
-                                    width={item.image.width}
-                                    height={item.image.height}
+                                    src={`/img/illustrations/${service.data.imageBaseName}.webp`}
+                                    alt={service.data.imageAlt}
                                     loading="lazy"
                                     class="rounded-lg w-full"
                                 />

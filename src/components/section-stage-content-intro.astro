@@ -12,7 +12,7 @@ import Me from "../content/me.json" assert {type: "json"};
 
 const breakpoints = getBreakpoints();
 const currentYear = new Date().getFullYear();
-const yearsOfExperience = currentYear - Me.careerStartedIn;
+const yearsOfExperience = Math.max(0, currentYear - Me.careerStartedIn);
 ---
 
 <div
