@@ -7,7 +7,7 @@
         "clean": "pnpm clean:build && pnpm clean:dependencies",
         "clean:build": "rm -rf dist",
         "clean:dependencies": "rm -rf node_modules",
-        "start": "pnpm build:app-meta && astro dev",
+        "dev": "pnpm build:app-meta && astro dev",
         "build": "pnpm build:app-meta && astro build",
         "build:noindex": "pnpm build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
         "build:app-meta": "node -p \"'export const version = ' + JSON.stringify(require('./package.json').version) + ';'\" > src/data/app-meta.ts",
@@ -15,25 +15,25 @@
         "lint:astro": "astro check",
         "lint:prettier": "prettier --check .",
         "lint:prettier:fix": "prettier --check .",
-        "preview": "astro preview"
+        "start": "astro preview"
     },
     "dependencies": {
-        "@astrojs/check": "^0.7.0",
-        "@astrojs/react": "^3.5.0",
-        "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.10.2",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-swipeable": "^7.0.1",
+        "@astrojs/check": "^0.9.4",
+        "@astrojs/react": "^4.3.0",
+        "@astrojs/tailwind": "^6.0.2",
+        "astro": "^5.12.9",
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1",
+        "react-swipeable": "^7.0.2",
         "tailwindcss": "^3.4.4"
     },
     "devDependencies": {
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
-        "dotenv": "^16.4.5",
-        "prettier": "^3.3.2",
-        "prettier-plugin-astro": "^0.14.0",
-        "sharp": "^0.33.4",
-        "typescript": "^5.4.5"
+        "@types/react": "^19.1.9",
+        "@types/react-dom": "^19.1.7",
+        "dotenv": "^17.2.1",
+        "prettier": "^3.6.2",
+        "prettier-plugin-astro": "^0.14.1",
+        "sharp": "^0.34.3",
+        "typescript": "^5.9.2"
     }
 }
