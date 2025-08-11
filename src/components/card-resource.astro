@@ -1,8 +1,17 @@
 ---
-import type {Resource} from "../data/typedefs";
+import type {IconId} from "../typedefs";
 import Icon from "./icons/icon.astro";
 
-interface Props extends Resource {}
+interface Props {
+    title: string;
+    description: string;
+    link: {
+        href: string;
+        rel?: string;
+        target?: "_blank" | "_self";
+    };
+    iconId: IconId;
+}
 
 const {link, title, description, iconId} = Astro.props;
 ---

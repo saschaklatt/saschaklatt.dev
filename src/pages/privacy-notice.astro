@@ -2,8 +2,11 @@
 import ButtonHome from "../components/button-home.astro";
 import SectionStage from "../components/section-stage.astro";
 import {CheckboxMatomoUserOptOut} from "../components/checkbox-matomo-opt-out";
+import {Me} from "../content/me";
 import Layout from "../layouts/main.astro";
-import {SaschaKlatt} from "../data/companies";
+
+const {name, address} = Me;
+const {street, city, country, zipCode} = address;
 ---
 
 <Layout
@@ -45,7 +48,7 @@ import {SaschaKlatt} from "../data/companies";
                 </p>
                 <p class="paragraph">
                     {
-                        `b) The data controller for this website pursuant to Art. 4 (7) of the EU General Data Protection Regulation (GDPR) is ${SaschaKlatt.name}, ${SaschaKlatt.address?.street} ${SaschaKlatt.address?.streetNumber}, ${SaschaKlatt.address?.zipCode} ${SaschaKlatt.address?.city}. You can contact by sending an email or by writing to my postal address.`
+                        `b) The data controller for this website pursuant to Art. 4 (7) of the EU General Data Protection Regulation (GDPR) is ${name}, ${street}, ${zipCode} ${city}, ${country}. You can contact by sending an email or by writing to my postal address.`
                     }
                 </p>
                 <p class="paragraph">

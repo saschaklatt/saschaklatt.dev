@@ -5,9 +5,10 @@ import imageIphone4x from "../assets/images/iphone-sascha@4x.webp";
 import {getBreakpoints} from "../helpers/tailwind-helpers";
 import Editor from "./editor";
 import {numToPx} from "../helpers/converter-helpers";
-import {Cv, Email} from "../data/resources";
+import {Cv} from "../content/cv";
 import ClickTracker from "./click-tracker.astro";
 import Icon from "./icons/icon.astro";
+import {Me} from "../content/me";
 
 const breakpoints = getBreakpoints();
 ---
@@ -61,10 +62,10 @@ const breakpoints = getBreakpoints();
 
         <div class="flex flex-col md:flex-row gap-y-2 md:gap-x-4 md:gap-y-0 drop-shadow-2xl">
             <ClickTracker trackingEvent={{action: "click", category: "cta_email", name: "cta_email_stage-main"}}>
-                <a {...Email.link} class="btn-accent w-full md:w-auto">Contact me!</a>
+                <a href={`mailto:${Me.email}`} class="btn-accent w-full md:w-auto">Contact me!</a>
             </ClickTracker>
             <ClickTracker trackingEvent={{action: "click", category: "cta_cv", name: "cta_cv_stage-main"}}>
-                <a {...Cv.link} class="btn-neutral w-full md:w-auto">Download CV</a>
+                <a href={Cv.link.href} class="btn-neutral w-full md:w-auto">Download CV</a>
             </ClickTracker>
         </div>
     </div>

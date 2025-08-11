@@ -1,11 +1,11 @@
 ---
 import SectionStage from "../components/section-stage.astro";
 import Layout from "../layouts/main.astro";
-import {SaschaKlatt} from "../data/companies/sascha-klatt";
 import ButtonHome from "../components/button-home.astro";
+import {Me} from "../content/me";
 
-const {name, email, vatId, address} = SaschaKlatt;
-const {street, streetNumber, city, country, zipCode} = address!;
+const {name, email, vatId, address} = Me;
+const {street, city, country, zipCode} = address;
 ---
 
 <Layout
@@ -27,8 +27,7 @@ const {street, streetNumber, city, country, zipCode} = address!;
                 <h2 class="headline-2">{"Contact"}</h2>
                 <address class="paragraph">
                     {name}<br />
-                    {street}
-                    {streetNumber}<br />
+                    {street}<br />
                     {zipCode}
                     {city}<br />
                     {country}<br />

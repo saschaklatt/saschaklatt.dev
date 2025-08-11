@@ -5,7 +5,6 @@ import Layout from "../layouts/main.astro";
 import SectionStage from "../components/section-stage.astro";
 import SectionCta from "../components/section-cta.astro";
 import SectionHeadlined from "../components/section-headlined.astro";
-import {Email, allResources} from "../data/resources";
 import CardResource from "../components/card-resource.astro";
 import CardProject from "../components/card-project.astro";
 import SectionTestimonials from "../components/section-testimonials";
@@ -27,9 +26,10 @@ import illustrationRocketCloud4x from "../assets/images/illustration-rocket-clou
 import illustrationMongodb from "../assets/images/illustration-mongodb.webp";
 import illustrationMongodb2x from "../assets/images/illustration-mongodb@2x.webp";
 import illustrationMongodb4x from "../assets/images/illustration-mongodb@4x.webp";
+import {Me} from "../content/me";
 
 const sortByOrder =
-    (direction: "asc" | "desc" = "asc") =>
+    (direction: "asc" | "desc") =>
     <T extends {data: {order: number}}>(list: T[]): T[] => {
         return list.sort((a, b) => (direction === "asc" ? a.data.order - b.data.order : b.data.order - a.data.order));
     };
@@ -117,7 +117,7 @@ const allProjects = await getCollection("projects").then(sortByOrder("desc"));
             slot="actions"
             trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-dev-support"}}
         >
-            <a class="btn-accent" {...Email.link}>
+            <a class="btn-accent" href={`mailto:${Me.email}`}>
                 {"send me an email"}
             </a>
         </ClickTracker>
@@ -130,7 +130,50 @@ const allProjects = await getCollection("projects").then(sortByOrder("desc"));
         subline="Download my CV and connect with me on other online platforms."
     >
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {allResources.map((resource) => <CardResource {...resource} />)}
+            <CardResource
+                title="CV"
+                description="Download my up-to-date CV."
+                link={{
+                    href: "/pdfs/CV-Sascha-Klatt.pdf?update=05092023",
+                    target: "_blank",
+                }}
+                iconId="document"
+            />
+            <CardResource
+                title="Email"
+                description="Let's get in touch!"
+                link={{
+                    href: "mailto:hello@saschaklatt.dev",
+                }}
+                iconId="envelope"
+            />
+            <CardResource
+                title="LinkedIn"
+                description="I share insights about my work here every now and then."
+                link={{
+                    href: "https://www.linkedin.com/in/sascha-klatt/",
+                    target: "_blank",
+                }}
+                iconId="linkedin"
+            />
+            <CardResource
+                title="X"
+                description="I share insights about my work here every now and then."
+                link={{
+                    href: "https://www.linkedin.com/in/sascha-klatt/",
+                    target: "_blank",
+                }}
+                iconId="x"
+            />
+            <CardResource
+                title="Instagram"
+                description="If you're interested in my personal life → I'm an open book ;)"
+                link={{
+                    href: "https://www.instagram.com/klattmansash/",
+                    target: "_blank",
+                }}
+                iconId="instagram"
+            />
         </ul>
     </SectionHeadlined>
     <SectionCta slot="main" headline="Thanks for visiting!" message="If you want to collaborate don't hestiate to...">
@@ -138,7 +181,9 @@ const allProjects = await getCollection("projects").then(sortByOrder("desc"));
             slot="actions"
             trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-thanks"}}
         >
-            <a class="btn-accent" {...Email.link}>{"send me an email"}</a>
+            <a class="btn-accent" href={`mailto:${Me.email}`}>
+                {"send me an email"}
+            </a>
         </ClickTracker>
     </SectionCta>
 </Layout>
