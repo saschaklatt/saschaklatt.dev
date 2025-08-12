@@ -1,10 +1,11 @@
 ---
 import SectionStage from "../components/section-stage.astro";
 import ButtonHome from "../components/button-home.astro";
-import Me from "../content/me.json" assert {type: "json"};
 import Layout from "../layouts/main.astro";
 
-const {name, email, vatId, address} = Me;
+import me from "../content/me.json" assert {type: "json"};
+
+const {name, email, vatId, address} = me;
 const {street, city, country, zipCode} = address;
 ---
 

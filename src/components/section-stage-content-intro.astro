@@ -3,16 +3,17 @@ import imageIphone from "../assets/images/iphone-sascha.webp";
 import imageIphone2x from "../assets/images/iphone-sascha@2x.webp";
 import imageIphone4x from "../assets/images/iphone-sascha@4x.webp";
 import {getBreakpoints} from "../helpers/tailwind-helpers";
-import Editor from "./editor";
+import Editor from "./editor.astro";
 import {numToPx} from "../helpers/converter-helpers";
 import ClickTracker from "./click-tracker.astro";
 import Icon from "./icons/icon.astro";
-import Cv from "../content/cv.json" assert {type: "json"};
-import Me from "../content/me.json" assert {type: "json"};
+
+import cv from "../content/cv.json" assert {type: "json"};
+import me from "../content/me.json" assert {type: "json"};
 
 const breakpoints = getBreakpoints();
 const currentYear = new Date().getFullYear();
-const yearsOfExperience = Math.max(0, currentYear - Me.careerStartedIn);
+const yearsOfExperience = Math.max(0, currentYear - me.careerStartedIn);
 ---
 
 <div
@@ -25,13 +26,14 @@ const yearsOfExperience = Math.max(0, currentYear - Me.careerStartedIn);
         />
         <h1 class="text-center md:text-left drop-shadow-2xl uppercase" slot="stage">
             <span class="block font-bold mb-2 lg:mb-4 text-2xl md:text-3xl lg:text-4xl text-neutral-900">Sascha Klatt</span>
-            <span class="font-serif block text-4xl lg:text-6xl">full-stack<br />web developer</span>
+            <span class="font-serif block text-4xl lg:text-6xl">full-stack web developer</span>
         </h1>
         <Editor
             client:idle
             className="drop-shadow-2xl"
             panes={[
                 {
+                    id: "tab-about-me",
                     tab: "About me",
                     lines: [
                         "🙋🏻‍♂️ Hi, I'm Sascha",
@@ -46,6 +48,7 @@ const yearsOfExperience = Math.max(0, currentYear - Me.careerStartedIn);
                     ],
                 },
                 {
+                    id: "tab-tech-stack",
                     tab: "Tech-stack",
                     lines: [
                         "💻 I'm focusing on:",
@@ -64,10 +67,10 @@ const yearsOfExperience = Math.max(0, currentYear - Me.careerStartedIn);
 
         <div class="flex flex-col md:flex-row gap-y-2 md:gap-x-4 md:gap-y-0 drop-shadow-2xl">
             <ClickTracker trackingEvent={{action: "click", category: "cta_email", name: "cta_email_stage-main"}}>
-                <a href={`mailto:${Me.email}`} class="btn-accent w-full md:w-auto">Contact me!</a>
+                <a href={`mailto:${me.email}`} class="btn-accent w-full md:w-auto">Contact me!</a>
             </ClickTracker>
             <ClickTracker trackingEvent={{action: "click", category: "cta_cv", name: "cta_cv_stage-main"}}>
-                <a href={Cv.href} class="btn-neutral w-full md:w-auto">Download CV</a>
+                <a href={cv.href} class="btn-neutral w-full md:w-auto">Download CV</a>
             </ClickTracker>
         </div>
     </div>

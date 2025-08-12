@@ -3,9 +3,10 @@ import ButtonHome from "../components/button-home.astro";
 import SectionStage from "../components/section-stage.astro";
 import {CheckboxMatomoUserOptOut} from "../components/checkbox-matomo-opt-out";
 import Layout from "../layouts/main.astro";
-import Me from "../content/me.json" assert {type: "json"};
 
-const {name, address} = Me;
+import me from "../content/me.json" assert {type: "json"};
+
+const {name, address} = me;
 const {street, city, country, zipCode} = address;
 ---
 

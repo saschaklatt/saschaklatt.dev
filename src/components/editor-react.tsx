@@ -3,7 +3,8 @@ import {classList} from "../helpers/string-helpers";
 import {matomoTrackEvent} from "../services/matomo";
 
 interface EditorPane {
-    tab: string;
+    id: string;
+    tabLabel: string;
     lines: string[];
 }
 
@@ -17,7 +18,7 @@ const Editor = ({className, panes}: Props) => {
 
     const selectTab = (pane: EditorPane, idx: number) => {
         setSelectedIndex(idx);
-        matomoTrackEvent({category: "editor", action: "select-tab", name: pane.tab, value: idx});
+        matomoTrackEvent({category: "editor", action: "select-tab", name: pane.tabLabel, value: idx});
     };
 
     const handleTabClick = (pane: EditorPane, idx: number) => {
@@ -29,9 +30,6 @@ const Editor = ({className, panes}: Props) => {
         selectTab(pane, idx);
     };
 
-    const getEditorTabId = (idx: number) => `editor-tab-${idx}`;
-    const getEditorPaneId = (idx: number) => `editor-pane-${idx}`;
-
     return (
         <section className={classList(["rounded-lg", "overflow-hidden", className])}>
             <div className="bg-gradient-to-b from-neutral-900 to-neutral-950 h-10 flex items-center px-4 gap-x-2">
@@ -42,34 +40,33 @@ const Editor = ({className, panes}: Props) => {
             <ul className="bg-neutral-900 flex gap-x-1 px-4" role="tablist" aria-label="editor tabs">
                 {panes.map((pane, idx) => (
                     <li
-                        key={`${pane.tab}-${idx}`}
+                        key={`${pane.tabLabel}-${idx}`}
                         className={classList(["editor-tab", idx === selectedIndex && "active"])}
                         onClick={() => handleTabClick(pane, idx)}
                         onKeyUp={(evt) => handleKeyDown(pane, idx, evt)}
                         aria-selected={idx === selectedIndex}
-                        aria-controls={getEditorPaneId(idx)}
+                        aria-controls={pane.id}
                         role="tab"
                         tabIndex={0}
-                        id={getEditorTabId(idx)}
+                        id={pane.id}
                     >
-                        {pane.tab}
+                        {pane.tabLabel}
                     </li>
                 ))}
             </ul>
-            {panes.map(({lines}, paneIdx) => (
+            {panes.map(({id, lines}, paneIdx) => (
                 <article
-                    key={paneIdx}
+                    key={id}
                     className={classList([
                         "editor-pane",
                         "px-6 py-4 bg-gradient-to-b from-neutral-800 to-neutral-900",
                         paneIdx === selectedIndex && "active",
                     ])}
                     aria-hidden={paneIdx !== selectedIndex}
-                    aria-labelledby={getEditorTabId(paneIdx)}
-                    id={getEditorPaneId(paneIdx)}
+                    aria-labelledby={id}
+                    id={id}
                 >
-                    <ol
-                    >
+                    <ol>
                         {lines.map((line, lineIdx) => (
                             <li key={`${line}-${lineIdx}`}>{line}</li>
                         ))}

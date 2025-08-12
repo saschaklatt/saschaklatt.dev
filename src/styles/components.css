@@ -98,16 +98,12 @@
         @apply leading-relaxed ml-4 pl-2;
     }
 
-    /*** EDITOR ***/
+    /*** OLD REACT EDITOR ***/
     .editor-tab {
         @apply rounded-t-lg px-4 py-2 font-bold cursor-pointer select-none common-focus no-tap-highlight;
     }
     .editor-tab.active {
         @apply bg-neutral-800;
-    }
-
-    .editor-pane {
-        @apply hidden;
     }
     .editor-pane.active {
         @apply block;
@@ -121,6 +117,39 @@
     .editor-pane > ol > li::before {
         content: counter(list-item) "\a0\a0";
         @apply opacity-50 text-right;
+    }
+
+    /*** CSS-ONLY EDITOR ***/
+    .editor {
+        @apply flex flex-wrap;
+    }
+    .editor input[type="radio"] {
+        @apply w-0 order-first common-focus no-tap-highlight; /* TODO: keyboard focus highlight not visible */
+    }
+    .editor label {
+        @apply cursor-pointer inline-block order-first transition-colors;
+    }
+    .editor .editor-content {
+        @apply hidden p-4 order-last flex-grow w-full;
+    }
+
+    .editor .editor-content > ol {
+        @apply list-none leading-7 font-code text-sm md:text-base;
+    }
+    .editor .editor-content > ol > li {
+        @apply md:pl-1;
+    }
+    .editor .editor-content > ol > li::before {
+        content: counter(list-item) "\a0\a0";
+        @apply opacity-50 text-right;
+    }
+
+    /* active tab */
+    .editor input[type="radio"]:checked + label {
+        @apply bg-neutral-800;
+    }
+    .editor input[type="radio"]:checked + label + .editor-content {
+        @apply block;
     }
 
     /*** UTILS ***/

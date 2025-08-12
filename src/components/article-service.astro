@@ -20,6 +20,7 @@ const breakpoints = getBreakpoints();
         "before:-top-28 before:h-16 before:w-1",
         "md:before:-top-36 md:before:h-24 md:before:w-1.5",
     ]}
+    id={service.id}
 >
     <div class:list={["flex-1", reverse ? "md:text-left" : "md:text-right"]}>
         <h3 class="text-xl md:text-3xl font-extrabold opacity-90">{service.data.title}</h3>

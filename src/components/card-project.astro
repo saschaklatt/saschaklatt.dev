@@ -16,7 +16,7 @@ interface ListItem {
     href?: string;
 }
 
-const {id, project} = Astro.props;
+const {project} = Astro.props;
 
 const breakpoints = getBreakpoints();
 const listItems: ListItem[] = [];
@@ -92,7 +92,7 @@ if (project.data.teamSize) {
 }
 ---
 
-<card-project data-project-title={project.data.title} id={id}>
+<card-project data-project-title={project.data.title} id={project.id}>
     <details
         class:list={[
             "group",

@@ -14,6 +14,20 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm dev`             | Starts local dev server at `localhost:4321`      |
 | `pnpm build`           | Build your production site to `./dist/`          |
 | `pnpm build:noindex`           | Same `pnpm build` but adds `robots.txt` to disallow search engine crawling. Useful for Netlify branch deploys.    |
-| `pnpm preview`         | Preview your build locally, before deploying     |
+| `pnpm start`         | Runs your locally build (requires `pnpm build`)     |
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
+
+## TODOs
+
+- [ ] Pages in Markdown
+- [ ] Individual project pages
+- [ ] CV / Resume section
+- [ ] Alias imports
+- [ ] Cursor rules
+- [ ] Documentation
+- [ ] Component Overview (Storyblok)
+- [ ] Fix line number position on empty lines in <Editor/> on Safari
+- [ ] Image sizes `x4` aren't useful
+- [ ] Project intro doc
+- [ ] Easy-to-edit color scheme

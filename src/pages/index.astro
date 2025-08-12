@@ -3,125 +3,97 @@ import {getCollection} from "astro:content";
 
 import SectionStage from "../components/section-stage.astro";
 import SectionCta from "../components/section-cta.astro";
-import SectionHeadlined from "../components/section-headlined.astro";
 import CardResource from "../components/card-resource.astro";
 import CardProject from "../components/card-project.astro";
-import SectionTestimonials from "../components/section-testimonials";
+import TestimonialGallery from "../components/testimonial-gallery";
 import SectionStageContentIntro from "../components/section-stage-content-intro.astro";
 import ClickTracker from "../components/click-tracker.astro";
-import Me from "../content/me.json" assert {type: "json"};
-import Cv from "../content/cv.json" assert {type: "json"};
 import Layout from "../layouts/main.astro";
 import SectionContent from "../components/section-content.astro";
 import HeaderSideline from "../components/header-sideline.astro";
 import HeaderCentered from "../components/header-centered.astro";
 import ArticleService from "../components/article-service.astro";
+import {sortByOrderProp} from "../helpers/misc-helpers";
 
-const sortByOrder =
-    (direction: "asc" | "desc") =>
-    <T extends {data: {order: number}}>(list: T[]): T[] => {
-        return list.sort((a, b) => (direction === "asc" ? a.data.order - b.data.order : b.data.order - a.data.order));
-    };
+import me from "../content/me.json" assert {type: "json"};
+import cv from "../content/cv.json" assert {type: "json"};
 
-const allTestimonials = await getCollection("testimonials").then(sortByOrder("asc"));
-const allProjects = await getCollection("projects").then(sortByOrder("desc"));
-const allServices = await getCollection("services").then(sortByOrder("asc"));
+const allTestimonials = await getCollection("testimonials").then(sortByOrderProp("asc"));
+const allProjects = await getCollection("projects").then(sortByOrderProp("desc"));
+const allServices = await getCollection("services").then(sortByOrderProp("asc"));
 ---
 
 <Layout
     slug="/"
-    title={`${Me.name} | full-stack developer`}
+    title={`${me.name} | full-stack developer`}
     description={`Freelance full-stack developer building web apps and enterprise websites preferably with React, Next.js and Node.js.`}
 >
     <SectionStage>
         <SectionStageContentIntro />
     </SectionStage>
-    <SectionContent id="services">
-        <HeaderCentered headline="my services" subline="Here's what I can do for you 🧑🏻‍💻" />
+
+    <SectionContent id="services" class="mt-20 my-48 md:mt-48 md:mb-64">
+        <HeaderCentered headline="my services" subline="Here's what I can do for you 🧑🏻‍💻" class="mb-36 md:mb-48" />
         <div class="flex flex-col gap-y-36 md:gap-y-48">
             {allServices.map((service, idx) => <ArticleService service={service} reverse={idx % 2 === 0} />)}
         </div>
     </SectionContent>
+
     <SectionContent class="my-20 md:my-32" id="projects">
         <HeaderSideline
             headline="Projects"
             subline="Curious about what I can deliver? Explore a selection of projects I've worked on."
         />
         <div class="flex flex-col gap-16">
-            {allProjects.map((project) => <CardProject id={project.id} project={project} />)}
+            {allProjects.map((project) => <CardProject project={project} />)}
         </div>
     </SectionContent>
+
     <SectionCta headline="Need dev support?" message="Let me help you creating high-quality digital products.">
-        <ClickTracker
-            slot="actions"
-            trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-dev-support"}}
-        >
-            <a class="btn-accent" href={`mailto:${Me.email}`}>
-                {"send me an email"}
-            </a>
+        <ClickTracker trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-dev-support"}}>
+            <a class="btn-accent" href={`mailto:${me.email}`}>{"send me an email"}</a>
         </ClickTracker>
     </SectionCta>
-    <SectionTestimonials testimonials={allTestimonials} headline="Testi­monials" name="testimonial" client:visible />
-    <SectionHeadlined
-        class="my-20 md:my-32"
-        headline="Let's connect!"
-        subline="Download my CV and connect with me on other online platforms."
-    >
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    <SectionContent class="my-32 md:my-80" classContent="flex flex-col items-center">
+        <HeaderCentered headline="Testimonials" class="mb-20 md:mb-32" />
+        <TestimonialGallery testimonials={allTestimonials} name="testimonial" client:visible />
+    </SectionContent>
+
+    <SectionContent class="my-20 md:my-32">
+        <HeaderSideline headline="Let's connect!" subline="Download my CV and connect with me on other online platforms." />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <CardResource
                 title="CV"
                 description="Download my up-to-date CV."
-                link={{
-                    href: Cv.href,
-                    target: "_blank",
-                }}
+                link={{href: cv.href, target: "_blank"}}
                 iconId="document"
             />
-            <CardResource
-                title="Email"
-                description="Let's get in touch!"
-                link={{
-                    href: `mailto:${Me.email}`,
-                }}
-                iconId="envelope"
-            />
+            <CardResource title="Email" description="Let's get in touch!" link={{href: `mailto:${me.email}`}} iconId="envelope" />
             <CardResource
                 title="LinkedIn"
                 description="I share insights about my work here every now and then."
-                link={{
-                    href: Me.socials.linkedin,
-                    target: "_blank",
-                }}
+                link={{href: me.socials.linkedin, target: "_blank"}}
                 iconId="linkedin"
-            />
-            <CardResource
-                title="X"
-                description="I share insights about my work here every now and then."
-                link={{
-                    href: Me.socials.x,
-                    target: "_blank",
-                }}
-                iconId="x"
             />
             <CardResource
                 title="Instagram"
                 description="If you're interested in my personal life → I'm an open book ;)"
-                link={{
-                    href: Me.socials.instagram,
-                    target: "_blank",
-                }}
+                link={{href: me.socials.instagram, target: "_blank"}}
                 iconId="instagram"
             />
-        </ul>
-    </SectionHeadlined>
-    <SectionCta headline="Thanks for visiting!" message="If you want to collaborate don't hestiate to...">
-        <ClickTracker
-            slot="actions"
-            trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-thanks"}}
-        >
-            <a class="btn-accent" href={`mailto:${Me.email}`}>
-                {"send me an email"}
-            </a>
-        </ClickTracker>
-    </SectionCta>
+        </div>
+    </SectionContent>
+
+    <SectionContent class="my-48 md:my-96" classContent="text-center">
+        <HeaderCentered headline="Thanks for visiting!" />
+        <p class="mx-auto opacity-70 text-2xl md:text-3xl font-light max-w-prose leading-tight my-12 md:my-16">
+            If you want to collaborate don't hestiate to...
+        </p>
+        <div class="text-center inline-flex gap-4 flex-col md:flex-row mt-2">
+            <ClickTracker trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-thanks"}}>
+                <a class="btn-accent" href={`mailto:${me.email}`}>{"send me an email"}</a>
+            </ClickTracker>
+        </div>
+    </SectionContent>
 </Layout>
