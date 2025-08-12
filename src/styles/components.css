@@ -124,10 +124,10 @@
         @apply flex flex-wrap;
     }
     .editor input[type="radio"] {
-        @apply w-0 order-first common-focus no-tap-highlight; /* TODO: keyboard focus highlight not visible */
+        @apply w-0 opacity-0 order-first common-focus-label-after no-tap-highlight; /* TODO: keyboard focus highlight not visible */
     }
     .editor label {
-        @apply cursor-pointer inline-block order-first transition-colors;
+        @apply ml-1 cursor-pointer inline-block order-first transition-colors md:hover:bg-neutral-800/50;
     }
     .editor .editor-content {
         @apply hidden p-4 order-last flex-grow w-full;
