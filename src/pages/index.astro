@@ -9,10 +9,13 @@ import CardProject from "../components/card-project.astro";
 import SectionTestimonials from "../components/section-testimonials";
 import SectionStageContentIntro from "../components/section-stage-content-intro.astro";
 import ClickTracker from "../components/click-tracker.astro";
-import SectionImageText from "../components/section-image-text.astro";
 import Me from "../content/me.json" assert {type: "json"};
 import Cv from "../content/cv.json" assert {type: "json"};
 import Layout from "../layouts/main.astro";
+import SectionContent from "../components/section-content.astro";
+import HeaderSideline from "../components/header-sideline.astro";
+import HeaderCentered from "../components/header-centered.astro";
+import ArticleService from "../components/article-service.astro";
 
 const sortByOrder =
     (direction: "asc" | "desc") =>
@@ -30,35 +33,25 @@ const allServices = await getCollection("services").then(sortByOrder("asc"));
     title={`${Me.name} | full-stack developer`}
     description={`Freelance full-stack developer building web apps and enterprise websites preferably with React, Next.js and Node.js.`}
 >
-    <SectionStage slot="stage">
+    <SectionStage>
         <SectionStageContentIntro />
     </SectionStage>
-    <SectionImageText
-        slot="main"
-        id="services"
-        class="mt-20 my-48 md:mt-48 md:mb-64"
-        headline="my services"
-        subline="Here's what I can do for you 🧑🏻‍💻"
-        services={allServices}
-    />
-    <SectionHeadlined
-        slot="main"
-        class="my-20 md:my-32"
-        headline="Projects"
-        subline="Curious about what I can deliver? Explore a selection of projects I've worked on."
-        id="projects"
-    >
-        <ul class="flex flex-col gap-16">
-            {
-                allProjects.map((project) => (
-                    <li id={`project-${project.id}`}>
-                        <CardProject project={project} />
-                    </li>
-                ))
-            }
-        </ul>
-    </SectionHeadlined>
-    <SectionCta slot="main" headline="Need dev support?" message="Let me help you creating high-quality digital products.">
+    <SectionContent id="services">
+        <HeaderCentered headline="my services" subline="Here's what I can do for you 🧑🏻‍💻" />
+        <div class="flex flex-col gap-y-36 md:gap-y-48">
+            {allServices.map((service, idx) => <ArticleService service={service} reverse={idx % 2 === 0} />)}
+        </div>
+    </SectionContent>
+    <SectionContent class="my-20 md:my-32" id="projects">
+        <HeaderSideline
+            headline="Projects"
+            subline="Curious about what I can deliver? Explore a selection of projects I've worked on."
+        />
+        <div class="flex flex-col gap-16">
+            {allProjects.map((project) => <CardProject id={project.id} project={project} />)}
+        </div>
+    </SectionContent>
+    <SectionCta headline="Need dev support?" message="Let me help you creating high-quality digital products.">
         <ClickTracker
             slot="actions"
             trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-dev-support"}}
@@ -68,9 +61,8 @@ const allServices = await getCollection("services").then(sortByOrder("asc"));
             </a>
         </ClickTracker>
     </SectionCta>
-    <SectionTestimonials slot="main" testimonials={allTestimonials} headline="Testi­monials" name="testimonial" client:visible />
+    <SectionTestimonials testimonials={allTestimonials} headline="Testi­monials" name="testimonial" client:visible />
     <SectionHeadlined
-        slot="main"
         class="my-20 md:my-32"
         headline="Let's connect!"
         subline="Download my CV and connect with me on other online platforms."
@@ -122,7 +114,7 @@ const allServices = await getCollection("services").then(sortByOrder("asc"));
             />
         </ul>
     </SectionHeadlined>
-    <SectionCta slot="main" headline="Thanks for visiting!" message="If you want to collaborate don't hestiate to...">
+    <SectionCta headline="Thanks for visiting!" message="If you want to collaborate don't hestiate to...">
         <ClickTracker
             slot="actions"
             trackingEvent={{action: "click", category: "cta_email", name: "cta_email_section-cta-thanks"}}

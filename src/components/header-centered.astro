@@ -1,0 +1,13 @@
+---
+interface Props {
+    headline: string;
+    subline?: string;
+}
+
+const {headline, subline} = Astro.props;
+---
+
+<header class="text-center mb-36 md:mb-48">
+    <h2 class="font-serif text-3xl md:text-5xl">{headline}</h2>
+    {subline && <p class="text-lg md:text-2xl opacity-75 mt-2 md:my-8">{subline}</p>}
+</header>

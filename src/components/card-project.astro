@@ -6,6 +6,7 @@ import {getBreakpoints} from "../helpers/tailwind-helpers";
 import {numToPx} from "../helpers/converter-helpers";
 
 interface Props {
+    id?: string;
     project: CollectionEntry<"projects">;
 }
 
@@ -15,7 +16,7 @@ interface ListItem {
     href?: string;
 }
 
-const {project} = Astro.props;
+const {id, project} = Astro.props;
 
 const breakpoints = getBreakpoints();
 const listItems: ListItem[] = [];
@@ -91,7 +92,7 @@ if (project.data.teamSize) {
 }
 ---
 
-<card-project data-project-title={project.data.title}>
+<card-project data-project-title={project.data.title} id={id}>
     <details
         class:list={[
             "group",
