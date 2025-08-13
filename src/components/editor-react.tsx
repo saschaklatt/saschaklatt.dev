@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-import {classList} from "@/helpers/string-helpers";
+import {classList} from "@/utils/common";
 import {matomoTrackEvent} from "@/services/matomo";
 
 interface EditorPane {

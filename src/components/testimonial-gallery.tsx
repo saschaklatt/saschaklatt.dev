@@ -2,10 +2,10 @@ import type {CollectionEntry} from "astro:content";
 import {useState, type ChangeEventHandler} from "react";
 import {useSwipeable} from "react-swipeable";
 
-import {numToPx} from "../helpers/converter-helpers";
-import {getBreakpoints} from "../helpers/tailwind-helpers";
-import {matomoTrackEvent} from "../services/matomo";
-import {classList} from "../helpers/string-helpers";
+import {numToPx} from "@/utils/common";
+import {getBreakpoints} from "@/utils/tailwind";
+import {classList} from "@/utils/common";
+import {matomoTrackEvent} from "@/services/matomo";
 
 interface SectionTestimonialProps {
     testimonials: CollectionEntry<"testimonials">[];

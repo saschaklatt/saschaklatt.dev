@@ -2,8 +2,8 @@
 import type {CollectionEntry} from "astro:content";
 
 import IconArrowDown from "@/components/icons/icon-arrow-down.astro";
-import {getBreakpoints} from "@/helpers/tailwind-helpers";
-import {numToPx} from "@/helpers/converter-helpers";
+import {getBreakpoints} from "@/utils/tailwind";
+import {numToPx} from "@/utils/common";
 
 interface Props {
     id?: string;

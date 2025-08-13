@@ -1,7 +1,7 @@
 ---
 import PageFooter from "@/components/page-footer.astro";
 import {version} from "@/app-meta";
-import {stripTrailingSlash} from "@/helpers/string-helpers";
+import {stripTrailingSlash} from "@/utils/common";
 import "@/styles/index.css";
 
 interface Props {
@@ -46,7 +46,7 @@ const ogImage = new URL("/img/saschaklatt.dev.jpg", Astro.site).toString();
         <meta name="generator" content={Astro.generator} />
 
         <script>
-            var _paq = (window._paq = window._paq || []);
+            var _paq = ((window as any)._paq = (window as any)._paq || []);
             _paq.push(["setDoNotTrack", true]);
             _paq.push(["disableCookies"]);
             _paq.push(["requireCookieConsent"]);
@@ -62,7 +62,7 @@ const ogImage = new URL("/img/saschaklatt.dev.jpg", Astro.site).toString();
                     s = d.getElementsByTagName("script")[0];
                 g.async = true;
                 g.src = u + "matomo.js";
-                s.parentNode.insertBefore(g, s);
+                s.parentNode?.insertBefore(g, s);
             })();
         </script>
     </head>

@@ -1,6 +1,6 @@
 import type {MatomoTrackingEvent} from "./typedefs";
 import {getCookie} from "../cookies";
-import {isNil} from "../../helpers/misc-helpers";
+import {isNil} from "../../utils/common";
 
 export const COOKIE_NAME_CONSENT_REMOVED = "mtm_consent_removed";
 

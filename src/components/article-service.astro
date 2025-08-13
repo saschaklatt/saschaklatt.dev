@@ -1,8 +1,8 @@
 ---
 import type {CollectionEntry} from "astro:content";
 
-import {numToPx} from "@/helpers/converter-helpers";
-import {getBreakpoints} from "@/helpers/tailwind-helpers";
+import {numToPx} from "@/utils/common";
+import {getBreakpoints} from "@/utils/tailwind";
 
 interface Props {
     service: CollectionEntry<"services">;
