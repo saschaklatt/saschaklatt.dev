@@ -5,12 +5,12 @@ import {stripTrailingSlash} from "@/utils/common";
 import "@/styles/index.css";
 
 interface Props {
-    title: string;
-    description: string;
+    pageTitle: string;
+    pageDescription: string;
     slug?: string;
 }
 
-const {title, description, slug} = Astro.props;
+const {pageTitle, pageDescription, slug} = Astro.props;
 const canonicalUrl = slug ? stripTrailingSlash(new URL(slug, Astro.site).toString()) : Astro.url.toString();
 const ogImage = new URL("/img/saschaklatt.dev.jpg", Astro.site).toString();
 ---
@@ -24,12 +24,12 @@ const ogImage = new URL("/img/saschaklatt.dev.jpg", Astro.site).toString();
         <link rel="icon" href="/img/logo-circled32.png" sizes="32x32" type="image/png" />
         <link rel="canonical" href={canonicalUrl} />
 
-        <title>{title}</title>
+        <title>{pageTitle}</title>
 
-        <meta name="description" content={description} />
+        <meta name="description" content={pageDescription} />
         <meta name="version" content={version} />
 
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={pageDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:height" content="630" />
@@ -39,7 +39,7 @@ const ogImage = new URL("/img/saschaklatt.dev.jpg", Astro.site).toString();
         <meta property="og:url" content={canonicalUrl} />
 
         <meta property="twitter:card" content="summary" />
-        <meta property="twitter:description" content={description} />
+        <meta property="twitter:description" content={pageDescription} />
         <meta property="twitter:creator" content="@klattimaniac" />
 
         <meta name="author" content="Sascha Klatt" />
