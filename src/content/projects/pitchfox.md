@@ -26,12 +26,12 @@ technologies:
     - Auth.js
     - Vercel
     - PostHog
-tools: 
+tools:
     - GitLab
     - Whimsical
     - JIRA
 teamSize: 1
-imageBaseName: pitchfox
+image: pitchfox.webp
 ---
 
 PITCHFOX is an AI-powered roleplay app designed to help introverted founders, freelancers, and creators boost their confidence and communication skills in pitching, sales, and networking. Users practice lifelike conversations with diverse AI personas simulating real-world scenarios — from investor meetings to client calls — within a judgment-free environment. The app provides structured roleplay sessions and actionable feedback across key performance metrics like clarity, confidence, and responsiveness. Currently in early validation, PITCHFOX is building toward its first working demo to empower non-salesy people to communicate with impact.

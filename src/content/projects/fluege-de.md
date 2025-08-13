@@ -13,7 +13,7 @@ client: Invia Flights Germany GmbH
 clientLogo: /img/brand-logos/invia-flights.svg
 industry: Travel
 order: 5
-tags: 
+tags:
     - freelance
     - front-end
 technologies:
@@ -22,11 +22,11 @@ technologies:
     - Polymer
     - Redux
     - Redux Saga
-tools: 
+tools:
     - GitLab
     - JIRA
     - Swagger
-imageBaseName: fluege
+image: fluege-de.webp
 ---
 
 The web application go.fluege.de efficiently sifts through thousands of airlines to give users the best flight options at unbeatable prices. In this project, I had the chance to work with Invia Flights' front-end team to modernize the existing platform. We made use of technologies such as Web Components, Polymer, Lit, and Redux and integrated the booking forms with a complex REST-based microservice architecture.

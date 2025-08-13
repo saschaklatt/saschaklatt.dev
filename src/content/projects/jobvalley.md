@@ -30,7 +30,7 @@ technologies:
     - Vercel
 tools:
     - JIRA
-imageBaseName: jobvalley
+image: jobvalley.webp
 ---
 
 I was engaged by Studitemps GmbH to spearhead the transformation of their corporate website from studitemps.de to jobvalley.com. Transitioning away from the initial WordPress infrastructure, we employed cutting-edge technologies including Contentful, Next.js, and Tailwind to achieve a high-speed, headless solution. Collaborating seamlessly with the Marketing and UX/UI departments, our cohesive team efficiently initiated the project. Despite a tight deadline, we launched the primary version in just a few weeks. Over the subsequent months, we further enhanced the platform by incorporating features such as automated job postings through an in-house job API, and integration with prominent external job platforms like Xing and Indeed.
