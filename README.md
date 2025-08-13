@@ -2,8 +2,6 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9008f0b9-b681-42be-af32-19e2efb19170/deploy-status)](https://app.netlify.com/sites/saschaklatt/deploys)
 
-This repository contains the source code of my personal dev portfolio website [saschaklatt.dev](https://saschaklatt.dev).
-
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -20,22 +18,26 @@ All commands are run from the root of the project, from a terminal:
 
 ## TODOs
 
+- [ ] Tailwind 4 upgrade
 - [ ] Images
     - [ ] Import images from `src/` in content collections
-    - [ ] Import SVG files as `.svg` – not `.astro`
-    - [ ] Image sizes `x4` aren't useful
+    - [ ] Auto-generate responsive sizes
+    - [x] Import SVG files as `.svg` – not `.astro`
     - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
     - [ ] Store illustrations as stylable SVGs (transparent + tailwind color scheme)
-- [ ] Pages in Markdown
-- [ ] Individual project pages
 - [ ] CV / Resume section
+- [ ] Make testimonials CSS-only (or at least replace React with native JS)
+- [ ] Pages in Markdown
+    - [ ] Start page
+    - [ ] Legal pages
+- [ ] Individual project pages
+- [ ] Fix line number position on empty lines in <Editor/> on Safari
 - [x] Alias imports
 - [ ] Cursor rules
 - [ ] Documentation
+    - [ ] Project overview
     - [ ] astro.config.mjs
-- [ ] Component Overview (Storybook)
-- [ ] Fix line number position on empty lines in <Editor/> on Safari
-- [ ] Project intro doc
-- [ ] Easy-to-edit color scheme
+    - [ ] How to chage styling: tailwind, color scheme, fonts, ...
+    - [ ] Component Overview (Storybook)
 - [ ] A11y review
 - [ ] SEO review

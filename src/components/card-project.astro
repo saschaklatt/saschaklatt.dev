@@ -1,7 +1,7 @@
 ---
 import type {CollectionEntry} from "astro:content";
 
-import IconArrowDown from "@/assets/images/icon-arrow-down.svg";
+import IconArrowDown from "@/assets/images/icons/arrow-down.svg";
 import {getBreakpoints} from "@/utils/tailwind";
 import {numToPx} from "@/utils/common";
 
@@ -11,7 +11,7 @@ interface Props {
 }
 
 interface ListItem {
-    term: string;
+    label: string;
     text: string;
     href?: string;
 }
@@ -30,7 +30,7 @@ function formatDate(date: Date): string {
 
 if (project.data.website) {
     listItems.push({
-        term: "Website",
+        label: "Website",
         text: project.data.website.label,
         href: project.data.website.href,
     });
@@ -39,54 +39,54 @@ if (project.data.dateEnd) {
     const from = formatDate(project.data.dateStart);
     const to = formatDate(project.data.dateEnd);
     listItems.push({
-        term: "When",
+        label: "When",
         text: from === to ? `in ${from}` : `${from} - ${to}`,
     });
 } else {
     listItems.push({
-        term: "From / to",
+        label: "From / to",
         text: `since ${formatDate(project.data.dateStart)}`,
     });
 }
 if (project.data.technologies.length > 0) {
     listItems.push({
-        term: "Tech-stack",
+        label: "Tech-stack",
         text: project.data.technologies.join(", "),
     });
 }
 if (project.data.tools && project.data.tools.length > 0) {
     listItems.push({
-        term: "Tools",
+        label: "Tools",
         text: project.data.tools.join(", "),
     });
 }
 if (project.data.employer) {
     listItems.push({
-        term: "Employer",
+        label: "Employer",
         text: project.data.employer,
     });
 }
 if (project.data.client) {
     listItems.push({
-        term: "Client",
+        label: "Client",
         text: project.data.client,
     });
 }
 if (project.data.partners && project.data.partners.length > 0) {
     listItems.push({
-        term: "in cooperation with",
+        label: "in cooperation with",
         text: project.data.partners.join("\n"),
     });
 }
 if (project.data.industry) {
     listItems.push({
-        term: "Industry",
+        label: "Industry",
         text: project.data.industry,
     });
 }
 if (project.data.teamSize) {
     listItems.push({
-        term: "Team size",
+        label: "Team size",
         text: project.data.teamSize === 1 ? "Solo" : `${project.data.teamSize} team members`,
     });
 }
@@ -215,7 +215,7 @@ if (project.data.teamSize) {
                 <p class="my-8">{project.body}</p>
                 <dl class="grid grid-cols-[auto,1fr] items-start gap-x-8 md:gap-y-2">
                     {
-                        listItems.map(({term, text, href}) => (
+                        listItems.map(({label: term, text, href}) => (
                             <>
                                 <dt class="font-extrabold uppercase text-xs col-span-2 md:col-span-1 md:leading-loose">{term}</dt>
                                 <dd class="col-span-2 md:col-span-1 md:col-start-2 mb-4 md:mb-0">
