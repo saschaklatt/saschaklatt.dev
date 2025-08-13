@@ -23,11 +23,17 @@ All commands are run from the root of the project, from a terminal:
 - [ ] Pages in Markdown
 - [ ] Individual project pages
 - [ ] CV / Resume section
-- [ ] Alias imports
+- [x] Alias imports
 - [ ] Cursor rules
 - [ ] Documentation
-- [ ] Component Overview (Storyblok)
+- [ ] Component Overview (Storybook)
 - [ ] Fix line number position on empty lines in <Editor/> on Safari
-- [ ] Image sizes `x4` aren't useful
 - [ ] Project intro doc
 - [ ] Easy-to-edit color scheme
+- [ ] Images
+    - [ ] Import images from `src/` in content collections
+    - [ ] Image sizes `x4` aren't useful
+    - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
+
+- [ ] A11y review
+- [ ] SEO review

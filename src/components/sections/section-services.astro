@@ -1,0 +1,23 @@
+---
+import type {CollectionEntry} from "astro:content";
+
+import ArticleService from "@/components/article-service.astro";
+import SectionContent from "@/components/section-content.astro";
+import HeaderCentered from "@/components/header-centered.astro";
+
+interface Props {
+    id?: string;
+    headline: string;
+    subline?: string;
+    services: CollectionEntry<"services">[];
+}
+
+const {services, headline, subline, id} = Astro.props;
+---
+
+<SectionContent class="mt-20 my-48 md:mt-48 md:mb-64" id={id}>
+    <HeaderCentered headline={headline} subline={subline} class="mb-36 md:mb-48" />
+    <div class="flex flex-col gap-y-36 md:gap-y-48">
+        {services.map((service, idx) => <ArticleService service={service} reverse={idx % 2 === 0} />)}
+    </div>
+</SectionContent>

@@ -1,0 +1,19 @@
+---
+import type {CollectionEntry} from "astro:content";
+import HeaderCentered from "@/components/header-centered.astro";
+import SectionContent from "@/components/section-content.astro";
+import TestimonialGallery from "@/components/testimonial-gallery";
+
+interface Props {
+    headline: string;
+    subline?: string;
+    testimonials: CollectionEntry<"testimonials">[];
+}
+
+const {testimonials, headline, subline} = Astro.props;
+---
+
+<SectionContent class="my-32 md:my-80" classContent="flex flex-col items-center">
+    <HeaderCentered headline={headline} subline={subline} class="mb-20 md:mb-32" />
+    <TestimonialGallery testimonials={testimonials} name="testimonial" client:visible />
+</SectionContent>

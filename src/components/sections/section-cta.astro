@@ -1,0 +1,51 @@
+---
+import type {MatomoTrackingEvent} from "@/services/matomo/typedefs";
+import ClickTracker from "@/components/click-tracker.astro";
+import HeaderCentered from "@/components/header-centered.astro";
+import SectionContent from "@/components/section-content.astro";
+
+interface CtaProps {
+    trackingEvent: MatomoTrackingEvent;
+    href: string;
+    text: string;
+    target?: string;
+    rel?: string;
+    class?: string;
+}
+
+interface Props {
+    id?: string;
+    headline: string;
+    message?: string;
+    ctas?: CtaProps[];
+}
+
+const {headline, message, ctas, id} = Astro.props;
+const hasCtas = ctas && ctas.length > 0;
+---
+
+<SectionContent class="my-48 md:my-96" classContent="text-center" id={id}>
+    <HeaderCentered headline={headline} />
+    {
+        message && (
+            <div class="mx-auto opacity-70 text-2xl md:text-3xl font-light max-w-prose leading-tight my-12 md:my-16">
+                {message}
+            </div>
+        )
+    }
+    {
+        hasCtas && (
+            <footer class="md:flex-row mt-12 md:mt-16">
+                <div class="text-center inline-flex gap-4 flex-col">
+                    {ctas.map((cta) => (
+                        <ClickTracker trackingEvent={cta.trackingEvent}>
+                            <a class={cta.class} href={cta.href} target={cta.target} rel={cta.rel}>
+                                {cta.text}
+                            </a>
+                        </ClickTracker>
+                    ))}
+                </div>
+            </footer>
+        )
+    }
+</SectionContent>

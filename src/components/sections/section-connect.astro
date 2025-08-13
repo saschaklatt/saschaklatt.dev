@@ -1,0 +1,30 @@
+---
+import SectionContent from "@/components/section-content.astro";
+import HeaderSideline from "@/components/header-sideline.astro";
+import CardResource from "@/components/card-resource.astro";
+import type {IconId} from "@/typedefs";
+
+interface Props {
+    headline: string;
+    subline?: string;
+    resources: {
+        title: string;
+        description: string;
+        link: {
+            href: string;
+            rel?: string;
+            target?: "_blank" | "_self";
+        };
+        iconId: IconId;
+    }[];
+}
+
+const {resources, headline, subline} = Astro.props;
+---
+
+<SectionContent class="my-20 md:my-32">
+    <HeaderSideline headline={headline} subline={subline} />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {resources.map((resource) => <CardResource {...resource} />)}
+    </div>
+</SectionContent>

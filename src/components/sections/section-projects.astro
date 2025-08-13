@@ -1,0 +1,23 @@
+---
+import type {CollectionEntry} from "astro:content";
+
+import HeaderSideline from "@/components/header-sideline.astro";
+import SectionContent from "@/components/section-content.astro";
+import CardProject from "@/components/card-project.astro";
+
+interface Props {
+    id?: string;
+    headline: string;
+    subline?: string;
+    projects: CollectionEntry<"projects">[];
+}
+
+const {projects, headline, subline, id} = Astro.props;
+---
+
+<SectionContent class="my-20 md:my-32" id={id}>
+    <HeaderSideline headline={headline} subline={subline} />
+    <div class="flex flex-col gap-16">
+        {projects.map((project) => <CardProject project={project} />)}
+    </div>
+</SectionContent>
