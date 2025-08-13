@@ -16,6 +16,7 @@ import cv from "@/content/cv.json" assert {type: "json"};
 const services = await getCollection("services").then(sortByOrderProp("asc"));
 const projects = await getCollection("projects").then(sortByOrderProp("desc"));
 const testimonials = await getCollection("testimonials").then(sortByOrderProp("asc"));
+console.log(testimonials);
 const currentYear = new Date().getFullYear();
 const yearsOfExperience = currentYear - me.careerStartedIn;
 ---

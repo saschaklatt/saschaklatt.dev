@@ -111,16 +111,8 @@ const Avatar = ({testimonial, isActive, onChange, name}: AvatarProps) => (
             ])}
         >
             <picture>
-                <source
-                    srcSet={`/img/avatars/${testimonial.data.referrerImgBaseName}_60.webp, /img/avatars/${testimonial.data.referrerImgBaseName}_60@2x.webp 2x`}
-                    media={`(max-width: ${numToPx(breakpoints.md)})`}
-                />
-                <source
-                    srcSet={`/img/avatars/${testimonial.data.referrerImgBaseName}_96.webp, /img/avatars/${testimonial.data.referrerImgBaseName}_96@2x.webp 2x`}
-                    media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
-                />
                 <img
-                    src={`/img/avatars/${testimonial.data.referrerImgBaseName}_96.webp`}
+                    src={testimonial.data.referrerImage?.src}
                     alt={`Profile picture of ${testimonial.data.referrer}`}
                     className="w-10 h-10 md:w-16 md:h-16"
                     width="96"

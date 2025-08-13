@@ -39,19 +39,20 @@ const projects = defineCollection({
 
 const testimonials = defineCollection({
     loader: glob({base: "./src/content/testimonials", pattern: "**/*.md"}),
-    schema: z
-        .object({
-            id: z.string(),
-            order: z.number().int().optional(),
-            referrer: z.string(),
-            referrerRole: z.string(),
-            referrerCompany: z.string(),
-            referrerImgBaseName: z.string(),
-        })
-        .transform((data) => ({
-            ...data,
-            order: data.order ?? 0,
-        })),
+    schema: ({image}) =>
+        z
+            .object({
+                id: z.string(),
+                order: z.number().int().optional(),
+                referrer: z.string(),
+                referrerRole: z.string(),
+                referrerCompany: z.string(),
+                referrerImage: image(),
+            })
+            .transform((data) => ({
+                ...data,
+                order: data.order ?? 0,
+            })),
 });
 
 const services = defineCollection({
