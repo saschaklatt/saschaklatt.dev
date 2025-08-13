@@ -1,6 +1,7 @@
 import {useState} from "react";
-import {classList} from "../helpers/string-helpers";
-import {matomoTrackEvent} from "../services/matomo";
+
+import {classList} from "@/helpers/string-helpers";
+import {matomoTrackEvent} from "@/services/matomo";
 
 interface EditorPane {
     id: string;

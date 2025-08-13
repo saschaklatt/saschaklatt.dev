@@ -1,13 +1,12 @@
 ---
 import {getCollection} from "astro:content";
 
-import SectionStage from "@/components/section-stage.astro";
 import SectionCta from "@/components/sections/section-cta.astro";
-import SectionStageContentIntro from "@/components/section-stage-content-intro.astro";
 import SectionConnect from "@/components/sections/section-connect.astro";
-import SectionTestimonials from "@/components/sections/section-testimonials.astro";
-import SectionServices from "@/components/sections/section-services.astro";
+import SectionHero from "@/components/sections/section-hero.astro";
 import SectionProjects from "@/components/sections/section-projects.astro";
+import SectionServices from "@/components/sections/section-services.astro";
+import SectionTestimonials from "@/components/sections/section-testimonials.astro";
 import {sortByOrderProp} from "@/helpers/misc-helpers";
 import Layout from "@/layouts/main.astro";
 
@@ -17,16 +16,65 @@ import cv from "@/content/cv.json" assert {type: "json"};
 const services = await getCollection("services").then(sortByOrderProp("asc"));
 const projects = await getCollection("projects").then(sortByOrderProp("desc"));
 const testimonials = await getCollection("testimonials").then(sortByOrderProp("asc"));
+const currentYear = new Date().getFullYear();
+const yearsOfExperience = currentYear - me.careerStartedIn;
 ---
 
 <Layout
     slug="/"
-    title={`${me.name} | full-stack developer`}
-    description={`Freelance full-stack developer building web apps and enterprise websites preferably with React, Next.js and Node.js.`}
+    title={`${me.name} | ${me.title}`}
+    description={`Freelance ${me.title} building web apps and enterprise websites preferably with React, Next.js and Node.js.`}
 >
-    <SectionStage>
-        <SectionStageContentIntro />
-    </SectionStage>
+    <SectionHero
+        developerName={me.name}
+        developerTitle={me.title}
+        editorTabs={[
+            {
+                id: "tab-about-me",
+                tab: "About me",
+                lines: [
+                    "🙋🏻‍♂️ Hi, I'm Sascha",
+                    "",
+                    "💻 Freelance web developer",
+                    `🗿 ${yearsOfExperience} years of work experience`,
+                    "🎯 Focus on TypeScript and Node.js",
+                    "🧩 Headless CMS integrator",
+                    "👨🏻‍🎨 Eye for aesthetics",
+                    "",
+                    "🍃 Climber, Runner, Cyclist",
+                ],
+            },
+            {
+                id: "tab-tech-stack",
+                tab: "Tech-stack",
+                lines: [
+                    "💻 I'm focusing on:",
+                    "",
+                    "- TypeScript",
+                    "- React, Next.js, Astro",
+                    "- Node.js",
+                    "- Contentful, Sanity",
+                    "- MongoDB, PostgreSQL",
+                    "- Docker, Vercel, Netlify",
+                    "- Figma, Whimsical",
+                ],
+            },
+        ]}
+        ctas={[
+            {
+                trackingEvent: {action: "click", category: "cta_email", name: "cta_email_stage-main"},
+                href: `mailto:${me.email}`,
+                text: "Contact me!",
+                class: "btn-accent",
+            },
+            {
+                trackingEvent: {action: "click", category: "cta_cv", name: "cta_cv_stage-main"},
+                href: cv.href,
+                text: "Download CV",
+                class: "btn-neutral",
+            },
+        ]}
+    />
 
     <SectionServices id="services" headline="my services" subline="Here's what I can do for you 🧑🏻‍💻" services={services} />
 

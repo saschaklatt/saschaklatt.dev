@@ -1,16 +1,12 @@
 ---
-interface EditorPane {
-    id: string;
-    tab: string;
-    lines: string[];
-}
+import type {EditorTab} from "@/typedefs";
 
 interface Props {
     className?: string;
-    panes: EditorPane[];
+    tabs: EditorTab[];
 }
 
-const {className, panes} = Astro.props;
+const {className, tabs} = Astro.props;
 ---
 
 <article class:list={["rounded-lg overflow-hidden w-auto", className]}>
@@ -21,7 +17,7 @@ const {className, panes} = Astro.props;
     </div>
     <form class="editor bg-neutral-900 flex" role="tablist" aria-label="editor with tabs">
         {
-            panes.map(({id, tab, lines}, idx) => (
+            tabs.map(({id, tab, lines}, idx) => (
                 <>
                     <input type="radio" name="editor-tab" id={id} checked={idx === 0} />
                     <label for={id} class="editor-tab">

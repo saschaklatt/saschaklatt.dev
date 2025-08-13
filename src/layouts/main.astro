@@ -1,8 +1,8 @@
 ---
-import Footer from "../components/footer.astro";
-import {version} from "../app-meta";
-import {stripTrailingSlash} from "../helpers/string-helpers";
-import "../styles/index.css";
+import PageFooter from "@/components/page-footer.astro";
+import {version} from "@/app-meta";
+import {stripTrailingSlash} from "@/helpers/string-helpers";
+import "@/styles/index.css";
 
 interface Props {
     title: string;
@@ -69,7 +69,7 @@ const ogImage = new URL("/img/saschaklatt.dev.jpg", Astro.site).toString();
     <body>
         <main class="overflow-hidden">
             <slot />
-            <Footer />
+            <PageFooter />
         </main>
     </body>
 </html>

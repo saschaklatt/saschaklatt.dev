@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
-import {hasOptOutCookie, matomoPush, matomoTrackEvent} from "../services/matomo";
+
+import {hasOptOutCookie, matomoPush, matomoTrackEvent} from "@/services/matomo";
 
 interface CheckboxMatomoOptOutProps {
     className?: string;

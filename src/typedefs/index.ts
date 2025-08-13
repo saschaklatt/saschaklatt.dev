@@ -1,3 +1,5 @@
+import type {MatomoTrackingEvent} from "@/services/matomo/typedefs";
+
 export type IconId =
     | "saschaklatt"
     | "document"
@@ -9,3 +11,18 @@ export type IconId =
     | "stackoverflow"
     | "x"
     | "xing";
+
+export interface EditorTab {
+    id: string;
+    tab: string;
+    lines: string[];
+}
+
+export interface CtaProps {
+    trackingEvent: MatomoTrackingEvent;
+    href: string;
+    text: string;
+    target?: string;
+    rel?: string;
+    class?: string;
+}

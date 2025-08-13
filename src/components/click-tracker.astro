@@ -1,5 +1,5 @@
 ---
-import type {MatomoTrackingEvent} from "../services/matomo/typedefs";
+import type {MatomoTrackingEvent} from "@/services/matomo/typedefs";
 
 interface Props {
     class?: string;
@@ -14,8 +14,8 @@ const {class: className, trackingEvent} = Astro.props;
 </click-tracker>
 
 <script>
-    import type {MatomoTrackingEvent} from "../services/matomo/typedefs";
-    import {matomoTrackEvent} from "../services/matomo";
+    import type {MatomoTrackingEvent} from "@/services/matomo/typedefs";
+    import {matomoTrackEvent} from "@/services/matomo";
 
     class ClickTracker extends HTMLElement {
         private trackingEvent: MatomoTrackingEvent | null;
