@@ -1,0 +1,40 @@
+---
+import IconDocument from "@/assets/images/icon-document.svg";
+import IconEnvelope from "@/assets/images/icon-envelope.svg";
+import IconGithub from "@/assets/images/icon-github.svg";
+import IconInstagram from "@/assets/images/icon-instagram.svg";
+import IconLinkedIn from "@/assets/images/icon-linkedin.svg";
+import IconNomadlist from "@/assets/images/icon-nomadlist.svg";
+import IconSaschaklatt from "@/assets/images/icon-saschaklatt.svg";
+import IconStackoverflow from "@/assets/images/icon-stackoverflow.svg";
+import IconX from "@/assets/images/icon-x.svg";
+import IconXing from "@/assets/images/icon-xing.svg";
+
+import type {IconId} from "@/typedefs";
+
+const iconMap: Record<IconId, any> = {
+    document: IconDocument,
+    envelope: IconEnvelope,
+    github: IconGithub,
+    instagram: IconInstagram,
+    linkedin: IconLinkedIn,
+    saschaklatt: IconSaschaklatt,
+    stackoverflow: IconStackoverflow,
+    x: IconX,
+    xing: IconXing,
+    nomadlist: IconNomadlist,
+};
+
+interface Props {
+    class?: string;
+    iconId: IconId;
+}
+
+const {class: className, iconId} = Astro.props;
+
+const SvgIcon = iconMap[iconId];
+---
+
+<div class={className}>
+    <SvgIcon />
+</div>
