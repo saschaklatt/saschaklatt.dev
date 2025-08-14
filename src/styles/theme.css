@@ -1,0 +1,61 @@
+@theme {
+    --color-accent: #bf1363;
+    --color-accent-50: #f8bad7;
+    --color-accent-100: #f6a8cc;
+    --color-accent-200: #f383b7;
+    --color-accent-300: #ef5da1;
+    --color-accent-400: #eb388c;
+    --color-accent-500: #e41776;
+    --color-accent-600: #bf1363;
+    --color-accent-700: #8c0e49;
+    --color-accent-800: #59092e;
+    --color-accent-900: #260414;
+    --color-accent-950: #0c0106;
+
+    --color-neutral: #2ea0db;
+    --color-neutral-50: #ffffff;
+    --color-neutral-100: #eef7fc;
+    --color-neutral-200: #bee1f4;
+    --color-neutral-300: #8ecbec;
+    --color-neutral-400: #5eb5e3;
+    --color-neutral-500: #2ea0db;
+    --color-neutral-600: #1f80b3;
+    --color-neutral-700: #165d83;
+    --color-neutral-800: #0e3b53;
+    --color-neutral-900: #061923;
+    --color-neutral-950: #02080b;
+
+    --color-primary: #8fda3f;
+    --color-primary-50: #e9f8d9;
+    --color-primary-100: #dff4c8;
+    --color-primary-200: #cbeea5;
+    --color-primary-300: #b7e783;
+    --color-primary-400: #a3e061;
+    --color-primary-500: #8fda3f;
+    --color-primary-600: #73bc25;
+    --color-primary-700: #568d1b;
+    --color-primary-800: #395e12;
+    --color-primary-900: #1d2f09;
+    --color-primary-950: #0e1705;
+
+    --color-black: #000;
+    --color-current: currentColor;
+    --color-transparent: transparent;
+    --color-white: #ffffff;
+
+    --font-code: "Source Code Pro", "Courier New", "Courier", monospace;
+    --font-sans: "Mulish", sans-serif;
+    --font-serif: "Bungee Inline", serif;
+
+    --drop-shadow-sm: 0 1px 1px rgb(0 0 0 / 0.05);
+    --drop-shadow-md: 0 4px 3px rgb(0 0 0 / 0.07) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+    --drop-shadow-lg: 0 10px 8px rgb(0 0 0 / 0.04) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    --drop-shadow-xl: 0 20px 13px rgb(0 0 0 / 0.03) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+    --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.3);
+
+    --transition-property-bg: background-color, background-opacity;
+    --transition-property-fonts: font-size, font-weight;
+    --transition-property-spacing: margin, padding;
+
+    --animation-pulse: pulse 900ms cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

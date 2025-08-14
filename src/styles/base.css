@@ -1,16 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
-    ::-moz-selection {
-        @apply bg-accent-200;
-    }
-
-    ::selection {
-        @apply bg-accent-200;
-    }
-
     html {
         font-size: 1rem;
     }

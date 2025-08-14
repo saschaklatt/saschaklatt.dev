@@ -98,19 +98,19 @@ if (project.data.teamSize) {
         class:list={[
             "group",
             "rounded-lg no-tap-highlight transition-spacing",
-            "open:text-neutral-950 open:bg-gradient-to-tr from-neutral-600 to-primary-400 md:open:p-8",
+            "open:text-neutral-950 open:bg-linear-to-tr from-neutral-600 to-primary-400 md:open:p-8",
         ]}
     >
         <summary
             class:list={[
                 "group/summary",
                 "rounded-lg overflow-hidden",
-                "transition-bg",
+                "transition-all",
                 "details-summary rounded-lg grid grid-cols-[1fr_min-content]",
                 "md:grid-cols-[auto_1fr_auto] md:grid-rows-[auto_auto] md:gap-x-4 lg:gap-x-8",
                 "md:hover:bg-neutral-800 md:hover:scale-[1.02] md:hover:border-transparent md:hover:shadow-2xl",
-                "md:group-open:hover:scale-100 md:group-open:hover:bg-opacity-10 md:group-open:hover:shadow-none",
-                "md:focus-visible:bg-neutral-800 md:focus-visible:bg-opacity-10",
+                "md:hover:group-open:scale-100 md:group-open:hover:bg-neutral-800/10 md:hover:group-open:shadow-none",
+                "md:focus-visible:bg-neutral-800/10",
                 "common-focus",
             ]}
         >
@@ -201,7 +201,7 @@ if (project.data.teamSize) {
             </div>
             <div>
                 <p class="my-8">{project.body}</p>
-                <dl class="grid grid-cols-[auto,1fr] items-start gap-x-8 md:gap-y-2">
+                <dl class="grid grid-cols-[auto_1fr] items-start gap-x-8 md:gap-y-2">
                     {
                         listItems.map(({label: term, text, href}) => (
                             <>

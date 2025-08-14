@@ -33,7 +33,7 @@ const Editor = ({className, panes}: Props) => {
 
     return (
         <section className={classList(["rounded-lg", "overflow-hidden", className])}>
-            <div className="bg-gradient-to-b from-neutral-900 to-neutral-950 h-10 flex items-center px-4 gap-x-2">
+            <div className="bg-linear-to-b from-neutral-900 to-neutral-950 h-10 flex items-center px-4 gap-x-2">
                 <span className="bg-accent h-3 w-3 rounded-full inline-block"></span>
                 <span className="bg-[#F2F598] h-3 w-3 rounded-full inline-block"></span>
                 <span className="bg-[#00FFBD] h-3 w-3 rounded-full inline-block"></span>
@@ -60,7 +60,7 @@ const Editor = ({className, panes}: Props) => {
                     key={id}
                     className={classList([
                         "editor-pane",
-                        "px-6 py-4 bg-gradient-to-b from-neutral-800 to-neutral-900",
+                        "px-6 py-4 bg-linear-to-b from-neutral-800 to-neutral-900",
                         paneIdx === selectedIndex && "active",
                     ])}
                     aria-hidden={paneIdx !== selectedIndex}

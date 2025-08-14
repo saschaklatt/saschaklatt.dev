@@ -18,7 +18,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## TODOs
 
-- [ ] Tailwind 4 upgrade
+- [x] Tailwind 4 upgrade
 - [ ] Images
     - [x] Import images from `src/` in content collections
     - [x] Auto-generate responsive sizes
@@ -31,7 +31,9 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Start page
     - [ ] Legal pages
 - [ ] Individual project pages
-- [ ] Fix line number position on empty lines in <Editor/> on Safari
+- [ ] Bugs
+    - [ ] Fix line number position on empty lines in <Editor/> on Safari
+    - [ ] Fix line between waves
 - [x] Alias imports
 - [ ] Cursor rules
 - [ ] Documentation
@@ -41,6 +43,7 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Component Overview (Storybook / [Astrobook](https://github.com/ocavue/astrobook))
 - [ ] A11y review
 - [ ] SEO review
+- [ ] Custom CSS class review
 
 ## Improvements
 

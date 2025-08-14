@@ -1,24 +1,26 @@
-@layer components {
+@utility content {
     /*** PAGE LAYOUT ***/
-    .content {
-        @apply mx-auto max-w-screen-xl px-4 md:px-8;
-    }
+    @apply mx-auto max-w-screen-xl px-4 md:px-8;
+}
 
+@utility common-focus {
     /*** FOCUS ***/
-    .common-focus {
-        @apply focus-visible:ring-4 focus-visible:ring-primary-100 focus-visible:outline-none;
-    }
-    .common-focus-label-after:focus-visible + label {
+    @apply focus-visible:ring-4 focus-visible:ring-primary-100 focus-visible:outline-none;
+}
+
+@utility common-focus-label-after {
+    &:focus-visible + label {
         @apply ring-4 ring-primary-100 outline-none;
     }
+}
 
-    .common-focus-within {
-        @apply focus-within:ring-4 focus-within:ring-primary-100 focus-within:outline-none;
-    }
+@utility common-focus-within {
+    @apply focus-within:ring-4 focus-within:ring-primary-100 focus-within:outline-none;
+}
 
+@utility btn-base {
     /*** BUTTONS ***/
-    .btn-base {
-        @apply common-focus
+    @apply common-focus
         rounded-md
         inline-flex
         px-8
@@ -31,130 +33,160 @@
         transition-colors
         select-none
         whitespace-nowrap;
-    }
-    .btn-accent {
-        @apply btn-base bg-accent-600 text-white md:hover:bg-accent-500 md:hover:text-white;
-    }
-    .btn-neutral {
-        @apply btn-base bg-neutral-700 text-white md:hover:bg-neutral-600 md:hover:text-white;
-    }
+}
 
-    /*** BADGES ***/
-    .badge {
-        @apply inline-flex items-center justify-center rounded-full text-xs font-black px-2.5 py-1.5 uppercase border;
-    }
-    .badge-light {
-        @apply badge text-neutral-100 border-neutral-100 opacity-50;
-    }
-    .badge-dark {
-        @apply badge text-neutral-900 border-neutral-900 opacity-100;
-    }
+@utility btn-accent {
+    @apply btn-base bg-accent-600 text-white md:hover:bg-accent-500 md:hover:text-white;
+}
 
+@utility btn-neutral {
+    @apply btn-base bg-neutral-700 text-white md:hover:bg-neutral-600 md:hover:text-white;
+}
+
+@utility hashtag {
     /*** HASHTAG ***/
-    .hashtag {
-        @apply font-bold uppercase before:content-['#'] before:inline-block;
-    }
+    @apply font-bold uppercase before:content-['#'] before:inline-block;
+}
 
+@utility link {
     /*** LINKS ***/
-    .link {
-        @apply common-focus
+    @apply common-focus
         rounded-md
         inline-block
         transition-colors
         text-current
         underline;
-    }
-    .link-dark {
-        @apply link text-neutral-900 md:hover:text-neutral-950 underline;
-    }
-    .link-accent {
-        @apply link text-accent md:hover:text-accent-400 underline;
-    }
+}
 
+@utility link-dark {
+    @apply link text-neutral-900 md:hover:text-neutral-950 underline;
+}
+
+@utility link-accent {
+    @apply link text-accent md:hover:text-accent-400 underline;
+}
+
+@utility details-summary {
     /*** DETAILS ELEMENT ***/
-    .details-summary {
-        @apply cursor-pointer select-none;
-    }
-    .details-summary::marker,
-    .details-summary::-webkit-details-marker {
+    @apply cursor-pointer select-none;
+    &::marker {
         content: "";
         display: none;
     }
+    &::-webkit-details-marker {
+        content: "";
+        display: none;
+    }
+}
 
+@utility headline-2 {
     /*** TEXT ***/
-    .headline-2 {
-        @apply text-4xl md:text-5xl font-extrabold mt-12 mb-4 md:mt-32 md:mb-8;
-    }
-    .headline-3 {
-        @apply text-2xl md:text-3xl font-extrabold mt-8 mb-4 md:mt-16 md:mb-8;
-    }
-    .paragraph {
-        @apply opacity-75 my-2 md:my-4;
-    }
-    .ul {
-        @apply list-disc opacity-75 my-2 md:my-4;
-    }
-    .ul > li {
+    @apply text-4xl md:text-5xl font-extrabold mt-12 mb-4 md:mt-32 md:mb-8;
+}
+
+@utility headline-3 {
+    @apply text-2xl md:text-3xl font-extrabold mt-8 mb-4 md:mt-16 md:mb-8;
+}
+
+@utility paragraph {
+    @apply opacity-75 my-2 md:my-4;
+}
+
+@utility ul {
+    @apply list-disc opacity-75 my-2 md:my-4;
+    & > li {
         @apply leading-relaxed ml-4 pl-2;
     }
+}
 
+@utility editor-tab {
     /*** OLD REACT EDITOR ***/
-    .editor-tab {
-        @apply rounded-t-lg px-4 py-2 font-bold cursor-pointer select-none common-focus no-tap-highlight;
-    }
-    .editor-tab.active {
+    @apply rounded-t-lg px-4 py-2 font-bold cursor-pointer select-none common-focus no-tap-highlight;
+    &.active {
         @apply bg-neutral-800;
     }
-    .editor-pane.active {
+}
+
+@utility active {
+    &.editor-tab {
+        @apply bg-neutral-800;
+    }
+    &.editor-pane {
         @apply block;
     }
-    .editor-pane > ol {
+}
+
+@utility editor-pane {
+    &.active {
+        @apply block;
+    }
+    & > ol {
         @apply list-none leading-7 font-code text-sm md:text-base;
     }
-    .editor-pane > ol > li {
+    & > ol > li {
         @apply md:pl-1;
     }
-    .editor-pane > ol > li::before {
+    & > ol > li::before {
         content: counter(list-item) "\a0\a0";
         @apply opacity-50 text-right;
     }
+}
 
+@utility editor {
     /*** CSS-ONLY EDITOR ***/
-    .editor {
-        @apply flex flex-wrap;
-    }
-    .editor input[type="radio"] {
+    @apply flex flex-wrap;
+    & input[type="radio"] {
         @apply w-0 opacity-0 order-first common-focus-label-after no-tap-highlight; /* TODO: keyboard focus highlight not visible */
     }
-    .editor label {
+    & label {
         @apply ml-1 cursor-pointer inline-block order-first transition-colors md:hover:bg-neutral-800/50;
     }
-    .editor .editor-content {
+    & .editor-content {
         @apply hidden p-4 order-last flex-grow w-full;
     }
 
-    .editor .editor-content > ol {
+    & .editor-content > ol {
         @apply list-none leading-7 font-code text-sm md:text-base;
     }
-    .editor .editor-content > ol > li {
+    & .editor-content > ol > li {
         @apply md:pl-1;
     }
-    .editor .editor-content > ol > li::before {
+    & .editor-content > ol > li::before {
         content: counter(list-item) "\a0\a0";
         @apply opacity-50 text-right;
     }
 
     /* active tab */
-    .editor input[type="radio"]:checked + label {
+    & input[type="radio"]:checked + label {
         @apply bg-neutral-800;
     }
-    .editor input[type="radio"]:checked + label + .editor-content {
+    & input[type="radio"]:checked + label + .editor-content {
         @apply block;
     }
+}
 
-    /*** UTILS ***/
-    .no-tap-highlight {
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
+@utility editor-content {
+    .editor & {
+        @apply hidden p-4 order-last flex-grow w-full;
     }
+
+    .editor & > ol {
+        @apply list-none leading-7 font-code text-sm md:text-base;
+    }
+    .editor & > ol > li {
+        @apply md:pl-1;
+    }
+    .editor & > ol > li::before {
+        content: counter(list-item) "\a0\a0";
+        @apply opacity-50 text-right;
+    }
+    .editor input[type="radio"]:checked + label + & {
+        @apply block;
+    }
+}
+
+@utility no-tap-highlight {
+    /*** UTILS ***/
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
