@@ -4,7 +4,6 @@
     "version": "1.0.31",
     "scripts": {
         "astro": "astro",
-        "astro:sync": "astro sync",
         "clean": "pnpm clean:build && pnpm clean:dependencies",
         "clean:build": "rm -rf dist",
         "clean:dependencies": "rm -rf node_modules",

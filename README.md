@@ -16,6 +16,11 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro ...`          | Run CLI commands like `astro add`, `astro check`                                                               |
 | `pnpm astro -- --help`    | Get help using the Astro CLI                                                                                   |
 
+## Caveats
+
+- Astro components can't be used inside a framework component (e.g. React component)
+- Storybook can't render Astro components
+
 ## TODOs
 
 - [x] Tailwind 4 upgrade
@@ -27,9 +32,6 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Store illustrations as stylable SVGs (transparent + tailwind color scheme)
 - [ ] CV / Resume section
 - [ ] Make testimonials CSS-only (or at least replace React with native JS)
-- [ ] Pages in Markdown
-    - [ ] Start page
-    - [ ] Legal pages
 - [ ] Individual project pages
 - [ ] Bugs
     - [ ] Fix line number position on empty lines in <Editor/> on Safari
@@ -39,13 +41,19 @@ All commands are run from the root of the project, from a terminal:
 - [ ] Documentation
     - [ ] Project overview
     - [ ] astro.config.mjs
-    - [ ] How to chage styling: tailwind, color scheme, fonts, ...
+    - [ ] How to chage styling: tailwind, color scheme, fonts (incl. weights), ...
     - [ ] Component Overview (Storybook / [Astrobook](https://github.com/ocavue/astrobook))
-- [ ] A11y review
-- [ ] SEO review
-- [ ] Custom CSS class review
+- [ ] Pages in Markdown
+    - [ ] Start page
+    - [ ] Legal pages
+- [ ] Reviews
+    - [ ] A11y review
+    - [ ] SEO review
+    - [ ] Custom CSS class review
+- [ ] Light mode / dark mode
 
-## Improvements
+
+## Template Improvements
 
 - [ ] More Hero sections to choose from
-- [ ] Light mode / dark mode
+- [ ] Remove app versioning

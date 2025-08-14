@@ -1,0 +1,31 @@
+---
+import type {CollectionEntry} from "astro:content";
+
+interface Props {
+    isActive: boolean;
+    testimonial: CollectionEntry<"testimonials">;
+}
+
+const {isActive, testimonial} = Astro.props;
+const classMap = {
+    root: {
+        active: "opacity-100 translate-x-0 visible scale-100 delay-200",
+        inactive: "opacity-0 translate-x-8 scale-90 invisible delay-50",
+    },
+};
+---
+
+<address
+    aria-hidden={!isActive}
+    class:list={[
+        "transition-all duration-300 origin-right col-start-1 col-span-1 row-start-1 row-span-1",
+        isActive ? classMap.root.active : classMap.root.inactive,
+    ]}
+    data-classes-active={classMap.root.active}
+    data-classes-inactive={classMap.root.inactive}
+    data-testimonial-id={testimonial.id}
+>
+    <h3 class="text-sm md:text-xl font-semibold">{`${testimonial.data.referrer}`}</h3>
+    <p class="text-xs md:text-base font-light uppercase opacity-75">{`${testimonial.data.referrerRole}`}</p>
+    <p class="text-xs md:text-base font-light opacity-75">{testimonial.data.referrerCompany}</p>
+</address>

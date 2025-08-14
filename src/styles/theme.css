@@ -1,4 +1,6 @@
 @theme {
+    --animation-pulse: pulse 900ms cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
     --color-accent: #bf1363;
     --color-accent-50: #f8bad7;
     --color-accent-100: #f6a8cc;
@@ -43,19 +45,17 @@
     --color-transparent: transparent;
     --color-white: #ffffff;
 
-    --font-code: "Source Code Pro", "Courier New", "Courier", monospace;
-    --font-sans: "Mulish", sans-serif;
-    --font-serif: "Bungee Inline", serif;
-
     --drop-shadow-sm: 0 1px 1px rgb(0 0 0 / 0.05);
     --drop-shadow-md: 0 4px 3px rgb(0 0 0 / 0.07) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
     --drop-shadow-lg: 0 10px 8px rgb(0 0 0 / 0.04) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     --drop-shadow-xl: 0 20px 13px rgb(0 0 0 / 0.03) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
     --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.3);
 
+    --font-code: "Source Code Pro", "Courier New", "Courier", monospace;
+    --font-sans: "Mulish", sans-serif;
+    --font-serif: "Bungee Inline", serif;
+
     --transition-property-bg: background-color, background-opacity;
     --transition-property-fonts: font-size, font-weight;
     --transition-property-spacing: margin, padding;
-
-    --animation-pulse: pulse 900ms cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
