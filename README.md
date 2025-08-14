@@ -29,9 +29,9 @@ All commands are run from the root of the project, from a terminal:
     - [x] Auto-generate responsive sizes
     - [x] Import SVG files as `.svg` – not `.astro`
     - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
-    - [ ] Store illustrations as stylable SVGs (transparent + tailwind color scheme)
+    - [ ] Store illustrations as stylable SVGs (transparent + Tailwind color scheme)
 - [ ] CV / Resume section
-- [ ] Make testimonials CSS-only (or at least replace React with native JS)
+- [x] Make testimonials CSS-only (or at least replace React with native JS)
 - [ ] Individual project pages
 - [ ] Bugs
     - [ ] Fix line number position on empty lines in <Editor/> on Safari
