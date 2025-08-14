@@ -190,3 +190,35 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
 }
+
+@utility testimonials {
+    /*** TESTIMONIALS ***/
+    & input[type="radio"] {
+        @apply w-0 opacity-0 order-first common-focus-label-after no-tap-highlight;
+    }
+
+    & .testimonial-avatar {
+        @apply opacity-40 md:hover:scale-110 shadow-md transition-all;
+    }
+
+    & .testimonial-quote {
+        @apply opacity-0 scale-75 invisible;
+    }
+
+    & .testimonial-author {
+        @apply opacity-0 translate-x-8 scale-90 invisible delay-50;
+    }
+
+    /* Active states using data attributes */
+    & .testimonial-avatar[data-active="true"] {
+        @apply scale-150 opacity-100 shadow-2xl;
+    }
+
+    & .testimonial-quote[data-active="true"] {
+        @apply opacity-90 scale-100 visible delay-200;
+    }
+
+    & .testimonial-author[data-active="true"] {
+        @apply opacity-100 translate-x-0 visible scale-100 delay-200;
+    }
+}
