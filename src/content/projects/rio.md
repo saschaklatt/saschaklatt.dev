@@ -2,6 +2,7 @@
 id: rio
 title: RIO
 subline: Front-end development support for a cloud-based telematics platform.
+image: ./rio.webp
 contractType: employed
 dateStart: 2016-09-01
 dateEnd: 2018-12-31
@@ -26,7 +27,6 @@ tools:
     - JIRA
     - Swagger
 teamSize: 8
-image: rio.webp
 website:
     href: https://rio.cloud
     label: rio.cloud

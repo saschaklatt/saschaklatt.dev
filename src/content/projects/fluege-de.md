@@ -2,6 +2,7 @@
 id: fluege
 title: fluege.de
 subline: I had the privilege of collaborating with the front-end team at fluege.de, a leading German air travel comparison portal.
+image: ./fluege-de.webp
 website:
     href: https://go.fluege.de
     label: go.fluege.de
@@ -26,7 +27,6 @@ tools:
     - GitLab
     - JIRA
     - Swagger
-image: fluege-de.webp
 ---
 
 The web application go.fluege.de efficiently sifts through thousands of airlines to give users the best flight options at unbeatable prices. In this project, I had the chance to work with Invia Flights' front-end team to modernize the existing platform. We made use of technologies such as Web Components, Polymer, Lit, and Redux and integrated the booking forms with a complex REST-based microservice architecture.

@@ -2,6 +2,7 @@
 id: bettercodelabs-bid
 title: bettercode BID
 subline: UX/UI design and front-end development for a bidding platform
+image: ./bettercodelabs-bid.webp
 client: bettercodeLABS L.L.C-FC
 clientLogo: /img/brand-logos/bettercodelabs.svg
 contractType: freelance
@@ -22,7 +23,6 @@ technologies:
 tools:
     - Figma
 teamSize: 0
-image: bettercodelabs-bid.webp
 ---
 
 Commissioned by bettercodeLABS to enhance the UI of their existing prototype into a production-ready design, I utilized Figma to create a user-centric design prioritizing simplicity and functionality. Through wireframing and prototyping, I developed a clickable prototype in Figma for desktop and mobile devices, ensuring an intuitive interface. The implementation of the design into the client application involved React.js and Material UI for a polished and consistent look. Real-time updates were seamlessly integrated via a REST API, elevating user engagement and responsiveness. The result is an optimized UI that enhances the overall bidding experience.

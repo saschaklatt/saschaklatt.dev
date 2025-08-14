@@ -20,8 +20,8 @@ All commands are run from the root of the project, from a terminal:
 
 - [ ] Tailwind 4 upgrade
 - [ ] Images
-    - [ ] Import images from `src/` in content collections
-    - [ ] Auto-generate responsive sizes
+    - [x] Import images from `src/` in content collections
+    - [x] Auto-generate responsive sizes
     - [x] Import SVG files as `.svg` – not `.astro`
     - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
     - [ ] Store illustrations as stylable SVGs (transparent + tailwind color scheme)
@@ -38,6 +38,11 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Project overview
     - [ ] astro.config.mjs
     - [ ] How to chage styling: tailwind, color scheme, fonts, ...
-    - [ ] Component Overview (Storybook)
+    - [ ] Component Overview (Storybook / [Astrobook](https://github.com/ocavue/astrobook))
 - [ ] A11y review
 - [ ] SEO review
+
+## Improvements
+
+- [ ] More Hero sections to choose from
+- [ ] Light mode / dark mode
