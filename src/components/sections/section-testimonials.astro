@@ -100,26 +100,23 @@ const name = "testimonial";
 <script>
     import {matomoTrackEvent} from "@/services/matomo";
 
-    // Update data-active attributes when radio inputs change
-    document.addEventListener("DOMContentLoaded", () => {
-        const radioInputs = document.querySelectorAll('input[name="testimonial"]');
+    const radioInputs = document.querySelectorAll('input[name="testimonial"]');
 
-        radioInputs.forEach((radio) => {
-            radio.addEventListener("change", (e) => {
-                const checkedRadio = e.target as HTMLInputElement;
-                const activeTestimonialId = checkedRadio.id;
+    radioInputs.forEach((radio) => {
+        radio.addEventListener("change", (e) => {
+            const checkedRadio = e.target as HTMLInputElement;
+            const activeTestimonialId = checkedRadio.id;
 
-                // Update all elements with data-testimonial-id
-                const allElements = document.querySelectorAll("[data-testimonial-id]");
-                allElements.forEach((element) => {
-                    const testimonialId = element.getAttribute("data-testimonial-id");
-                    element.setAttribute("data-active", testimonialId === activeTestimonialId ? "true" : "false");
-                });
-
-                // Track the testimonial selection
-                const testimonialIndex = Array.from(radioInputs).findIndex((input) => input.id === activeTestimonialId);
-                matomoTrackEvent({action: "select", category: "testimonial", name: "testimonial", value: testimonialIndex});
+            // Update all elements with data-testimonial-id
+            const allElements = document.querySelectorAll("[data-testimonial-id]");
+            allElements.forEach((element) => {
+                const testimonialId = element.getAttribute("data-testimonial-id");
+                element.setAttribute("data-active", testimonialId === activeTestimonialId ? "true" : "false");
             });
+
+            // Track the testimonial selection
+            const testimonialIndex = Array.from(radioInputs).findIndex((input) => input.id === activeTestimonialId);
+            matomoTrackEvent({action: "select", category: "testimonial", name: "testimonial", value: testimonialIndex});
         });
     });
 </script>
