@@ -5,10 +5,11 @@ import Icon from "@/assets/images/icons/saschaklatt.svg";
 
 import ClickTracker from "@/components/click-tracker.astro";
 import Editor from "@/components/editor.astro";
+import Iphone from "@/components/decorations/iphone.astro";
 import WavesHeader from "@/components/decorations/waves-header.astro";
 import {getBreakpoints, numToPx} from "@/utils";
 
-import imageMe from "@/content/me.webp";
+import imageMe from "@/content/me.png";
 
 import type {CtaProps, EditorTab} from "@/typedefs";
 
@@ -52,16 +53,24 @@ const breakpoints = getBreakpoints();
             </div>
         </div>
         <div class="relative shrink-0">
-            <Picture
-                alt="A portrait of the developer displayed on a black iPhone."
-                class="-rotate-6 -translate-x-10 md:translate-x-8 lg:translate-x-0 w-32 md:w-auto drop-shadow-2xl max-w-[250px]"
-                formats={["webp", "avif"]}
-                sizes={`(min-width: ${numToPx(breakpoints.lg)}) 250px, 500px`}
-                draggable="false"
-                priority
-                quality={100}
-                src={imageMe}
-            />
+            <div
+                class="-rotate-6 -translate-x-10 md:translate-x-8 lg:translate-x-0 w-32 md:w-auto drop-shadow-2xl max-w-[250px] overflow-hidden relative"
+            >
+                <Picture
+                    alt="A portrait of the developer displayed on a black iPhone."
+                    formats={["webp", "avif"]}
+                    sizes={`(min-width: ${numToPx(breakpoints.lg)}) 250px, 500px`}
+                    draggable="false"
+                    priority
+                    quality={100}
+                    src={imageMe}
+                    class="w-full h-full object-cover rounded-2xl md:rounded-4xl"
+                    style="aspect-ratio: 250/533;"
+                />
+                <div class="absolute inset-0 pointer-events-none">
+                    <Iphone />
+                </div>
+            </div>
         </div>
     </div>
     <WavesHeader class="w-full" />

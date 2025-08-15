@@ -128,26 +128,6 @@
     }
 }
 
-@utility editor-content {
-    .editor & {
-        @apply hidden p-4 order-last flex-grow w-full;
-    }
-
-    .editor & > ol {
-        @apply list-none leading-7 font-code text-sm md:text-base;
-    }
-    .editor & > ol > li {
-        @apply md:pl-1;
-    }
-    .editor & > ol > li::before {
-        content: counter(list-item) "\a0\a0";
-        @apply opacity-50 text-right;
-    }
-    .editor input[type="radio"]:checked + label + & {
-        @apply block;
-    }
-}
-
 @utility no-tap-highlight {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -185,5 +165,5 @@
 }
 
 @utility bg-hero-gradient {
-    @apply bg-linear-to-tr from-secondary-600 to-neutral-600;
+    @apply bg-linear-to-tr from-secondary-600 via-primary-600 to-neutral-600;
 }

@@ -36,8 +36,8 @@ All commands are run from the root of the project, from a terminal:
     - [x] Hero image with automatic image optimization
     - [x] Header/Footer waves as stylable SVGs (Tailwind color scheme)
     - [x] Style testimonial background heart with theme colors
-    - [ ] Illustrations as stylable SVGs (transparent + Tailwind color scheme)
-    - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
+    - [x] Illustrations as stylable SVGs (transparent + Tailwind color scheme)
+    - [x] iPhone frame as separate asset so that users can just add a simple profile pic
 - [ ] CV / Resume section
 - [ ] Individual project pages
 - [ ] Cursor rules
@@ -62,6 +62,7 @@ All commands are run from the root of the project, from a terminal:
 ## Template TODOs
 
 - [ ] Remove Matomo and Cookie services
+- [ ] Pre-made color schemes
 - [ ] Use dummy content instead of my projects, services, and testimonials
 - [ ] Use dummy content on legal pages
 - [ ] Remove brand icon (hero section, home buttons)

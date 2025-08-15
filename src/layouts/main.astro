@@ -22,6 +22,7 @@ const ogImage = new URL("/img/og-image.jpg", Astro.site).toString();
         <meta name="viewport" content="width=device-width" />
 
         <link rel="icon" href="/img/logo-circled32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/img/logo-circled64.png" sizes="64x64" type="image/png" />
         <link rel="canonical" href={canonicalUrl} />
 
         <title>{pageTitle}</title>
@@ -35,12 +36,11 @@ const ogImage = new URL("/img/og-image.jpg", Astro.site).toString();
         <meta property="og:image:height" content="630" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:alt" content="A screenshot of the homepage of saschaklatt.dev" />
         <meta property="og:url" content={canonicalUrl} />
 
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:description" content={pageDescription} />
-        <meta property="twitter:creator" content="@klattimaniac" />
+        <meta property="twitter:creator" content="@saschaklatt_dev" />
 
         <meta name="author" content="Sascha Klatt" />
         <meta name="generator" content={Astro.generator} />
