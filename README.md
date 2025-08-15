@@ -32,8 +32,8 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Header/Footer waves as stylable SVGs (Tailwind color scheme)
     - [ ] Illustrations as stylable SVGs (transparent + Tailwind color scheme)
 - [ ] CV / Resume section
-- [x] Make testimonials CSS-only (or at least replace React with native JS)
 - [ ] Individual project pages
+- [x] Make testimonials CSS-only (or at least replace React with native JS)
 - [x] Bugs
     - [x] Fix line number position on empty lines in <Editor/> on Safari
     - [x] Fix line between waves
@@ -52,6 +52,7 @@ All commands are run from the root of the project, from a terminal:
     - [ ] SEO review
     - [ ] Custom CSS class review
 - [ ] Light mode / dark mode
+- [ ] Read breakpoints from Tailwind config
 
 
 ## Template Improvements
