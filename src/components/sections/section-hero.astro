@@ -1,4 +1,6 @@
 ---
+import {Picture} from "astro:assets";
+
 import ClickTracker from "@/components/click-tracker.astro";
 import Editor from "@/components/editor.astro";
 import Icon from "@/assets/images/icons/saschaklatt.svg";
@@ -6,9 +8,8 @@ import {numToPx} from "@/utils";
 import {getBreakpoints} from "@/utils";
 
 import SvgWavesStage from "@/assets/images/waves-header.svg";
-import imageIphone from "@/assets/images/iphone-sascha.webp";
-import imageIphone2x from "@/assets/images/iphone-sascha@2x.webp";
-import imageIphone4x from "@/assets/images/iphone-sascha@4x.webp";
+
+import imageMe from "@/content/me.webp";
 
 import type {CtaProps, EditorTab} from "@/typedefs";
 
@@ -52,23 +53,16 @@ const breakpoints = getBreakpoints();
             </div>
         </div>
         <div class="relative shrink-0">
-            <picture>
-                <source
-                    srcset={`${imageIphone.src}, ${imageIphone2x.src} 2x`}
-                    media={`(max-width: ${numToPx(breakpoints.md)})`}
-                />
-                <source
-                    srcset={`${imageIphone2x.src}, ${imageIphone4x.src} 2x`}
-                    media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
-                />
-                <img
-                    class="-rotate-6 -translate-x-10 md:translate-x-8 lg:translate-x-0 w-32 md:w-auto drop-shadow-2xl"
-                    src={imageIphone2x.src}
-                    width="251"
-                    height="451"
-                    alt="An iPhone showing Sascha Klatt."
-                />
-            </picture>
+            <Picture
+                alt="A portrait of the developer displayed on a black iPhone."
+                class="-rotate-6 -translate-x-10 md:translate-x-8 lg:translate-x-0 w-32 md:w-auto drop-shadow-2xl max-w-[250px]"
+                formats={["webp", "avif"]}
+                sizes={`(min-width: ${numToPx(breakpoints.lg)}) 250px, 500px`}
+                draggable="false"
+                priority
+                quality={100}
+                src={imageMe}
+            />
         </div>
     </div>
     <SvgWavesStage class="w-full" />

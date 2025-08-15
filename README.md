@@ -28,8 +28,10 @@ All commands are run from the root of the project, from a terminal:
     - [x] Import images from `src/` in content collections
     - [x] Auto-generate responsive sizes
     - [x] Import SVG files as `.svg` – not `.astro`
-    - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
     - [ ] Header/Footer waves as stylable SVGs (Tailwind color scheme)
+    - [x] Hero image with automatic image optimization
+    - [ ] Style testimonial background heart with theme colors
+    - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
     - [ ] Illustrations as stylable SVGs (transparent + Tailwind color scheme)
 - [ ] CV / Resume section
 - [ ] Individual project pages
@@ -42,6 +44,7 @@ All commands are run from the root of the project, from a terminal:
 - [ ] Documentation
     - [ ] Project overview
     - [ ] astro.config.mjs
+    - [ ] Page meta data (title, description, og:image, ...)
     - [ ] CSS helper classes
     - [ ] How to chage styling: tailwind, color scheme (plus tools like coloor etc), fonts (incl. weights), ...
     - [ ] Component Overview (Storybook / [Astrobook](https://github.com/ocavue/astrobook))
