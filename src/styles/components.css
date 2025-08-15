@@ -183,3 +183,7 @@
         @apply opacity-100 translate-x-0 visible scale-100 delay-200;
     }
 }
+
+@utility bg-hero-gradient {
+    @apply bg-linear-to-tr from-primary-400 to-neutral-500;
+}

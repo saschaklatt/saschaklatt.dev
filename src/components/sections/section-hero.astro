@@ -2,10 +2,10 @@
 import ClickTracker from "@/components/click-tracker.astro";
 import Editor from "@/components/editor.astro";
 import Icon from "@/assets/images/icons/saschaklatt.svg";
-import SectionStage from "@/components/sections/section-stage.astro";
 import {numToPx} from "@/utils";
 import {getBreakpoints} from "@/utils";
 
+import SvgWavesStage from "@/assets/images/waves-header.svg";
 import imageIphone from "@/assets/images/iphone-sascha.webp";
 import imageIphone2x from "@/assets/images/iphone-sascha@2x.webp";
 import imageIphone4x from "@/assets/images/iphone-sascha@4x.webp";
@@ -25,7 +25,7 @@ const {developerName, developerTitle, editorTabs, id, ctas} = Astro.props;
 const breakpoints = getBreakpoints();
 ---
 
-<SectionStage id={id}>
+<section class="bg-hero-gradient flex flex-col justify-center" id={id}>
     <div
         class="content w-full md:w-auto pt-20 md:pt-32 pb-20 inline-flex items-center flex-col-reverse md:flex-row-reverse gap-x-32 gap-y-8"
     >
@@ -71,4 +71,5 @@ const breakpoints = getBreakpoints();
             </picture>
         </div>
     </div>
-</SectionStage>
+    <SvgWavesStage class="w-full" />
+</section>

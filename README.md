@@ -42,7 +42,8 @@ All commands are run from the root of the project, from a terminal:
 - [ ] Documentation
     - [ ] Project overview
     - [ ] astro.config.mjs
-    - [ ] How to chage styling: tailwind, color scheme, fonts (incl. weights), ...
+    - [ ] CSS helper classes
+    - [ ] How to chage styling: tailwind, color scheme (plus tools like coloor etc), fonts (incl. weights), ...
     - [ ] Component Overview (Storybook / [Astrobook](https://github.com/ocavue/astrobook))
 - [ ] Pages in Markdown
     - [ ] Start page
@@ -53,10 +54,14 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Custom CSS class review
 - [ ] Light mode / dark mode
 - [ ] Read breakpoints from Tailwind config
+- [ ] Swipe support for testimonials
 
 
-## Template Improvements
+## Template TODOs
 
+- [ ] Remove Matomo and Cookie services
+- [ ] Use dummy content instead of my projects, services, and testimonials
+- [ ] Use dummy content on legal pages
 - [ ] Remove brand icon (hero section, home buttons)
 - [ ] More Hero sections to choose from
 - [ ] Remove app versioning

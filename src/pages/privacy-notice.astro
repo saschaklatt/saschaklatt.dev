@@ -1,6 +1,6 @@
 ---
+import SvgWavesStage from "@/assets/images/waves-header.svg";
 import ButtonHome from "@/components/button-home.astro";
-import SectionStage from "@/components/sections/section-stage.astro";
 import {CheckboxMatomoUserOptOut} from "@/components/checkbox-matomo-opt-out";
 import Layout from "@/layouts/main.astro";
 
@@ -15,14 +15,15 @@ const {street, city, country, zipCode} = address;
     pageTitle="Privacy notice | Sascha Klatt"
     pageDescription="Your privacy is paramount to me. Learn how I collect, use, and protect your data with transparency."
 >
-    <SectionStage>
+    <section class="bg-hero-gradient flex flex-col justify-center">
         <div class="content drop-shadow-2xl max-w-6-xl w-full">
             <ButtonHome />
             <header class="w-full text-center">
                 <h1 class="block font-serif text-5xl md:text-6xl mb-24 mt-16 md:mt-44 md:mb-52">{"Privacy notice"}</h1>
             </header>
         </div>
-    </SectionStage>
+        <SvgWavesStage />
+    </section>
     <section>
         <div class="content text-lg max-w-prose my-24 md:my-24">
             <section class="my-20 md:my-32">
