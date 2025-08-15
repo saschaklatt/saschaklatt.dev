@@ -1,13 +1,12 @@
 ---
 import {Picture} from "astro:assets";
 
+import Icon from "@/assets/images/icons/saschaklatt.svg";
+
 import ClickTracker from "@/components/click-tracker.astro";
 import Editor from "@/components/editor.astro";
-import Icon from "@/assets/images/icons/saschaklatt.svg";
-import {numToPx} from "@/utils";
-import {getBreakpoints} from "@/utils";
-
-import SvgWavesStage from "@/assets/images/waves-header.svg";
+import WavesHeader from "@/components/waves-header.astro";
+import {getBreakpoints, numToPx} from "@/utils";
 
 import imageMe from "@/content/me.webp";
 
@@ -65,5 +64,5 @@ const breakpoints = getBreakpoints();
             />
         </div>
     </div>
-    <SvgWavesStage class="w-full" />
+    <WavesHeader class="w-full" />
 </section>

@@ -24,22 +24,22 @@ All commands are run from the root of the project, from a terminal:
 ## TODOs
 
 - [x] Tailwind 4 upgrade
+- [x] Make testimonials CSS-only (or at least replace React with native JS)
+- [x] Alias imports
+- [x] Bugs
+    - [x] Fix line number position on empty lines in <Editor/> on Safari
+    - [x] Fix line between waves
 - [ ] Images
     - [x] Import images from `src/` in content collections
     - [x] Auto-generate responsive sizes
     - [x] Import SVG files as `.svg` – not `.astro`
-    - [ ] Header/Footer waves as stylable SVGs (Tailwind color scheme)
     - [x] Hero image with automatic image optimization
+    - [x] Header/Footer waves as stylable SVGs (Tailwind color scheme)
     - [ ] Style testimonial background heart with theme colors
     - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
     - [ ] Illustrations as stylable SVGs (transparent + Tailwind color scheme)
 - [ ] CV / Resume section
 - [ ] Individual project pages
-- [x] Make testimonials CSS-only (or at least replace React with native JS)
-- [x] Bugs
-    - [x] Fix line number position on empty lines in <Editor/> on Safari
-    - [x] Fix line between waves
-- [x] Alias imports
 - [ ] Cursor rules
 - [ ] Documentation
     - [ ] Project overview
@@ -55,7 +55,6 @@ All commands are run from the root of the project, from a terminal:
     - [ ] A11y review
     - [ ] SEO review
     - [ ] Custom CSS class review
-- [ ] Light mode / dark mode
 - [ ] Read breakpoints from Tailwind config
 - [ ] Swipe support for testimonials
 
@@ -68,3 +67,4 @@ All commands are run from the root of the project, from a terminal:
 - [ ] Remove brand icon (hero section, home buttons)
 - [ ] More Hero sections to choose from
 - [ ] Remove app versioning
+- [ ] Light mode / dark mode

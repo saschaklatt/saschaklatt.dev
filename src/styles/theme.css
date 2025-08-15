@@ -45,6 +45,10 @@
     --color-transparent: transparent;
     --color-white: #ffffff;
 
+    /* SVG Gradient Colors */
+    --tw-gradient-from: #061923;
+    --tw-gradient-to: #061923;
+
     --drop-shadow-sm: 0 1px 1px rgb(0 0 0 / 0.05);
     --drop-shadow-md: 0 4px 3px rgb(0 0 0 / 0.07) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
     --drop-shadow-lg: 0 10px 8px rgb(0 0 0 / 0.04) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));

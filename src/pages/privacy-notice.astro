@@ -1,5 +1,5 @@
 ---
-import SvgWavesStage from "@/assets/images/waves-header.svg";
+import WavesHeader from "@/components/waves-header.astro";
 import ButtonHome from "@/components/button-home.astro";
 import {CheckboxMatomoUserOptOut} from "@/components/checkbox-matomo-opt-out";
 import Layout from "@/layouts/main.astro";
@@ -22,7 +22,7 @@ const {street, city, country, zipCode} = address;
                 <h1 class="block font-serif text-5xl md:text-6xl mb-24 mt-16 md:mt-44 md:mb-52">{"Privacy notice"}</h1>
             </header>
         </div>
-        <SvgWavesStage />
+        <WavesHeader />
     </section>
     <section>
         <div class="content text-lg max-w-prose my-24 md:my-24">

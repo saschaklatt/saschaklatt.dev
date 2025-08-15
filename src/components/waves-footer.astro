@@ -1,0 +1,62 @@
+---
+/**
+ * ----------------------
+ * Waves Footer Component
+ * ----------------------
+ *
+ * This component is used to display the footer waves.
+ *
+ * We're using a .astro component instead of a .svg file because we need to use the Tailwind CSS
+ * color scheme variables in the SVG which is not possible with a .svg file.
+ */
+---
+
+<svg width="100%" height="100%" viewBox="0 1 1920 373">
+    <defs>
+        <linearGradient
+            id="footer-gradient-1"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="matrix(2.24006e-14,-365.83,-365.83,-2.24006e-14,3028.02,732.414)"
+        >
+            <stop offset="0" class="[stop-color:theme(colors.neutral.900)] [stop-opacity:0.04]"></stop>
+            <stop offset="1" class="[stop-color:theme(colors.neutral.900)] [stop-opacity:0.28]"></stop>
+        </linearGradient>
+        <linearGradient
+            id="footer-gradient-2"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="0"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="matrix(1.68947e-14,-275.912,-275.912,-1.68947e-14,3028.02,742.414)"
+        >
+            <stop offset="0" class="[stop-color:theme(colors.neutral.900)] [stop-opacity:0.02]"></stop>
+            <stop offset="1" class="[stop-color:theme(colors.neutral.900)] [stop-opacity:0.28]"></stop>
+        </linearGradient>
+    </defs>
+    <path
+        d="M3985.66,694.497C3985.66,633.835 3887.1,489.228 3541.11,489.228C3195.13,489.228 3174.72,572.748 2927.5,572.748C2680.28,572.748 2602.02,373.383 2331.45,369.451C2194.06,367.455 2066.64,463.973 2065.66,517.306L2065.66,742.414L3985.66,742.414L3985.66,694.497Z"
+        class="fill-[url(#footer-gradient-1)]"
+        transform="matrix(1,0,0,1,-7835,-7326) matrix(0.999034,0,0,1.00088,6.96572,-6.47393) matrix(7.97155,0,0,-11.7171,13324.3,7629.51) matrix(0.125567,0,0,0.0852708,-947.917,-37.4091)"
+    ></path>
+    <path
+        d="M3985.66,691.436C3985.66,598.125 3832.2,521.66 3641.26,521.66C3394.04,521.66 3173.97,636.863 2935.7,636.863C2721.2,636.863 2609.75,466.502 2358.76,466.502C2138.72,466.502 2098.09,613.894 2065.66,638.282L2065.66,742.414L3985.66,742.414L3985.66,691.436Z"
+        class="fill-[url(#footer-gradient-2)]"
+        transform="matrix(1,0,0,1,-7835,-7326) matrix(0.999034,0,0,1.00088,6.96572,-6.47393) matrix(7.97155,0,0,-11.7171,13324.3,7629.51) matrix(0.125567,0,0,0.0852708,-947.917,-37.4091)"
+    ></path>
+    <path
+        d="M3985.66,617.299C3975.01,599.837 3847.48,521.202 3619.7,521.202C3372.47,521.202 3299.73,625.819 3061.46,625.819C2758.68,625.819 2663.95,518.104 2412.96,518.104C2192.91,518.104 2129.25,580.462 2065.66,638.282L2065.66,669.065L3985.66,669.065L3985.66,617.299Z"
+        class="fill-neutral-900"
+        transform="matrix(1,0,0,1,-7835,-7326) matrix(0.999034,0,0,1.00088,6.96572,-6.47393) matrix(7.97155,0,0,-11.7171,13324.3,7629.51) matrix(0.125567,0,0,0.0852708,-947.917,-31.1546)"
+    ></path>
+</svg>
+
+<style>
+    .shape-rendering-crispEdges {
+        shape-rendering: crispEdges;
+    }
+</style>
