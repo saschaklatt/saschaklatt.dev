@@ -25,13 +25,11 @@ const {className, tabs} = Astro.props;
             tabs.map(({id, tab, lines}, idx) => (
                 <>
                     <input type="radio" name="editor-tab" id={id} checked={idx === 0} />
-                    <label for={id} class="editor-tab">
-                        {tab}
-                    </label>
+                    <label for={id}>{tab}</label>
                     <div class="editor-content px-6 py-4 bg-linear-to-b from-neutral-800 to-neutral-900">
                         <ol>
                             {lines.map((line) => (
-                                <li>{line}</li>
+                                <li>{line || " "}</li>
                             ))}
                         </ol>
                     </div>

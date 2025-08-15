@@ -38,7 +38,7 @@ const name = "testimonial";
                         >
                             <Picture
                                 alt={`Profile picture of ${testimonial.data.referrer}`}
-                                class="w-10 h-10 md:w-16 md:h-16"
+                                class="w-10 h-10 md:w-16 md:h-16 select-none"
                                 draggable="false"
                                 formats={["webp", "avif"]}
                                 height="96"
@@ -55,11 +55,13 @@ const name = "testimonial";
         {/* Content container */}
         <div class="relative max-w-prose text-base md:text-2xl bg-[url('/img/bg-heart.svg')] bg-no-repeat bg-center">
             <img
-                src="/img/quote.svg"
-                alt=""
-                width="60"
+                alt="Decorative quote icon"
+                class="absolute hidden md:block md:-top-8 left-0 w-10 h-10 md:w-20 md:h-20 select-none"
+                draggable="false"
                 height="60"
-                class="absolute hidden md:block md:-top-8 left-0 w-10 h-10 md:w-20 md:h-20"
+                loading="lazy"
+                src="/img/quote.svg"
+                width="60"
             />
 
             {/* Quote */}

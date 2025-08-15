@@ -1,10 +1,8 @@
 @utility content {
-    /*** PAGE LAYOUT ***/
     @apply mx-auto max-w-screen-xl px-4 md:px-8;
 }
 
 @utility common-focus {
-    /*** FOCUS ***/
     @apply focus-visible:ring-4 focus-visible:ring-primary-100 focus-visible:outline-none;
 }
 
@@ -19,7 +17,6 @@
 }
 
 @utility btn-base {
-    /*** BUTTONS ***/
     @apply common-focus
         rounded-md
         inline-flex
@@ -44,12 +41,10 @@
 }
 
 @utility hashtag {
-    /*** HASHTAG ***/
     @apply font-bold uppercase before:content-['#'] before:inline-block;
 }
 
 @utility link {
-    /*** LINKS ***/
     @apply common-focus
         rounded-md
         inline-block
@@ -67,7 +62,6 @@
 }
 
 @utility details-summary {
-    /*** DETAILS ELEMENT ***/
     @apply cursor-pointer select-none;
     &::marker {
         content: "";
@@ -80,7 +74,6 @@
 }
 
 @utility headline-2 {
-    /*** TEXT ***/
     @apply text-4xl md:text-5xl font-extrabold mt-12 mb-4 md:mt-32 md:mb-8;
 }
 
@@ -99,48 +92,18 @@
     }
 }
 
-@utility editor-tab {
-    /*** OLD REACT EDITOR ***/
-    @apply rounded-t-lg px-4 py-2 font-bold cursor-pointer select-none common-focus no-tap-highlight;
-    &.active {
-        @apply bg-neutral-800;
-    }
-}
-
-@utility active {
-    &.editor-tab {
-        @apply bg-neutral-800;
-    }
-    &.editor-pane {
-        @apply block;
-    }
-}
-
-@utility editor-pane {
-    &.active {
-        @apply block;
-    }
-    & > ol {
-        @apply list-none leading-7 font-code text-sm md:text-base;
-    }
-    & > ol > li {
-        @apply md:pl-1;
-    }
-    & > ol > li::before {
-        content: counter(list-item) "\a0\a0";
-        @apply opacity-50 text-right;
-    }
-}
-
 @utility editor {
-    /*** CSS-ONLY EDITOR ***/
     @apply flex flex-wrap;
+
     & input[type="radio"] {
         @apply w-0 opacity-0 order-first common-focus-label-after no-tap-highlight; /* TODO: keyboard focus highlight not visible */
     }
+
     & label {
+        @apply rounded-t-lg px-4 py-2 font-bold cursor-pointer select-none common-focus no-tap-highlight;
         @apply ml-1 cursor-pointer inline-block order-first transition-colors md:hover:bg-neutral-800/50;
     }
+
     & .editor-content {
         @apply hidden p-4 order-last flex-grow w-full;
     }
@@ -186,13 +149,11 @@
 }
 
 @utility no-tap-highlight {
-    /*** UTILS ***/
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
 }
 
 @utility testimonials {
-    /*** TESTIMONIALS ***/
     & input[type="radio"] {
         @apply w-0 opacity-0 order-first common-focus-label-after no-tap-highlight;
     }
