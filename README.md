@@ -38,9 +38,6 @@ All commands are run from the root of the project, from a terminal:
     - [x] Style testimonial background heart with theme colors
     - [x] Illustrations as stylable SVGs (transparent + Tailwind color scheme)
     - [x] iPhone frame as separate asset so that users can just add a simple profile pic
-- [ ] CV / Resume section
-- [ ] Individual project pages
-- [ ] Cursor rules
 - [ ] Documentation
     - [ ] Project overview
     - [ ] astro.config.mjs
@@ -48,6 +45,9 @@ All commands are run from the root of the project, from a terminal:
     - [ ] CSS helper classes
     - [ ] How to chage styling: tailwind, color scheme (plus tools like coloor etc), fonts (incl. weights), ...
     - [ ] Component Overview (Storybook / [Astrobook](https://github.com/ocavue/astrobook))
+- [ ] CV / Resume section
+- [ ] Individual project pages
+- [ ] Cursor rules
 - [ ] Pages in Markdown
     - [ ] Start page
     - [ ] Legal pages
@@ -69,3 +69,4 @@ All commands are run from the root of the project, from a terminal:
 - [ ] More Hero sections to choose from
 - [ ] Remove app versioning
 - [ ] Light mode / dark mode
+- [ ] Sitemap generator
