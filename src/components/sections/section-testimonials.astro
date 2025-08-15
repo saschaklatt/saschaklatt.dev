@@ -2,6 +2,7 @@
 import type {CollectionEntry} from "astro:content";
 import HeaderCentered from "@/components/header-centered.astro";
 import SectionContent from "@/components/sections/section-content.astro";
+import Heart from "@/components/decorations/heart.astro";
 import {Picture} from "astro:assets";
 
 interface Props {
@@ -53,7 +54,13 @@ const name = "testimonial";
         </div>
 
         {/* Content container */}
-        <div class="relative max-w-prose text-base md:text-2xl bg-[url('/img/bg-heart.svg')] bg-no-repeat bg-center">
+        <div class="relative max-w-prose text-base md:text-2xl">
+            {/* Heart background */}
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-75" role="img">
+                <Heart class="w-full h-full max-w-md" />
+            </div>
+
+            {/* Quote icon */}
             <img
                 alt="Decorative quote icon"
                 class="absolute hidden md:block md:-top-8 left-0 w-10 h-10 md:w-20 md:h-20 select-none"
@@ -65,7 +72,7 @@ const name = "testimonial";
             />
 
             {/* Quote */}
-            <div class="pt-4 md:pt-10 pb-4 md:py-20 grid grid-cols-1 grid-rows-1">
+            <div class="pt-4 md:pt-10 pb-4 md:py-20 grid grid-cols-1 grid-rows-1 relative z-10">
                 {
                     testimonials.map((testimonial, idx) => (
                         <q
@@ -80,7 +87,7 @@ const name = "testimonial";
             </div>
 
             {/* Author */}
-            <div class="grid grid-cols-1 grid-rows-1 self-end mb-14 text-right">
+            <div class="grid grid-cols-1 grid-rows-1 self-end mb-14 text-right relative z-10">
                 {
                     testimonials.map((testimonial, idx) => (
                         <address

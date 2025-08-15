@@ -35,7 +35,7 @@ All commands are run from the root of the project, from a terminal:
     - [x] Import SVG files as `.svg` – not `.astro`
     - [x] Hero image with automatic image optimization
     - [x] Header/Footer waves as stylable SVGs (Tailwind color scheme)
-    - [ ] Style testimonial background heart with theme colors
+    - [x] Style testimonial background heart with theme colors
     - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
     - [ ] Illustrations as stylable SVGs (transparent + Tailwind color scheme)
 - [ ] CV / Resume section

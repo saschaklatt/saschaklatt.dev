@@ -1,16 +1,6 @@
 import type {MatomoTrackingEvent} from "@/services/matomo/typedefs";
 
-export type IconId =
-    | "saschaklatt"
-    | "document"
-    | "envelope"
-    | "github"
-    | "instagram"
-    | "linkedin"
-    | "nomadlist"
-    | "stackoverflow"
-    | "x"
-    | "xing";
+export type IconId = "document" | "envelope" | "github" | "instagram" | "linkedin" | "nomadlist" | "stackoverflow" | "x" | "xing";
 
 export interface EditorTab {
     id: string;
