@@ -5,7 +5,6 @@ export type IconId = "document" | "envelope" | "github" | "instagram" | "linkedi
 export enum IllustrationId {
     ApiCloudScreen = "api-cloud-screen",
     HeadlessCms = "headless-cms",
-    MobileTabletDesktop = "mobile-tablet-desktop",
     Mongodb = "mongodb",
     RocketCloud = "rocket-cloud",
     UiComponentsPhone = "ui-components-phone",

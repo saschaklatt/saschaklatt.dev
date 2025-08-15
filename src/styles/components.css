@@ -185,5 +185,5 @@
 }
 
 @utility bg-hero-gradient {
-    @apply bg-linear-to-tr from-primary-400 to-neutral-500;
+    @apply bg-linear-to-tr from-secondary-600 to-neutral-600;
 }
