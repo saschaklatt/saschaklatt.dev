@@ -1,8 +1,8 @@
 ---
 import ClickTracker from "@/components/click-tracker.astro";
 import Editor from "@/components/editor.astro";
-import Icon from "@/components/icon.astro";
-import SectionStage from "@/components/section-stage.astro";
+import Icon from "@/assets/images/icons/saschaklatt.svg";
+import SectionStage from "@/components/sections/section-stage.astro";
 import {numToPx} from "@/utils";
 import {getBreakpoints} from "@/utils";
 
@@ -31,7 +31,6 @@ const breakpoints = getBreakpoints();
     >
         <div class="flex flex-col gap-y-8 relative w-full md:w-132">
             <Icon
-                iconId="saschaklatt"
                 class="w-40 h-40 md:w-24 md:h-24 absolute -top-60 left-1/2 text-neutral-900 md:left-auto md:-top-5 md:right-0 rotate-12 drop-shadow-2xl"
             />
             <h1 class="text-center md:text-left drop-shadow-2xl uppercase" slot="stage">

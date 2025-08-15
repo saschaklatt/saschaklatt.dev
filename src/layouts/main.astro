@@ -1,5 +1,5 @@
 ---
-import PageFooter from "@/components/page-footer.astro";
+import PageFooter from "@/components/sections/section-page-footer.astro";
 import {version} from "@/app-meta";
 import {stripTrailingSlash} from "@/utils";
 import "@/styles/index.css";
@@ -12,7 +12,7 @@ interface Props {
 
 const {pageTitle, pageDescription, slug} = Astro.props;
 const canonicalUrl = slug ? stripTrailingSlash(new URL(slug, Astro.site).toString()) : Astro.url.toString();
-const ogImage = new URL("/img/saschaklatt.dev.jpg", Astro.site).toString();
+const ogImage = new URL("/img/og-image.jpg", Astro.site).toString();
 ---
 
 <!doctype html>
