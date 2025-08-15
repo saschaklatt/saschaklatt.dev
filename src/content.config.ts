@@ -1,6 +1,8 @@
 import {defineCollection, z} from "astro:content";
 import {glob} from "astro/loaders";
 
+import {IllustrationId} from "@/typedefs";
+
 const projects = defineCollection({
     loader: glob({base: "./src/content/projects", pattern: "**/*.md"}),
     schema: ({image}) =>
@@ -60,7 +62,7 @@ const services = defineCollection({
     schema: z
         .object({
             id: z.string(),
-            imageBaseName: z.string(),
+            illustrationId: z.nativeEnum(IllustrationId),
             imageAlt: z.string(),
             order: z.number().int().optional(),
             title: z.string(),

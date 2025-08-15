@@ -2,6 +2,7 @@
 id: cloud-hosting
 imageBaseName: rocket-cloud
 imageAlt: Illustration of a rocket deploying content to a cloud.
+illustrationId: rocket-cloud
 order: 5
 title: Cloud Hosting, CI/CD & Docker
 ---

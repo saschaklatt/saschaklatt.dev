@@ -1,0 +1,32 @@
+---
+import type {IllustrationId} from "@/typedefs";
+
+import IllustrationApiCloudScreen from "./illustration-api-cloud-screen.astro";
+import IllustrationHeadlessCms from "./illustration-headless-cms.astro";
+import IllustrationMobileTabletDesktop from "./illustration-mobile-tablet-desktop.astro";
+import IllustrationMongodb from "./illustration-mongodb.astro";
+import IllustrationRocketCloud from "./illustration-rocket-cloud.astro";
+import IllustrationUiComponentsPhone from "./illustration-ui-components-phone.astro";
+
+const illustrationMap: Record<IllustrationId, any> = {
+    "api-cloud-screen": IllustrationApiCloudScreen,
+    "headless-cms": IllustrationHeadlessCms,
+    "mobile-tablet-desktop": IllustrationMobileTabletDesktop,
+    "mongodb": IllustrationMongodb,
+    "rocket-cloud": IllustrationRocketCloud,
+    "ui-components-phone": IllustrationUiComponentsPhone,
+};
+
+interface Props {
+    class?: string;
+    illustrationId: IllustrationId;
+}
+
+const {class: className, illustrationId} = Astro.props;
+
+const Illustration = illustrationMap[illustrationId];
+---
+
+<div class={className}>
+    <Illustration />
+</div>

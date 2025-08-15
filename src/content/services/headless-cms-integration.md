@@ -2,6 +2,7 @@
 id: headless-cms-integration
 imageAlt: Illustration of all content of the headless CMS distributed to different devices.
 imageBaseName: headless-cms
+illustrationId: headless-cms
 order: 1
 title: Headless CMS Integration
 ---

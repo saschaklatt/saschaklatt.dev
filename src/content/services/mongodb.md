@@ -2,6 +2,7 @@
 id: mongodb
 imageAlt: Illustration of a MongoDB database with documents and a lock.
 imageBaseName: mongodb
+illustrationId: mongodb
 order: 4
 title: MongoDB Modeling & Integration
 ---

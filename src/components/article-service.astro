@@ -1,6 +1,8 @@
 ---
 import type {CollectionEntry} from "astro:content";
 
+import Illustration from "@/components/illustrations/index.astro";
+
 import {numToPx} from "@/utils";
 import {getBreakpoints} from "@/utils";
 
@@ -28,21 +30,6 @@ const breakpoints = getBreakpoints();
         <p class="opacity-75 font-light mt-4 md:mt-6 text-base md:text-lg">{service.body}</p>
     </div>
     <div class:list={["flex-1 flex w-full", reverse ? "justify-start" : "justify-end"]}>
-        <picture class="mx-auto flex w-full">
-            <source
-                srcset={`/img/illustrations/${service.data.imageBaseName}.webp, /img/illustrations/${service.data.imageBaseName}@2x.webp 2x`}
-                media={`(max-width: ${numToPx(breakpoints.md)})`}
-            />
-            <source
-                srcset={`/img/illustrations/${service.data.imageBaseName}.webp, /img/illustrations/${service.data.imageBaseName}@2x.webp 2x`}
-                media={`(min-width: ${numToPx(breakpoints.md + 1)})`}
-            />
-            <img
-                src={`/img/illustrations/${service.data.imageBaseName}.webp`}
-                alt={service.data.imageAlt}
-                loading="lazy"
-                class="rounded-lg w-full"
-            />
-        </picture>
+        <Illustration illustrationId={service.data.illustrationId} class="mx-auto w-full" />
     </div>
 </article>

@@ -2,6 +2,7 @@
 id: frontend-development
 imageAlt: Illustration of a mobile phone with UI components floating on top.
 imageBaseName: ui-components-phone
+illustrationId: ui-components-phone
 order: 0
 title: Front-end Web Development
 ---

@@ -2,6 +2,7 @@
 id: apis
 imageAlt: Illustration of a cloud and a screen connected by wires.
 imageBaseName: api-cloud-screen
+illustrationId: api-cloud-screen
 order: 4
 title: API Design & Development
 ---

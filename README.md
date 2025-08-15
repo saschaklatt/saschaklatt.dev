@@ -36,8 +36,8 @@ All commands are run from the root of the project, from a terminal:
     - [x] Hero image with automatic image optimization
     - [x] Header/Footer waves as stylable SVGs (Tailwind color scheme)
     - [x] Style testimonial background heart with theme colors
-    - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
     - [ ] Illustrations as stylable SVGs (transparent + Tailwind color scheme)
+    - [ ] iPhone frame as separate asset so that users can just add a simple profile pic
 - [ ] CV / Resume section
 - [ ] Individual project pages
 - [ ] Cursor rules
